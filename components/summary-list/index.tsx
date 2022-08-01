@@ -21,16 +21,26 @@ export const SummaryList: FC<ISummaryListProps> = ({ rows, border = true }) => {
             {row.key}
           </Heading>
           <StyledComponents.SummaryListValue>
-            {Array.isArray(row.value) ? (
-              row.value.map((sub) => (
-                <StyledComponents.SummaryListParagraph key={sub}>
-                  {sub}
-                </StyledComponents.SummaryListParagraph>
-              ))
-            ) : (
+            {typeof row.value === 'string' ? (
               <StyledComponents.SummaryListParagraph>
                 {row.value}
               </StyledComponents.SummaryListParagraph>
+            ) : (
+              row.value.map((value) =>
+                Array.isArray(value) ? (
+                  <StyledComponents.SummaryListSubParagraphContainer>
+                    {value.map((sub) => (
+                      <StyledComponents.SummaryListParagraph key={sub}>
+                        {sub}
+                      </StyledComponents.SummaryListParagraph>
+                    ))}
+                  </StyledComponents.SummaryListSubParagraphContainer>
+                ) : (
+                  <StyledComponents.SummaryListParagraph key={value} hasMargin>
+                    {value}
+                  </StyledComponents.SummaryListParagraph>
+                ),
+              )
             )}
           </StyledComponents.SummaryListValue>
           {row.action && (

@@ -94,7 +94,7 @@ const rows = [
   },
   {
     key: 'Waste quantity',
-    value: ['Estimate', '22 tonnes'],
+    value: ['Estimate', '22 tonnes', ['something', 'else'], ['test', 'test2']],
     action: { title: 'Update', link: '/' },
   },
   {

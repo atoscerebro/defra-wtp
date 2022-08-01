@@ -32,6 +32,7 @@ export const SummaryListRow = styled.div<{
 
   ${MEDIA_QUERIES.TABLET} {
     display: table-row;
+    margin-bottom: unset;
 
     ${({ noActions }) =>
       noActions &&
@@ -44,6 +45,7 @@ export const SummaryListRow = styled.div<{
 
 export const SummaryListKey = styled.dt`
   margin-bottom: ${SPACING.SCALE_3};
+  overflow-wrap: break-word;
 
   ${MEDIA_QUERIES.TABLET} {
     display: table-cell;
@@ -58,12 +60,23 @@ export const SummaryListValue = styled.dd`
   ${MEDIA_QUERIES.TABLET} {
     display: table-cell;
     padding: ${SPACING.SCALE_2} ${SPACING.SCALE_4} ${SPACING.SCALE_2} 0px;
+    margin: unset;
+  }
+
+  & :last-child {
+    margin-bottom: unset;
   }
 `;
 
-export const SummaryListParagraph = styled(Paragraph)`
-  margin: unset;
+export const SummaryListParagraph = styled(Paragraph)<{ hasMargin?: boolean }>`
+  margin-bottom: ${({ hasMargin }) => (hasMargin ? SPACING.SCALE_2 : 'unset')};
 `;
+
+export const SummaryListSubParagraphContainer = styled.div`
+  margin-bottom: ${SPACING.SCALE_2};
+`;
+
+export const SummaryListSubParagraph = styled(Paragraph)``;
 
 export const SummaryListActions = styled.dd`
   margin: unset;
