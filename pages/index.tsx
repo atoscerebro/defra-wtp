@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import { TaskList } from '../components/task-list';
 import { TaskListStatus } from '../components/task-list/types';
 import { GridRow, GridCol, Main } from 'govuk-react';
+import { SummaryList } from '../components/summary-list';
 
 const groups = [
   {
@@ -76,12 +77,40 @@ const groups = [
   },
 ];
 
+const rows = [
+  {
+    key: 'Waste code',
+    value:
+      'GC020: Electronic scrap (e.g. printed circuit boards, electronic components, wire, etc.)',
+  },
+  {
+    key: 'EWC code',
+    value: 'Not provided',
+  },
+  { key: 'National code', value: 'Not provided' },
+  {
+    key: 'Waste Description',
+    value: 'Electronics including; wires and circuit boards',
+  },
+  {
+    key: 'Waste quantity',
+    value: ['Estimate', '22 tonnes'],
+    action: { title: 'Update', link: '/' },
+  },
+  {
+    key: 'Collection date',
+    value: 'Estimate, 14 July 2022',
+    action: { title: 'Update', link: '/' },
+  },
+];
+
 const Home: NextPage = () => {
   return (
     <Main>
       <GridRow>
         <GridCol setWidth="two-thirds">
           <TaskList groups={groups} />
+          <SummaryList rows={rows} />
         </GridCol>
       </GridRow>
     </Main>
