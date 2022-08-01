@@ -7,13 +7,13 @@ export const HomePage: NextPage  = () => {
     return <>
         <Main>
         <Breadcrumbs>
-            <Breadcrumbs.Link href="/section">
-                Section
+            <Breadcrumbs.Link href="">
+                Waste tracking service
             </Breadcrumbs.Link>
             <Breadcrumbs.Link href="/section/sub-section">
-                Sub-section
+                Green list waste overview
             </Breadcrumbs.Link>
-            Current page
+                
         </Breadcrumbs>
         
         <H1 size="XLARGE">Green list waste overview</H1>
@@ -21,20 +21,20 @@ export const HomePage: NextPage  = () => {
         <H1 size="MEDIUM">Tell us about an export</H1>
 
         <Paragraph>
-           [Submit an export](`#`)
+           [Submit an export](unique-ref)
         </Paragraph>
 
         <Paragraph>
-            [Continue a draft export](`#`)
+            [Continue a draft export](#)
         </Paragraph>
 
         <H1 size="MEDIUM">All exports</H1>
         <Paragraph>
-            [Update an export with actual details](`#`)
+            [Update an export with actual details](#)
         </Paragraph>
 
         <Paragraph>
-            [View submitted exports](`#`)
+            [View submitted exports](#)
         </Paragraph>
 
         
