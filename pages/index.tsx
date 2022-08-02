@@ -121,8 +121,8 @@ const headers = [
 
 const tableRows = [
   [
-    { text: '01546', type: 'data' as const },
-    { text: '5 July 2022', type: 'data' as const, sortValue: '5' },
+    { text: '01546', type: 'data' as const, numeric: true },
+    { text: '5 July 2022', type: 'data' as const, sortValue: '220705' },
     {
       text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
       type: 'data' as const,
@@ -132,7 +132,17 @@ const tableRows = [
   ],
   [
     { text: '01546', type: 'data' as const },
-    { text: '20 July 2022', type: 'data' as const, sortValue: '20' },
+    { text: '20 July 2022', type: 'data' as const, sortValue: '220720' },
+    {
+      text: 'GC050: Spent fluid catalytic cracking (FCC) catalysts (e.g. aluminium oxide, zeolites)',
+      type: 'data' as const,
+    },
+    { text: 'Link', action: 'link' as const, type: 'action' as const },
+    { text: 'Button', action: 'button' as const, type: 'action' as const },
+  ],
+  [
+    { text: '01546', type: 'data' as const },
+    { text: '16 July 2022', type: 'data' as const, sortValue: '220716' },
     {
       text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
       type: 'data' as const,
@@ -142,7 +152,7 @@ const tableRows = [
   ],
   [
     { text: '01546', type: 'data' as const },
-    { text: '16 July 2022', type: 'data' as const, sortValue: '16' },
+    { text: '22 July 2022', type: 'data' as const, sortValue: '220722' },
     {
       text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
       type: 'data' as const,
@@ -152,17 +162,7 @@ const tableRows = [
   ],
   [
     { text: '01546', type: 'data' as const },
-    { text: '22 July 2022', type: 'data' as const, sortValue: '22' },
-    {
-      text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
-      type: 'data' as const,
-    },
-    { text: 'Link', action: 'link' as const, type: 'action' as const },
-    { text: 'Button', action: 'button' as const, type: 'action' as const },
-  ],
-  [
-    { text: '01546', type: 'data' as const },
-    { text: '18 July 2022', type: 'data' as const, sortValue: '18' },
+    { text: '18 July 2022', type: 'data' as const, sortValue: '220718' },
     {
       text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
       type: 'data' as const,

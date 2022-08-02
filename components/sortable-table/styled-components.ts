@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import * as COLOURS from 'govuk-colours';
 import { Table } from 'govuk-react';
 
-export const SortButton = styled.button`
+export const SortTableButton = styled.button`
   cursor: pointer;
   position: relative;
   color: ${COLOURS.BLUE};
@@ -14,17 +14,19 @@ export const SortButton = styled.button`
   text-align: inherit;
 `;
 
-export const SortHeader = styled(Table.CellHeader)`
+export const SortTableCellHeader = styled(Table.CellHeader)`
   vertical-align: top;
+`;
 
-  &[aria-sort] ${SortButton}:focus {
+export const SortTableSortHeader = styled(SortTableCellHeader)`
+  &[aria-sort] ${SortTableButton}:focus {
     background-color: ${COLOURS.YELLOW};
     color: ${COLOURS.BLACK};
     box-shadow: 0 -2px ${COLOURS.YELLOW}, 0 4px ${COLOURS.BLACK};
     outline: none;
   }
 
-  &[aria-sort='none'] ${SortButton}:after {
+  &[aria-sort='none'] ${SortTableButton}:after {
     content: ' ▲';
     position: absolute;
     right: -1px;
@@ -32,7 +34,7 @@ export const SortHeader = styled(Table.CellHeader)`
     font-size: 0.5em;
   }
 
-  &[aria-sort='none'] ${SortButton}:before {
+  &[aria-sort='none'] ${SortTableButton}:before {
     content: ' ▼';
     position: absolute;
     right: -1px;
@@ -40,7 +42,7 @@ export const SortHeader = styled(Table.CellHeader)`
     font-size: 0.5em;
   }
 
-  &[aria-sort='ascending'] ${SortButton}:after {
+  &[aria-sort='ascending'] ${SortTableButton}:after {
     content: ' ▲';
     font-size: 0.8em;
     position: absolute;
@@ -48,11 +50,22 @@ export const SortHeader = styled(Table.CellHeader)`
     top: 2px;
   }
 
-  &[aria-sort='descending'] ${SortButton}:after {
+  &[aria-sort='descending'] ${SortTableButton}:after {
     content: ' ▼';
     font-size: 0.8em;
     position: absolute;
     right: -5px;
     top: 2px;
   }
+`;
+
+export const SortTableCell = styled(Table.Cell)<{ numeric?: boolean }>`
+  ${({ numeric }) =>
+    numeric &&
+    `@supports (font-variant-numeric: tabular-nums) {
+    font-feature-settings: normal;
+    font-variant-numeric: tabular-nums;
+  } 
+  
+  text-align: right;`}
 `;

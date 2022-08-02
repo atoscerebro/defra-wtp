@@ -3,6 +3,7 @@ import { ReactNode, useCallback, useMemo, useState } from 'react';
 import { SortHeader } from './sort-header';
 import { ICell, IHeader, IRow, SortType } from './types';
 import { getRowKey, resolveCellValue } from './utils';
+import * as StyledComponents from './styled-components';
 
 export interface ISortableTableProps<T extends string> {
   caption?: string;
@@ -26,22 +27,17 @@ export const SortableTable = <T extends string>({
     if (sortIndex === -1) {
       return rows;
     }
-    const { numeric, type } = localHeaders[sortIndex];
+    const { dataType, type } = localHeaders[sortIndex];
     return [...rows].sort((a, b) => {
       const cellA = resolveCellValue(a[sortIndex]);
       const cellB = resolveCellValue(b[sortIndex]);
-      if (numeric) {
-        if (type === 'ascending') {
-          return parseInt(cellA) - parseInt(cellB);
-        } else {
-          return parseInt(cellB) - parseInt(cellA);
-        }
+
+      if (type === 'ascending') {
+        return cellA.localeCompare(cellB, undefined, {
+          numeric: !isNaN(parseInt(cellA)) && !isNaN(parseInt(cellB)),
+        });
       } else {
-        if (type === 'ascending') {
-          return cellA.localeCompare(cellB);
-        } else {
-          return cellB.localeCompare(cellA);
-        }
+        return cellB.localeCompare(cellA, undefined, { numeric: true });
       }
     });
   }, [rows, localHeaders]);
@@ -64,9 +60,9 @@ export const SortableTable = <T extends string>({
             header.sortable ? (
               <SortHeader key={header.text} onSort={handleSort} {...header} />
             ) : (
-              <Table.CellHeader key={header.text}>
+              <StyledComponents.SortTableCellHeader key={header.text}>
                 {header.text}
-              </Table.CellHeader>
+              </StyledComponents.SortTableCellHeader>
             ),
           )}
         </Table.Row>
@@ -75,11 +71,14 @@ export const SortableTable = <T extends string>({
       {sortedRows.map((row) => (
         <Table.Row key={getRowKey(row)}>
           {row.map((cell) => (
-            <Table.Cell key={cell.text}>
+            <StyledComponents.SortTableCell
+              key={cell.text}
+              datatype={cell.datatype}
+            >
               {cell.type === 'data'
                 ? cell.text
                 : children({ actionCell: cell })}
-            </Table.Cell>
+            </StyledComponents.SortTableCell>
           ))}
         </Table.Row>
       ))}
