@@ -1,6 +1,4 @@
-import {
-    TopNav,
-} from 'govuk-react'
+import { TopNav } from 'govuk-react';
 
 export const PageHeader  = () => {
     return <>

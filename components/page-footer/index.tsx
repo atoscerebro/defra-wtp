@@ -1,6 +1,4 @@
-import {
-    Footer
-} from 'govuk-react';
+import { Footer } from 'govuk-react';
 
 export const PageFooter = () => {
 return (

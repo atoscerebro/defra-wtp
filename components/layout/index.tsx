@@ -1,5 +1,5 @@
-import { PageHeader } from './page-header'
-import { PageFooter } from './page-footer'
+import { PageHeader } from '../page-header'
+import { PageFooter } from '../page-footer'
 import type { ReactElement } from 'react'
 
 type LayoutProps = {
