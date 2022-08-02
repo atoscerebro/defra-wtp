@@ -107,21 +107,22 @@ const rows = [
 ];
 
 const headers = [
-  { text: 'Your reference number', type: 'none' as const },
+  { text: 'Your reference number', type: 'none' as const, formatType: 'numeric' as const
+},
   {
     text: 'Collection date',
     sortable: true,
     type: 'none' as const,
-    numeric: true,
+    formatType: 'numeric' as const
   },
-  { text: 'Waste code', type: 'none' as const },
+  { text: 'Waste code', type: 'none' as const, formatType: 'text' as const },
   { text: 'Link', type: 'none' as const },
   { text: 'Button', type: 'none' as const },
 ];
 
 const tableRows = [
   [
-    { text: '01546', type: 'data' as const, numeric: true },
+    { text: '01546', type: 'data' as const, formatType: 'numeric' as const },
     { text: '5 July 2022', type: 'data' as const, sortValue: '220705' },
     {
       text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',

@@ -60,8 +60,10 @@ export const SortableTable = <T extends string>({
             header.sortable ? (
               <SortHeader key={header.text} onSort={handleSort} {...header} />
             ) : (
-              <StyledComponents.SortTableCellHeader key={header.text}>
-                {header.text}
+              <StyledComponents.SortTableCellHeader 
+                key={header.text}
+                formatType={header.formatType}>
+                  {header.text}
               </StyledComponents.SortTableCellHeader>
             ),
           )}
@@ -73,7 +75,7 @@ export const SortableTable = <T extends string>({
           {row.map((cell) => (
             <StyledComponents.SortTableCell
               key={cell.text}
-              datatype={cell.datatype}
+              formatType={cell.formatType}
             >
               {cell.type === 'data'
                 ? cell.text
