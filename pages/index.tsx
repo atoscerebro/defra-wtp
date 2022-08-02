@@ -3,6 +3,8 @@ import { TaskList } from '../components/task-list';
 import { TaskListStatus } from '../components/task-list/types';
 import { GridRow, GridCol, Main } from 'govuk-react';
 import { SummaryList } from '../components/summary-list';
+import { SortableTable } from '../components/sortable-table';
+import { IRow } from '../components/sortable-table/types';
 
 const groups = [
   {
@@ -104,6 +106,72 @@ const rows = [
   },
 ];
 
+const headers = [
+  { text: 'Your reference number', type: 'none' as const },
+  {
+    text: 'Collection date',
+    sortable: true,
+    type: 'none' as const,
+    numeric: true,
+  },
+  { text: 'Waste code', type: 'none' as const },
+  { text: 'Link', type: 'none' as const },
+  { text: 'Button', type: 'none' as const },
+];
+
+const tableRows = [
+  [
+    { text: '01546', type: 'data' as const },
+    { text: '5 July 2022', type: 'data' as const, sortValue: '5' },
+    {
+      text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
+      type: 'data' as const,
+    },
+    { text: 'Link', action: 'link' as const, type: 'action' as const },
+    { text: 'Button', action: 'button' as const, type: 'action' as const },
+  ],
+  [
+    { text: '01546', type: 'data' as const },
+    { text: '20 July 2022', type: 'data' as const, sortValue: '20' },
+    {
+      text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
+      type: 'data' as const,
+    },
+    { text: 'Link', action: 'link' as const, type: 'action' as const },
+    { text: 'Button', action: 'button' as const, type: 'action' as const },
+  ],
+  [
+    { text: '01546', type: 'data' as const },
+    { text: '16 July 2022', type: 'data' as const, sortValue: '16' },
+    {
+      text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
+      type: 'data' as const,
+    },
+    { text: 'Link', action: 'link' as const, type: 'action' as const },
+    { text: 'Button', action: 'button' as const, type: 'action' as const },
+  ],
+  [
+    { text: '01546', type: 'data' as const },
+    { text: '22 July 2022', type: 'data' as const, sortValue: '22' },
+    {
+      text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
+      type: 'data' as const,
+    },
+    { text: 'Link', action: 'link' as const, type: 'action' as const },
+    { text: 'Button', action: 'button' as const, type: 'action' as const },
+  ],
+  [
+    { text: '01546', type: 'data' as const },
+    { text: '18 July 2022', type: 'data' as const, sortValue: '18' },
+    {
+      text: 'B1010: Metal and metal-alloy wastes in metallic, non-dispersible form',
+      type: 'data' as const,
+    },
+    { text: 'Link', action: 'link' as const, type: 'action' as const },
+    { text: 'Button', action: 'button' as const, type: 'action' as const },
+  ],
+];
+
 const Home: NextPage = () => {
   return (
     <Main>
@@ -111,6 +179,16 @@ const Home: NextPage = () => {
         <GridCol setWidth="two-thirds">
           <TaskList groups={groups} />
           <SummaryList rows={rows} />
+          <SortableTable headers={headers} rows={tableRows}>
+            {({ actionCell }) => (
+              <>
+                {actionCell.action === 'link' && <a>{actionCell.text}</a>}
+                {actionCell.action === 'button' && (
+                  <button>{actionCell.text}</button>
+                )}
+              </>
+            )}
+          </SortableTable>
         </GridCol>
       </GridRow>
     </Main>
