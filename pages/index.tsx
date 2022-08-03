@@ -1,20 +1,16 @@
 import type { NextPage } from 'next';
-import { TaskList } from '../components/task-list';
-import { GridRow, GridCol, Main } from 'govuk-react';
-import { SummaryList } from '../components/summary-list';
-import { taskListGroups } from '../payloads/task-list-groups';
-import { summaryListRows } from '../payloads/summary-list-rows';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import { PageHeader } from '../components/page-header';
+import { HomePage } from './homepage';
+import { PageFooter } from '../components/page-footer';
 
 const Home: NextPage = () => {
   return (
-    <Main>
-      <GridRow>
-        <GridCol setWidth="two-thirds">
-          <TaskList groups={taskListGroups} />
-          <SummaryList rows={summaryListRows} />
-        </GridCol>
-      </GridRow>
-    </Main>
+    <>
+      <HomePage />
+    </>
   );
 };
 
