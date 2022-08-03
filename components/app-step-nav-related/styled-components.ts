@@ -12,7 +12,7 @@ import {
 export const AppStepNavRelated = styled.div`
   color: ${COLOURS.BLACK};
   border-top: 2px solid ${COLOURS.BLUE};
-  margin-bottom ${SPACING.SCALE_6};
+  margin-bottom ${SPACING.SCALE_5};
 `;
 
 export const AppStepNavRelatedHeading = styled.h2`
