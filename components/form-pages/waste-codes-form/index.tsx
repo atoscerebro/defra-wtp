@@ -14,12 +14,12 @@ const WasteCodes = () => {
   return (
     <>
       <BaseTaskPage
+        backHref="/submit-export-task-list"
         component={
           <>
             <Form
               onSubmit={(formObj) => {
                 console.log(formObj);
-
                 router.push(''); // TODO
               }}
             >
@@ -30,11 +30,15 @@ const WasteCodes = () => {
                     <CaptionWrapper>
                       <Caption size="M">Select one option.</Caption>
                     </CaptionWrapper>
-                    <Field name="waste-code-answer" type="radio" value="yes">
+                    <Field
+                      name="waste-code-radio"
+                      type="radio"
+                      value={WASTE_CODES_LABELS.BASEL_ANNEX_IX}
+                    >
                       {({ input }) => (
                         <Radio
                           {...input}
-                          name="waste-codes"
+                          name="waste-code"
                           onClick={() =>
                             setWasteCode(WASTE_CODES_LABELS.BASEL_ANNEX_IX)
                           }
@@ -44,7 +48,7 @@ const WasteCodes = () => {
                       )}
                     </Field>
                     {wasteCode === WASTE_CODES_LABELS.BASEL_ANNEX_IX && (
-                      <Field name="ref-number">
+                      <Field name="waste-code-input">
                         {({ input }) => (
                           <DisplayInputField
                             {...input}
@@ -53,11 +57,15 @@ const WasteCodes = () => {
                         )}
                       </Field>
                     )}
-                    <Field name="waste-code-answer" type="radio" value="yes">
+                    <Field
+                      name="waste-code-radio"
+                      type="radio"
+                      value={WASTE_CODES_LABELS.OECD}
+                    >
                       {({ input }) => (
                         <Radio
                           {...input}
-                          name="waste-codes"
+                          name="waste-code"
                           onClick={() => setWasteCode(WASTE_CODES_LABELS.OECD)}
                         >
                           {WASTE_CODES_LABELS.OECD}
@@ -65,7 +73,7 @@ const WasteCodes = () => {
                       )}
                     </Field>
                     {wasteCode === WASTE_CODES_LABELS.OECD && (
-                      <Field name="">
+                      <Field name="waste-code-input">
                         {({ input }) => (
                           <DisplayInputField
                             {...input}
@@ -74,21 +82,25 @@ const WasteCodes = () => {
                         )}
                       </Field>
                     )}
-                    <Field name="waste-code-answer" type="radio" value="yes">
+                    <Field
+                      name="waste-code-radio"
+                      type="radio"
+                      value={WASTE_CODES_LABELS.ANNEX_IIIA}
+                    >
                       {({ input }) => (
                         <Radio
                           {...input}
-                          name="waste-codes"
+                          name="waste-code"
                           onClick={() =>
-                            setWasteCode(WASTE_CODES_LABELS.BASEL_ANNEX_IX)
+                            setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIA)
                           }
                         >
-                          {WASTE_CODES_LABELS.BASEL_ANNEX_IX}
+                          {WASTE_CODES_LABELS.ANNEX_IIIA}
                         </Radio>
                       )}
                     </Field>
-                    {wasteCode === WASTE_CODES_LABELS.BASEL_ANNEX_IX && (
-                      <Field name="ref-number">
+                    {wasteCode === WASTE_CODES_LABELS.ANNEX_IIIA && (
+                      <Field name="waste-code-input">
                         {({ input }) => (
                           <DisplayInputField
                             {...input}
@@ -97,44 +109,51 @@ const WasteCodes = () => {
                         )}
                       </Field>
                     )}
-                    <Radio
-                      name="waste-codes"
-                      onClick={() =>
-                        setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIA)
-                      }
+
+                    <Field
+                      name="waste-code-radio"
+                      type="radio"
+                      value={WASTE_CODES_LABELS.ANNEX_IIIB}
                     >
-                      {WASTE_CODES_LABELS.ANNEX_IIIA}
-                    </Radio>
-                    {wasteCode === WASTE_CODES_LABELS.ANNEX_IIIA && (
-                      <DisplayInputField
-                        onChange={setWasteCode}
-                        input={'ref-number'}
-                        label={'Start typing, then choose from the list'}
-                      />
-                    )}
-                    <Radio
-                      name="waste-codes"
-                      onClick={() =>
-                        setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIB)
-                      }
-                    >
-                      {WASTE_CODES_LABELS.ANNEX_IIIB}
-                    </Radio>
+                      {({ input }) => (
+                        <Radio
+                          {...input}
+                          name="waste-code"
+                          onClick={() =>
+                            setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIB)
+                          }
+                        >
+                          {WASTE_CODES_LABELS.ANNEX_IIIB}
+                        </Radio>
+                      )}
+                    </Field>
                     {wasteCode === WASTE_CODES_LABELS.ANNEX_IIIB && (
-                      <DisplayInputField
-                        onChange={setWasteCode}
-                        input={'ref-number'}
-                        label={'Start typing, then choose from the list'}
-                      />
+                      <Field name="waste-code-input">
+                        {({ input }) => (
+                          <DisplayInputField
+                            {...input}
+                            label={'Start typing, then choose from the list'}
+                          />
+                        )}
+                      </Field>
                     )}
                     <Paragraph>or</Paragraph>
-                    <Radio
-                      name="waste-codes"
-                      hint="Only select this option if the waste is going to a laboratory"
+                    <Field
+                      name="waste-code-radio"
+                      type="radio"
+                      value="not-applicable"
                     >
-                      Not applicable
-                    </Radio>
-                    <Button>Save and continue</Button>
+                      {({ input }) => (
+                        <Radio
+                          {...input}
+                          name="waste-code"
+                          hint="Only select this option if the waste is going to a laboratory"
+                        >
+                          Not applicable
+                        </Radio>
+                      )}
+                    </Field>
+                    <Button type="submit">Save and continue</Button>
                   </form>
                 </FormGroup>
               )}

@@ -1,24 +1,35 @@
-import {  } from "govuk-react";
-import { Paragraph } from "govuk-react";
-import { BackLink, Main, GridRow, GridCol, FormGroup, Link } from "govuk-react"
-import {FC} from 'react'
+import { Paragraph } from 'govuk-react';
+import {
+  BackLink as GovUKBackLink,
+  Main,
+  GridRow,
+  GridCol,
+  FormGroup,
+  Link,
+} from 'govuk-react';
+import { BackLink } from '../back-link';
+import { FC } from 'react';
+import { useRouter } from 'next/router';
 
 interface IProps {
-    component?: React.ReactNode;
+  component?: React.ReactNode;
+  backHref: string;
 }
 
-export const BaseTaskPage: FC<IProps> = ({component}) => {
-    return <>
-        <Main>
-            <GridRow>
-                <GridCol setWidth="two-thirds">
-                    <BackLink>Back</BackLink>
-                    <FormGroup>
-                    {component}
-                    </FormGroup>
-                    <Paragraph>[Return to submit export page](../)</Paragraph>
-                </GridCol>
-            </GridRow>
-        </Main>
+export const BaseTaskPage: FC<IProps> = ({ component, backHref }) => {
+  const router = useRouter();
+  return (
+    <>
+      <Main>
+        <GridRow>
+          <GridCol setWidth="two-thirds">
+            <BackLink href={backHref}>Back</BackLink>
+            <FormGroup>{component}</FormGroup>
+            {console.log(router.route)}
+            <Paragraph>[Return to submit export page](../)</Paragraph>
+          </GridCol>
+        </GridRow>
+      </Main>
     </>
-}
+  );
+};
