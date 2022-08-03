@@ -1,9 +1,0 @@
-declare module "govuk-react";
-declare module "@govuk-react/constants";
-declare module "@govuk-react/icons";
-declare module "@govuk-react/icon-crown";
-declare module "@govuk-react/main";
-declare module "@govuk-react/top-nav";
-declare module "@govuk-react/phase-banner";
-declare module "@govuk-react/breadcrumb";
-declare module "@govuk-react/link";
