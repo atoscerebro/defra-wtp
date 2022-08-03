@@ -2,7 +2,7 @@ import { SPACING } from '@govuk-react/constants';
 import styled from 'styled-components';
 import * as COLOURS from 'govuk-colours';
 import { Table } from 'govuk-react';
-import { FormatType } from './types'
+import { FormatType } from './types';
 
 export const SortTableButton = styled.button`
   cursor: pointer;
@@ -15,14 +15,16 @@ export const SortTableButton = styled.button`
   text-align: inherit;
 `;
 
-export const SortTableCellHeader = styled(Table.CellHeader)<{ formatType?: FormatType }>`
+export const SortTableCellHeader = styled(Table.CellHeader)<{
+  formatType?: FormatType;
+}>`
   vertical-align: top;
-  ${({ formatType }) =>
-  formatType === 'numeric' &&
-    `text-align: right;`}
+  ${({ formatType }) => formatType === 'numeric' && `text-align: right;`}
 `;
 
-export const SortTableSortHeader = styled(SortTableCellHeader)<{ formatType?: FormatType }>`
+export const SortTableSortHeader = styled(SortTableCellHeader)<{
+  formatType?: FormatType;
+}>`
 
 &[aria-sort] ${SortTableButton}:focus {
     background-color: ${COLOURS.YELLOW};
@@ -63,9 +65,7 @@ export const SortTableSortHeader = styled(SortTableCellHeader)<{ formatType?: Fo
     top: 2px;
   }
 
-  ${({ formatType }) =>
-  formatType === 'numeric' &&
-    `text-align: right;`}
+  &${({ formatType }) => formatType === 'numeric' && `text-align: right;`}
 `;
 
 export const SortTableCell = styled(Table.Cell)<{ formatType?: FormatType }>`

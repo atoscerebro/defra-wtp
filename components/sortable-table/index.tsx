@@ -9,7 +9,7 @@ export interface ISortableTableProps<T extends string> {
   caption?: string;
   headers: IHeader[];
   rows: IRow<T>[];
-  children: (renderProps: { actionCell: ICell<T> }) => ReactNode;
+  children?: (renderProps: { actionCell: ICell<T> }) => ReactNode;
 }
 
 export const SortableTable = <T extends string>({
@@ -27,17 +27,16 @@ export const SortableTable = <T extends string>({
     if (sortIndex === -1) {
       return rows;
     }
-    const { dataType, type } = localHeaders[sortIndex];
+    const { dataType = 'text', type } = localHeaders[sortIndex];
     return [...rows].sort((a, b) => {
       const cellA = resolveCellValue(a[sortIndex]);
       const cellB = resolveCellValue(b[sortIndex]);
+      const compareOptions = { numeric: dataType === 'numeric' };
 
       if (type === 'ascending') {
-        return cellA.localeCompare(cellB, undefined, {
-          numeric: !isNaN(parseInt(cellA)) && !isNaN(parseInt(cellB)),
-        });
+        return cellA.localeCompare(cellB, undefined, compareOptions);
       } else {
-        return cellB.localeCompare(cellA, undefined, { numeric: true });
+        return cellB.localeCompare(cellA, undefined, compareOptions);
       }
     });
   }, [rows, localHeaders]);
@@ -60,10 +59,11 @@ export const SortableTable = <T extends string>({
             header.sortable ? (
               <SortHeader key={header.text} onSort={handleSort} {...header} />
             ) : (
-              <StyledComponents.SortTableCellHeader 
+              <StyledComponents.SortTableCellHeader
                 key={header.text}
-                formatType={header.formatType}>
-                  {header.text}
+                formatType={header.formatType}
+              >
+                {header.text}
               </StyledComponents.SortTableCellHeader>
             ),
           )}
@@ -79,7 +79,9 @@ export const SortableTable = <T extends string>({
             >
               {cell.type === 'data'
                 ? cell.text
-                : children({ actionCell: cell })}
+                : children
+                ? children({ actionCell: cell })
+                : null}
             </StyledComponents.SortTableCell>
           ))}
         </Table.Row>

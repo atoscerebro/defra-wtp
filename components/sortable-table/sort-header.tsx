@@ -9,7 +9,10 @@ export interface ISortHeader extends IHeader {
 
 export const SortHeader: FC<ISortHeader> = ({ onSort, ...rest }) => {
   return (
-    <StyledComponents.SortTableSortHeader aria-sort={rest.type} formatType={rest.formatType}>
+    <StyledComponents.SortTableSortHeader
+      aria-sort={rest.type}
+      formatType={rest.formatType}
+    >
       <StyledComponents.SortTableButton
         onClick={() => onSort(rest, getNextSortType(rest.type))}
       >
