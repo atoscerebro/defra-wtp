@@ -553,7 +553,6 @@
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/@govuk-react/icon-crown/-/icon-crown-0.0.7.tgz#02c8c9fe1ea5462309e8c63ab490b286fab93fb4"
   integrity sha512-mcJBO3uwr15GpVtFetDRdygJ/gpC9yLen47u9Re/kPk6DTdoTlkxkCv6tYVFreOM5gG5Rf/e+Ucjzc6RSV6xEg==
-
 "@govuk-react/icons@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@govuk-react/icons/-/icons-0.10.1.tgz#c7954f1869774f2451ce204bc7ca3bc442ef4564"
@@ -4371,7 +4370,6 @@ react-final-form@^6.5.9:
   integrity sha512-x3XYvozolECp3nIjly+4QqxdjSSWfcnpGEL5K8OBT6xmGrq5kBqbA6+/tOqoom9NwqIPPbxPNsOViFlbKgowbA==
   dependencies:
     "@babel/runtime" "^7.15.4"
-
 react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
