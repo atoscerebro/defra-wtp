@@ -20,7 +20,7 @@ const WasteCodes = () => {
             <Form
               onSubmit={(formObj) => {
                 console.log(formObj);
-                router.push(''); // TODO
+                router.push('/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code'); // TODO
               }}
             >
               {({ handleSubmit }) => (

@@ -1,23 +1,22 @@
-import { FormGroup, Radio, H1, GridRow, GridCol, Button } from 'govuk-react';
+import { FormGroup, Radio, H1, Caption, Button } from 'govuk-react';
 import { Form, Field } from 'react-final-form';
 import { useState } from 'react';
 import { DisplayInputField } from '../../../../display-input-field';
 import { ButtonWrapper } from '../../../styled-components';
-import Link from 'next/link';
+import { CaptionWrapper } from '../styled-components';
 import { useRouter } from 'next/router';
 import { BaseTaskPage } from '../../../../base-task-page';
 
-export const UniqueRefForm = () => {
+export const EWCCodeForm = () => {
   const [usingOwnRef, setUsingOwnRef] = useState(false);
   const router = useRouter();
   return (
     <BaseTaskPage
-      backHref="/submit-export-task-list"
+      backHref="/submit-an-export/about-the-waste/waste-codes-descriptions"
       component={
         <Form
           onSubmit={(formObj) => {
-            console.log(formObj); //ref-number-answer: 'yes' or 'no'. (If 'yes') ref-number-input: 'reference number string'
-
+            console.log(formObj);
             router.push('/submit-export-task-list');
           }}
         >
@@ -25,9 +24,12 @@ export const UniqueRefForm = () => {
             <FormGroup>
               <form onSubmit={handleSubmit}>
                 <H1 size="LARGE">
-                  Do you want to add your own reference number to this export?
+                  Do you have an EWC code?
                 </H1>
-                <Field name="ref-number-answer" type="radio" value="yes">
+                <CaptionWrapper>
+                      <Caption size="M">An EWC code (European Waste Catalogue code) is also known as an EC list of waste.</Caption>
+                    </CaptionWrapper>
+                <Field name="ewc-code-radio" type="radio" value="yes">
                   {({ input }) => (
                     <Radio
                       {...input}
@@ -40,18 +42,18 @@ export const UniqueRefForm = () => {
                   )}
                 </Field>
                 {usingOwnRef && (
-                  <Field name="ref-number-input">
+                  <Field name="ewc-code-input">
                     {({ input }) => (
                       <DisplayInputField
                         {...input}
-                        label={'Enter your reference number'}
+                        label={'Start typing, then chose from the list'}
                       />
                     )}
                   </Field>
                 )}
                 <Field
                   defaultValue="no"
-                  name="ref-number-answer"
+                  name="ewc-code-radio"
                   type="radio"
                   value="no"
                 >
