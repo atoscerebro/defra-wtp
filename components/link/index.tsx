@@ -1,6 +1,6 @@
 import NextLink, { LinkProps } from 'next/link';
-import { Link as GovUKLink } from 'govuk-react';
 import { FC, ReactNode } from 'react';
+import * as StyledComponents from './styled-components';
 
 export interface ILinkProps extends Omit<LinkProps, 'passHref' | 'as'> {
   className?: string;
@@ -9,6 +9,8 @@ export interface ILinkProps extends Omit<LinkProps, 'passHref' | 'as'> {
 
 export const Link: FC<ILinkProps> = ({ className, children, ...rest }) => (
   <NextLink passHref {...rest}>
-    <GovUKLink className={className}>{children}</GovUKLink>
+    <StyledComponents.StyledGovUKLink className={className}>
+      {children}
+    </StyledComponents.StyledGovUKLink>
   </NextLink>
 );

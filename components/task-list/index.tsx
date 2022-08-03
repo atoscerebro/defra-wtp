@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Heading } from 'govuk-react';
 import { ITaskListGroup, TaskListStatus } from './types';
 import * as StyledComponents from './styled-components';
+import { StyledGovUKLink } from '../link/styled-components';
 
 export interface ITaskListProps {
   groups: ITaskListGroup[];
@@ -26,9 +27,9 @@ export const TaskList: FC<ITaskListProps> = ({ groups }) => {
                     {section.title}
                   </StyledComponents.TaskListParagraph>
                 ) : (
-                  <StyledComponents.TaskListLink href={section.link}>
+                  <StyledGovUKLink href={section.link}>
                     {section.title}
-                  </StyledComponents.TaskListLink>
+                  </StyledGovUKLink>
                 )}
                 <StyledComponents.TaskListTag status={section.status}>
                   {section.status}
