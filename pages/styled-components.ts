@@ -5,7 +5,9 @@ import { FONT_SIZE } from '@govuk-react/constants';
 
 const commonWidth = '66%';
 
-export const LinkWrapper = styled.div``;
+export const LinkWrapper = styled.div`
+  margin-bottom: 1rem;
+`;
 
 export const HomepageLink = styled(Link)`
   :hover {
@@ -15,5 +17,4 @@ export const HomepageLink = styled(Link)`
   text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
   font-size: ${FONT_SIZE.SIZE_18};
-  padding: 10px;
 `;
