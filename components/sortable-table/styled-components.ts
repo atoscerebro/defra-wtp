@@ -22,11 +22,8 @@ export const SortTableCellHeader = styled(Table.CellHeader)<{
   ${({ formatType }) => formatType === 'numeric' && `text-align: right;`}
 `;
 
-export const SortTableSortHeader = styled(SortTableCellHeader)<{
-  formatType?: FormatType;
-}>`
-
-&[aria-sort] ${SortTableButton}:focus {
+export const SortTableSortHeader = styled(SortTableCellHeader)`
+  &[aria-sort] ${SortTableButton}:focus {
     background-color: ${COLOURS.YELLOW};
     color: ${COLOURS.BLACK};
     box-shadow: 0 -2px ${COLOURS.YELLOW}, 0 4px ${COLOURS.BLACK};
@@ -64,8 +61,6 @@ export const SortTableSortHeader = styled(SortTableCellHeader)<{
     right: -5px;
     top: 2px;
   }
-
-  &${({ formatType }) => formatType === 'numeric' && `text-align: right;`}
 `;
 
 export const SortTableCell = styled(Table.Cell)<{ formatType?: FormatType }>`
