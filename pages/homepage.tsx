@@ -1,4 +1,3 @@
-import { Crown } from '@govuk-react/icon-crown';
 import { HomepageLink, LinkWrapper } from './styled-components';
 import type { NextPage } from 'next';
 import {
@@ -6,23 +5,25 @@ import {
   Breadcrumbs,
   H1,
   SectionBreak,
-  Paragraph,
   GridRow,
   GridCol,
+  Link,
 } from 'govuk-react';
 import { taskListGroups } from '../payloads/task-list-groups';
 import { summaryListRows } from '../payloads/summary-list-rows';
 import { TaskList } from '../components/task-list';
 import { SummaryList } from '../components/summary-list';
 
+const BreadcrumbsLink = Breadcrumbs.Link || Link;
+
 export const HomePage: NextPage = () => {
   return (
     <Main>
       <Breadcrumbs>
-        <Breadcrumbs.Link href="">Waste tracking service</Breadcrumbs.Link>
-        <Breadcrumbs.Link href="/section/sub-section">
+        <BreadcrumbsLink href="">Waste tracking service</BreadcrumbsLink>
+        <BreadcrumbsLink href="/section/sub-section">
           Green list waste overview
-        </Breadcrumbs.Link>
+        </BreadcrumbsLink>
       </Breadcrumbs>
 
       <H1 size="XLARGE">Green list waste overview</H1>
@@ -47,13 +48,6 @@ export const HomePage: NextPage = () => {
       <LinkWrapper>
         <HomepageLink href={'#'}>View submitted exports</HomepageLink>
       </LinkWrapper>
-
-      <GridRow>
-        <GridCol setWidth="two-thirds">
-          <TaskList groups={taskListGroups} />
-          <SummaryList rows={summaryListRows} />
-        </GridCol>
-      </GridRow>
     </Main>
   );
 };
