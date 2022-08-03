@@ -106,9 +106,9 @@ export const WasteCarriersForm = () => {
                   </FormGroup>
                 </Fieldset>
               </FormGroup>
-              <FormGroup>
+              <div>
                 <Button>Save and continue</Button>
-              </FormGroup>
+              </div>
             </form>
           )}
         </Form>
