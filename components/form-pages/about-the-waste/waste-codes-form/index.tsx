@@ -1,6 +1,6 @@
 import { H1, FormGroup, Radio, Paragraph, Caption, Button } from 'govuk-react';
-import { DisplayInputField } from '../../display-input-field';
-import { BaseTaskPage } from '../../base-task-page';
+import { DisplayInputField } from '../../../display-input-field';
+import { BaseTaskPage } from '../../../base-task-page';
 import { useState } from 'react';
 import { CaptionWrapper } from './styled-components';
 import { WASTE_CODES_LABELS } from './constants';
