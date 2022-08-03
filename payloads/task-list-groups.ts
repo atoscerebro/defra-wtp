@@ -41,7 +41,7 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Waste carriers',
-        link: '',
+        link: 'submit-an-export/journey-of-waste/waste-carriers',
         status: TaskListStatus.NOT_STARTED,
       },
       {
