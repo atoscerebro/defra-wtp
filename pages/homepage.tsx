@@ -30,7 +30,7 @@ export const HomePage: NextPage = () => {
       <H1 size="MEDIUM">Tell us about an export</H1>
 
       <LinkWrapper>
-        <HomepageLink href={'unique-ref'}>Submit an export</HomepageLink>
+        <HomepageLink href={'submit-an-export'}>Submit an export</HomepageLink>
       </LinkWrapper>
 
       <LinkWrapper>
