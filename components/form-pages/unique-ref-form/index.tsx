@@ -2,7 +2,7 @@ import { FormGroup, Radio, H1, GridRow, GridCol, Button } from 'govuk-react';
 import { Form, Field } from 'react-final-form';
 import { useState } from 'react';
 import { DisplayInputField } from '../../display-input-field';
-import { ButtonWrapper } from './styled-components';
+import { ButtonWrapper } from '../styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
