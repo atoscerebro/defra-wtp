@@ -87,6 +87,35 @@ export const UniqueRefForm = () => {
                     />
                   )}
                 </Field>
+                <Field name="quant-waste-answer" type="radio" value="yes">
+                  {({ input }) => (
+                    <RadiosConditional
+                      {...input}
+                      children={<label>Yes</label>}
+                      renderConditional={() => (
+                        <DisplayInputField
+                          label={'Enter your reference number'}
+                        />
+                      )}
+                    />
+                  )}
+                </Field>
+                <Field name="quant-waste-answer" type="radio" value="no">
+                  {({ input }) => (
+                    <RadiosConditional
+                      {...input}
+                      children={<label>No</label>}
+                      renderConditional={() => (
+                        <DisplayInputField
+                          body={
+                            "You'll need to update this with actual details as soon as possible after submitting this export."
+                          }
+                          label={'Weight, in tonnes'}
+                        />
+                      )}
+                    />
+                  )}
+                </Field>
 
                 <ButtonWrapper>
                   <Button type="submit">Save and continue</Button>

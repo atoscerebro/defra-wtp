@@ -1,5 +1,6 @@
 import { ComponentProps, ReactNode } from 'react';
 import { Radio } from 'govuk-react';
+import { RadiosConditionalWrapper } from './styled-components';
 
 export interface IRadiosConditionalProps<T extends string>
   extends ComponentProps<typeof Radio> {
@@ -17,13 +18,9 @@ export const RadiosConditional = <T extends string>({
       <Radio checked={checked} {...rest}>
         {children}
       </Radio>
-      {checked && renderConditional()}
+      <RadiosConditionalWrapper>
+        {checked && renderConditional()}
+      </RadiosConditionalWrapper>
     </div>
   );
 };
-
-// { input: {onChange, value} }
-// <div>
-//      <Radio/>
-//      {children}
-// <div>
