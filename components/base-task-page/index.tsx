@@ -22,11 +22,11 @@ export const BaseTaskPage: FC<IProps> = ({ component, backHref }) => {
     <>
       <Main>
         <GridRow>
-          <GridCol setWidth="two-thirds">
+          <GridCol>
             <BackLink href={backHref}>Back</BackLink>
             <FormGroup>{component}</FormGroup>
             {console.log(router.route)}
-            <Paragraph>[Return to submit export page](../)</Paragraph>
+            <Paragraph>[Return to submit export page](/submit-export-task-list)</Paragraph>
           </GridCol>
         </GridRow>
       </Main>

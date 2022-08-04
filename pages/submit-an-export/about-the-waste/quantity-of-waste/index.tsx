@@ -3,16 +3,18 @@ import { BaseTaskPage } from '../../../../components/base-task-page';
 import { DisplayInputField } from '../../../../components/display-input-field';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
 import { Form, Field } from 'react-final-form';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button, GridRow, GridCol, Input } from 'govuk-react';
-import { Link } from '../../../../components/link';
+import { H1, FormGroup, Radio, Paragraph, Caption, Button, GridRow, GridCol, Input, Link as GovUKLink } from 'govuk-react';
+import { Link as CustomLink } from '../../../../components/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { CaptionWrapper, ButtonWrapper } from '../../../../components/form-pages/styled-components';
-import { InputMeasurement, QuantityInputWrapper } from './styled-components';
+import { InputMeasurement, QuantityInputWrapper, LinkButton, InputBringToFront } from './styled-components';
+import { QuantityInput } from './quantity-input';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
   const [knowQuantityOfWaste, setKnowQuantityOfWaste] = useState(false);
+  const [measurementInTonnes, setMeasurementInTonnes] = useState(true);
 
   return (
     <BaseTaskPage
@@ -48,19 +50,7 @@ const QuantityOfWaste: NextPage = () => {
                 {knowQuantityOfWaste && (
                   <Field name="quantity-of-waste-input">
                     {({ input }) => (
-                      <>
-                        <GridRow>
-                          <GridCol setWidth="one-third">
-                              <DisplayInputFieldWrapper>
-                                <Caption size="M">Weight, in tonnes</Caption>
-                                <QuantityInputWrapper>
-                                  <Input {...input}></Input>
-                                  <InputMeasurement><Paragraph>Mg</Paragraph></InputMeasurement>
-                                </QuantityInputWrapper>
-                              </DisplayInputFieldWrapper>
-                          </GridCol>
-                        </GridRow>
-                      </>
+                      <QuantityInput {...input} updateLaterMsg={false} />
                     )}
                   </Field>
                 )}
@@ -81,6 +71,16 @@ const QuantityOfWaste: NextPage = () => {
                     </Radio>
                   )}
                 </Field>
+                {!knowQuantityOfWaste && (
+                  <Field name="quantity-of-waste-input">
+                    {({ input }) => (
+                      <>
+                      
+                      <QuantityInput {...input} updateLaterMsg/>
+                      </>
+                    )}
+                  </Field>
+                )}
                 <ButtonWrapper>
                   <Button type="submit">Save and continue</Button>
                 </ButtonWrapper>

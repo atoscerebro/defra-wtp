@@ -1,19 +1,15 @@
 import styled from 'styled-components'
+import * as COLOURS from 'govuk-colours'
 
 export const QuantityInputWrapper = styled.div`
     display: flex;
+    margin-top: 0.5rem;
 `;
 
-// background-color: #f3f2f1;
-// color: #0b0c0c;
-// border: 2px solid #0b0c0c;
-// border-left: 0;
-// font-family: "nta", Arial, sans-serif;
-// font-weight: 400;
-// font-size: 18px;
-// padding-top: 0.5rem;
-// padding-left: 0.5rem;
-// padding-right: 0.5rem;
+export const InputBringToFront = styled.div`
+    z-index: 9;
+`;
+
 export const InputMeasurement = styled.div`
     color: #0b0c0c;
     font-family: "GDS Transport", arial, sans-serif;
@@ -36,4 +32,57 @@ export const InputMeasurement = styled.div`
     text-align: center;
     white-space: nowrap;
     cursor: default;
+`;
+
+export const LinkButton = styled.button`
+  background-color: unset;
+  border: unset;
+  font-size: 19px;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 2rem;
+  padding-left: 0;
+
+  color: ${COLOURS.LINK_COLOUR};
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1em;
+
+  :hover {
+    text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
+    text-decoration-skip-ink: none;
+    text-decoration-skip: none;
+  }
+
+  :focus {
+    outline: 3px solid transparent;
+    color: ${COLOURS.BLACK};
+    background-color: ${COLOURS.YELLOW};
+    box-shadow: 0 -2px ${COLOURS.YELLOW}, 0 4px ${COLOURS.BLACK};
+    text-decoration: none;
+  }
+
+  :link {
+    color: ${COLOURS.LINK_COLOUR};
+  }
+
+  :visited {
+    color: ${COLOURS.LINK_VISITED_COLOUR};
+  }
+  
+  :hover {
+    color: #003078;
+  }
+  
+  :active {
+    color: ${COLOURS.BLACK};
+  }
+  
+  :focus {
+    color: ${COLOURS.BLACK};
+  }
+`;
+
+export const UpdateLaterMsg = styled.div`
+    color: ${COLOURS.BLACK};
 `;
