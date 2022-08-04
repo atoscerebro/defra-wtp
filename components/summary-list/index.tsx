@@ -2,6 +2,7 @@ import { Heading, VisuallyHidden } from 'govuk-react';
 import { FC } from 'react';
 import { IRow } from './types';
 import * as StyledComponents from './styled-components';
+import { Link } from '../link';
 
 export interface ISummaryListProps {
   rows: IRow[];
@@ -45,10 +46,10 @@ export const SummaryList: FC<ISummaryListProps> = ({ rows, border = true }) => {
           </StyledComponents.SummaryListValue>
           {row.action && (
             <StyledComponents.SummaryListActions>
-              <StyledComponents.SummaryListLink href={row.action.link}>
+              <Link href={row.action.link}>
                 {row.action.title}
                 <VisuallyHidden>{row.key.toLowerCase()}</VisuallyHidden>
-              </StyledComponents.SummaryListLink>
+              </Link>
             </StyledComponents.SummaryListActions>
           )}
         </StyledComponents.SummaryListRow>

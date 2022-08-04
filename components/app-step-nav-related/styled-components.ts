@@ -30,16 +30,6 @@ export const AppStepNavRelatedHeading = styled.h2`
   }
 `;
 
-export const AppStepNavRelatedHeadingLink = styled(Link)`
-  :hover {
-    color: #003078;
-    text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
-    text-decoration-skip-ink: none;
-  }
-  text-decoration-thickness: max(1px, 0.0625rem);
-  text-underline-offset: 0.1em;
-`;
-
 export const AppStepNavRelatedHeadingParagraph = styled.p`
   color: ${COLOURS.BLACK};
   font-weight: ${FONT_WEIGHTS.regular};

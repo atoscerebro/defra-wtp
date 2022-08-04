@@ -1,3 +1,6 @@
+import { Paragraph } from 'govuk-react';
+import { ReactNode } from 'react';
+import { Link } from '../link';
 import * as StyledComponents from './styled-components';
 import { ILinkedAction } from './types';
 import { FC } from 'react';
@@ -21,11 +24,7 @@ export const AppStepNavRelatedHeading: FC<IAppStepNavRelatedHeadingProps> = ({
           <StyledComponents.AppStepNavRelatedHeadingParagraph
             key={linkedAction.link}
           >
-            <StyledComponents.AppStepNavRelatedHeadingLink
-              href={linkedAction.link}
-            >
-              {linkedAction.text}
-            </StyledComponents.AppStepNavRelatedHeadingLink>
+            <Link href={linkedAction.link}>{linkedAction.text}</Link>
             {linkedAction.caption && ` ${linkedAction.caption}`}
           </StyledComponents.AppStepNavRelatedHeadingParagraph>
         ))}
