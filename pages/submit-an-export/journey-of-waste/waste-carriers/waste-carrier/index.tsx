@@ -8,13 +8,19 @@ import {
   Paragraph,
   TextArea,
 } from 'govuk-react';
+import { useRouter } from 'next/router';
 import { Form, Field } from 'react-final-form';
-import { BaseTaskPage } from '../../base-task-page';
+import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { WASTE_CARRIERS_IDS, WASTE_CARRIERS_LABELS } from './constants';
 
-export const FirstWasteCarrierForm = () => {
+const WasteCarrier = () => {
+  const router = useRouter();
+
   const handleSubmit = (data: any) => {
     console.log(data);
+    router.push(
+      '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier-transport',
+    );
   };
 
   return (
@@ -23,7 +29,7 @@ export const FirstWasteCarrierForm = () => {
         <Form onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <H2 size="LARGE">Who is the first waste carrier?</H2>
+              <H2 size="LARGE">Who is the waste carrier?</H2>
               <Paragraph>
                 You&apos;ll be able to update these details after submitting
                 this export.
@@ -116,3 +122,5 @@ export const FirstWasteCarrierForm = () => {
     />
   );
 };
+
+export default WasteCarrier;
