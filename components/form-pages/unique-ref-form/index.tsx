@@ -5,7 +5,7 @@ import { DisplayInputField } from '../../display-input-field';
 import { ButtonWrapper } from './styled-components';
 import { useRouter } from 'next/router';
 
-const PRENOTIFY_ROUTE = 'prenotify';
+const PRENOTIFY_ROUTE = '/submit-export-task-list';
 export const UniqueRefForm = () => {
   const router = useRouter();
   const [usingOwnRef, setUsingOwnRef] = useState(false);
