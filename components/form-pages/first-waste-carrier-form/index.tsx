@@ -12,7 +12,7 @@ import { Form, Field } from 'react-final-form';
 import { BaseTaskPage } from '../../base-task-page';
 import { WASTE_CARRIERS_IDS, WASTE_CARRIERS_LABELS } from './constants';
 
-export const WasteCarriersForm = () => {
+export const FirstWasteCarrierForm = () => {
   const handleSubmit = (data: any) => {
     console.log(data);
   };
