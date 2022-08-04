@@ -3,10 +3,12 @@ import { BaseTaskPage } from '../../../../components/base-task-page';
 import { DisplayInputField } from '../../../../components/display-input-field';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
 import { Form, Field } from 'react-final-form';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button, GridRow, GridCol, InputField } from 'govuk-react';
+import { H1, FormGroup, Radio, Paragraph, Caption, Button, GridRow, GridCol, Input } from 'govuk-react';
+import { Link } from '../../../../components/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { CaptionWrapper, ButtonWrapper } from '../../../../components/form-pages/styled-components';
+import { InputMeasurement, QuantityInputWrapper } from './styled-components';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
@@ -48,9 +50,13 @@ const QuantityOfWaste: NextPage = () => {
                     {({ input }) => (
                       <>
                         <GridRow>
-                          <GridCol setWidth="two-thirds">
+                          <GridCol setWidth="one-third">
                               <DisplayInputFieldWrapper>
-                                  <InputField {...input}>Weight, in tonnes</InputField>
+                                <Caption size="M">Weight, in tonnes</Caption>
+                                <QuantityInputWrapper>
+                                  <Input {...input}></Input>
+                                  <InputMeasurement><Paragraph>Mg</Paragraph></InputMeasurement>
+                                </QuantityInputWrapper>
                               </DisplayInputFieldWrapper>
                           </GridCol>
                         </GridRow>
@@ -60,7 +66,7 @@ const QuantityOfWaste: NextPage = () => {
                 )}
                 <Field
                   defaultValue="no"
-                  name="ewc-code-radio"
+                  name="quantity-of-waste-radio"
                   type="radio"
                   value="no"
                 >
