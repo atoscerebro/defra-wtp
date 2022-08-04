@@ -30,29 +30,7 @@ const WasteCodes = () => {
                     <CaptionWrapper>
                       <Caption size="M">Select one option.</Caption>
                     </CaptionWrapper>
-                    <Field name="waste-code-answer" type="radio" value="yes">
-                      {({ input }) => (
-                        <Radio
-                          {...input}
-                          name="waste-codes"
-                          onClick={() =>
-                            setWasteCode(WASTE_CODES_LABELS.BASEL_ANNEX_IX)
-                          }
-                        >
-                          {WASTE_CODES_LABELS.BASEL_ANNEX_IX}
-                        </Radio>
-                      )}
-                    </Field>
-                    {wasteCode === WASTE_CODES_LABELS.BASEL_ANNEX_IX && (
-                      <Field name="ref-number">
-                        {({ input }) => (
-                          <DisplayInputField
-                            {...input}
-                            label={'Start typing, then choose from the list'}
-                          />
-                        )}
-                      </Field>
-                    )}
+
                     <Field name="waste-code-answer" type="radio" value="yes">
                       {({ input }) => (
                         <Radio
