@@ -14,7 +14,6 @@ import { QuantityInput } from './quantity-input';
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
   const [knowQuantityOfWaste, setKnowQuantityOfWaste] = useState(false);
-  const [measurementInTonnes, setMeasurementInTonnes] = useState(true);
 
   return (
     <BaseTaskPage

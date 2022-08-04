@@ -21,7 +21,7 @@ export const HomePage: NextPage = () => {
     <Main>
       <Breadcrumbs>
         <BreadcrumbsLink href="">Waste tracking service</BreadcrumbsLink>
-        <BreadcrumbsLink href="/section/sub-section">
+        <BreadcrumbsLink>
           Green list waste overview
         </BreadcrumbsLink>
       </Breadcrumbs>
