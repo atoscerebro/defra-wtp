@@ -28,10 +28,7 @@ const WasteCarrierCollect = () => {
               </H2>
               <FormGroup>
                 <FormGroup>
-                  <Field
-                    name={WASTE_CARRIER_COLLECT_IDS.ADDRESS_1}
-                    type="radio"
-                  >
+                  <Field name={WASTE_CARRIER_COLLECT_IDS.ADDRESS_1}>
                     {({ input }) => (
                       <InputField {...input}>
                         {WASTE_CARRIER_COLLECT_LABELS.ADDRESS_1}
@@ -40,10 +37,7 @@ const WasteCarrierCollect = () => {
                   </Field>
                 </FormGroup>
                 <FormGroup>
-                  <Field
-                    name={WASTE_CARRIER_COLLECT_IDS.ADDRESS_2}
-                    type="radio"
-                  >
+                  <Field name={WASTE_CARRIER_COLLECT_IDS.ADDRESS_2}>
                     {({ input }) => (
                       <InputField {...input}>
                         {WASTE_CARRIER_COLLECT_LABELS.ADDRESS_2}
@@ -52,7 +46,7 @@ const WasteCarrierCollect = () => {
                   </Field>
                 </FormGroup>
                 <FormGroup>
-                  <Field name={WASTE_CARRIER_COLLECT_IDS.TOWN} type="radio">
+                  <Field name={WASTE_CARRIER_COLLECT_IDS.TOWN}>
                     {({ input }) => (
                       <InputField {...input}>
                         {WASTE_CARRIER_COLLECT_LABELS.TOWN}
@@ -61,7 +55,7 @@ const WasteCarrierCollect = () => {
                   </Field>
                 </FormGroup>
                 <FormGroup>
-                  <Field name={WASTE_CARRIER_COLLECT_IDS.POSTCODE} type="radio">
+                  <Field name={WASTE_CARRIER_COLLECT_IDS.POSTCODE}>
                     {({ input }) => (
                       <InputField {...input}>
                         {WASTE_CARRIER_COLLECT_LABELS.POSTCODE}
@@ -70,7 +64,7 @@ const WasteCarrierCollect = () => {
                   </Field>
                 </FormGroup>
                 <FormGroup>
-                  <Field name={WASTE_CARRIER_COLLECT_IDS.COUNTRY} type="radio">
+                  <Field name={WASTE_CARRIER_COLLECT_IDS.COUNTRY}>
                     {({ input }) => (
                       <InputField
                         {...input}
