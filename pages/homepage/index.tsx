@@ -1,4 +1,4 @@
-import { HomepageLink, LinkWrapper } from './styled-components';
+import { HomepageLink, LinkWrapper } from '../styled-components';
 import type { NextPage } from 'next';
 import {
   Main,
@@ -9,10 +9,10 @@ import {
   GridCol,
   Link,
 } from 'govuk-react';
-import { taskListGroups } from '../payloads/task-list-groups';
-import { summaryListRows } from '../payloads/summary-list-rows';
-import { TaskList } from '../components/task-list';
-import { SummaryList } from '../components/summary-list';
+import { taskListGroups } from '../../payloads/task-list-groups';
+import { summaryListRows } from '../../payloads/summary-list-rows';
+import { TaskList } from '../../components/task-list';
+import { SummaryList } from '../../components/summary-list';
 
 const BreadcrumbsLink = Breadcrumbs.Link || Link;
 
@@ -31,7 +31,7 @@ export const HomePage: NextPage = () => {
       <H1 size="MEDIUM">Tell us about an export</H1>
 
       <LinkWrapper>
-        <HomepageLink href={'submit-an-export'}>Submit an export</HomepageLink>
+        <HomepageLink href={'submit-an-export/unique-ref'}>Submit an export</HomepageLink>
       </LinkWrapper>
 
       <LinkWrapper>

@@ -11,7 +11,7 @@ export const taskListGroups = [
       },
       {
         title: 'Quantity of waste',
-        link: 'quantity-of-waste',
+        link: 'submit-an-export/about-the-waste/quantity-of-waste',
         status: TaskListStatus.COMPLETED,
       },
       {

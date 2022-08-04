@@ -1,21 +1,23 @@
-import { FormGroup, Radio, H1, GridRow, GridCol, Button } from 'govuk-react';
+import { NextPage } from 'next';
+import { H1, FormGroup, Radio, Paragraph, Caption, Button } from 'govuk-react';
+import { DisplayInputField } from '../../../../../components/display-input-field';
+import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { CaptionWrapper, ButtonWrapper } from '../../../../../components/form-pages/styled-components';
 import { Form, Field } from 'react-final-form';
-import { useState } from 'react';
-import { DisplayInputField } from '../../display-input-field';
-import { ButtonWrapper } from '../styled-components';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
-export const UniqueRefForm = () => {
-  const [usingOwnRef, setUsingOwnRef] = useState(false);
+const EWCCodeRadio: NextPage = () => {
   const router = useRouter();
+  const [usingEWCCode, setUsingEWCCode] = useState(false);
+
   return (
-    <GridRow>
-      <GridCol setWidth="two-thirds">
+    <BaseTaskPage
+      backHref="/submit-an-export/about-the-waste/waste-codes-descriptions"
+      component={
         <Form
           onSubmit={(formObj) => {
-            console.log(formObj); //ref-number-answer: 'yes' or 'no'. (If 'yes') ref-number-input: 'reference number string'
-
+            console.log(formObj);
             router.push('/submit-export-task-list');
           }}
         >
@@ -23,33 +25,36 @@ export const UniqueRefForm = () => {
             <FormGroup>
               <form onSubmit={handleSubmit}>
                 <H1 size="LARGE">
-                  Do you want to add your own reference number to this export?
+                  Do you have an EWC code?
                 </H1>
-                <Field name="ref-number-answer" type="radio" value="yes">
+                <CaptionWrapper>
+                      <Caption size="M">An EWC code (European Waste Catalogue code) is also known as an EC list of waste.</Caption>
+                    </CaptionWrapper>
+                <Field name="ewc-code-radio" type="radio" value="yes">
                   {({ input }) => (
                     <Radio
                       {...input}
                       onClick={() => {
-                        setUsingOwnRef(true);
+                        setUsingEWCCode(true);
                       }}
                     >
                       Yes
                     </Radio>
                   )}
                 </Field>
-                {usingOwnRef && (
-                  <Field name="ref-number-input">
+                {usingEWCCode && (
+                  <Field name="ewc-code-input">
                     {({ input }) => (
                       <DisplayInputField
                         {...input}
-                        label={'Enter your reference number'}
+                        label={'Start typing, then chose from the list'}
                       />
                     )}
                   </Field>
                 )}
                 <Field
                   defaultValue="no"
-                  name="ref-number-answer"
+                  name="ewc-code-radio"
                   type="radio"
                   value="no"
                 >
@@ -57,7 +62,7 @@ export const UniqueRefForm = () => {
                     <Radio
                       {...input}
                       onClick={() => {
-                        setUsingOwnRef(false);
+                        setUsingEWCCode(false);
                       }}
                     >
                       No
@@ -71,7 +76,9 @@ export const UniqueRefForm = () => {
             </FormGroup>
           )}
         </Form>
-      </GridCol>
-    </GridRow>
+      }
+    ></BaseTaskPage>
   );
 };
+
+export default EWCCodeRadio;
