@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'next/router';
 import { Form, Field } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { links } from '../constants';
 import { WASTE_CARRIERS_IDS, WASTE_CARRIERS_LABELS } from './constants';
 
 const WasteCarrier = () => {
@@ -18,9 +19,7 @@ const WasteCarrier = () => {
 
   const handleSubmit = (data: any) => {
     console.log(data);
-    router.push(
-      '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier-transport',
-    );
+    router.push(links.wasteCarrierTransport);
   };
 
   return (

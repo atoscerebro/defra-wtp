@@ -17,15 +17,14 @@ import {
 } from './constants';
 import { Link } from '../../../../../components/link';
 import { useRouter } from 'next/router';
+import { links } from '../constants';
 
 const WasteCarrierCollectDetails = () => {
   const router = useRouter();
 
   const handleSubmit = (data: any) => {
     console.log(data);
-    router.push(
-      '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier-collect-leave',
-    );
+    router.push(links.wasteCarrierCollectLeave);
   };
 
   return (
@@ -44,7 +43,7 @@ const WasteCarrierCollectDetails = () => {
                 <HintText>
                   We&apos;ll use this as the exporting country.
                 </HintText>
-                <Link href="/submit-an-export/journey-of-waste/waste-carriers/waste-carrier-collect">
+                <Link href={links.wasteCarrierCollect}>
                   <Paragraph>Change address</Paragraph>
                 </Link>
               </FormGroup>

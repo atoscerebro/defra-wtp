@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { links } from '../constants';
 import {
   ADD_CARRIER_GROUP,
   WASTE_CARRIER_CHECK_IDS,
@@ -26,12 +27,7 @@ const WasteCarrierTransport = () => {
       no: false,
     }[data['add-carrier'] as 'yes' | 'no'];
 
-    const addCarrierRoute =
-      '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier';
-    const completeCarriersRoute =
-      '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier-collect';
-
-    router.push(addCarrier ? addCarrierRoute : completeCarriersRoute);
+    router.push(addCarrier ? links.wasteCarrier : links.wasteCarrierCollect);
   };
 
   return (

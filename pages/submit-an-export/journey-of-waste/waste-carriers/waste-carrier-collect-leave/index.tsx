@@ -2,6 +2,7 @@ import { Button, FormGroup, H2, Radio } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { links } from '../constants';
 import {
   WASTE_CARRIER_COLLECT_LEAVE_GROUP,
   WASTE_CARRIER_COLLECT_LEAVE_IDS,
@@ -13,9 +14,7 @@ const WasteCarrierCollectLeave = () => {
 
   const handleSubmit = (data: any) => {
     console.log(data);
-    router.push(
-      '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier-collect-travel',
-    );
+    router.push(links.wasteCarrierCollectTravel);
   };
 
   return (
