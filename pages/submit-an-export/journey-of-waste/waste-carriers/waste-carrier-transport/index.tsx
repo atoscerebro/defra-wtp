@@ -32,30 +32,46 @@ const WasteCarrierTransport = () => {
                 this export.
               </Paragraph>
               <FormGroup>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.ROAD} type="radio">
+                <Field
+                  name={WASTE_CARRIER_TRANSPORT_GROUP}
+                  value={WASTE_CARRIER_TRANSPORT_IDS.ROAD}
+                  type="radio"
+                >
                   {({ input }) => (
-                    <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
+                    <Radio {...input}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.ROAD}
                     </Radio>
                   )}
                 </Field>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.RAIL} type="radio">
+                <Field
+                  name={WASTE_CARRIER_TRANSPORT_GROUP}
+                  value={WASTE_CARRIER_TRANSPORT_IDS.RAIL}
+                  type="radio"
+                >
                   {({ input }) => (
-                    <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
+                    <Radio {...input}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.RAIL}
                     </Radio>
                   )}
                 </Field>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.SEA} type="radio">
+                <Field
+                  name={WASTE_CARRIER_TRANSPORT_GROUP}
+                  value={WASTE_CARRIER_TRANSPORT_IDS.SEA}
+                  type="radio"
+                >
                   {({ input }) => (
-                    <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
+                    <Radio {...input}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.SEA}
                     </Radio>
                   )}
                 </Field>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.AIR} type="radio">
+                <Field
+                  name={WASTE_CARRIER_TRANSPORT_GROUP}
+                  value={WASTE_CARRIER_TRANSPORT_IDS.AIR}
+                  type="radio"
+                >
                   {({ input }) => (
-                    <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
+                    <Radio {...input}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.AIR}
                     </Radio>
                   )}
