@@ -26,7 +26,9 @@ export const BaseTaskPage: FC<IProps> = ({ component, backHref }) => {
             <BackLink href={backHref}>Back</BackLink>
             <FormGroup>{component}</FormGroup>
             {console.log(router.route)}
-            <Paragraph>[Return to submit export page](/submit-export-task-list)</Paragraph>
+            <Paragraph>
+              [Return to submit export page](/submit-export-task-list)
+            </Paragraph>
           </GridCol>
         </GridRow>
       </Main>

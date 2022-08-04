@@ -8,7 +8,6 @@ import { WASTE_CODES_LABELS } from '../../../../components/form-pages/constants'
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 
-
 const WasteCodes: NextPage = () => {
   const [wasteCode, setWasteCode] = useState('');
   const router = useRouter();
@@ -22,7 +21,9 @@ const WasteCodes: NextPage = () => {
             <Form
               onSubmit={(formObj) => {
                 console.log(formObj);
-                router.push('/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-radio'); // TODO
+                router.push(
+                  '/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-radio',
+                ); // TODO
               }}
             >
               {({ handleSubmit }) => (
