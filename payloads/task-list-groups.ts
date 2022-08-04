@@ -6,17 +6,17 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Waste codes and descriptions',
-        link: '',
+        link: 'submit-an-export/about-the-waste/waste-codes-descriptions',
         status: TaskListStatus.COMPLETED,
       },
       {
         title: 'Quantity of waste',
-        link: '',
+        link: 'quantity-of-waste',
         status: TaskListStatus.COMPLETED,
       },
       {
         title: 'Collection date',
-        link: '',
+        link: 'collection-date',
         status: TaskListStatus.COMPLETED,
       },
     ],
@@ -41,7 +41,7 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Waste carriers',
-        link: '',
+        link: 'submit-an-export/journey-of-waste/waste-carriers/waste-carrier',
         status: TaskListStatus.NOT_STARTED,
       },
       {
