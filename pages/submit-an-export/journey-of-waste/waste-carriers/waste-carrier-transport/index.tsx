@@ -32,28 +32,28 @@ const WasteCarrierTransport = () => {
                 this export.
               </Paragraph>
               <FormGroup>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.ROAD}>
+                <Field name={WASTE_CARRIER_TRANSPORT_IDS.ROAD} type="radio">
                   {({ input }) => (
                     <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.ROAD}
                     </Radio>
                   )}
                 </Field>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.RAIL}>
+                <Field name={WASTE_CARRIER_TRANSPORT_IDS.RAIL} type="radio">
                   {({ input }) => (
                     <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.RAIL}
                     </Radio>
                   )}
                 </Field>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.SEA}>
+                <Field name={WASTE_CARRIER_TRANSPORT_IDS.SEA} type="radio">
                   {({ input }) => (
                     <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.SEA}
                     </Radio>
                   )}
                 </Field>
-                <Field name={WASTE_CARRIER_TRANSPORT_IDS.AIR}>
+                <Field name={WASTE_CARRIER_TRANSPORT_IDS.AIR} type="radio">
                   {({ input }) => (
                     <Radio {...input} name={WASTE_CARRIER_TRANSPORT_GROUP}>
                       {WASTE_CARRIER_TRANSPORT_LABELS.AIR}
