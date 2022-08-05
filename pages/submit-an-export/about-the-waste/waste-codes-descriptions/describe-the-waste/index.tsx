@@ -1,15 +1,11 @@
 import { NextPage } from 'next';
 import { H1, FormGroup, Button, TextArea, UnorderedList, ListItem} from 'govuk-react';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
-import {
-  CaptionWrapper,
-  ButtonWrapper,
-} from '../../../../../components/form-pages/styled-components';
+import { ButtonWrapper } from '../../../../../components/form-pages/styled-components';
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { DescribeWasteCaption } from './styled-components';
 
-//Link to quantity-of-waste
 const DescribeTheWaste: NextPage = () => {
   const router = useRouter();
 
@@ -32,7 +28,7 @@ const DescribeTheWaste: NextPage = () => {
                 
                       <TextArea {...input}>
                         <DescribeWasteCaption>
-                        Your description could include things like:
+                          Your description could include things like:
                         </DescribeWasteCaption>
                         <UnorderedList>
                           <ListItem>
@@ -43,8 +39,7 @@ const DescribeTheWaste: NextPage = () => {
                           </ListItem>
                         </UnorderedList>
                       </TextArea>
-                    
-                    
+                      
                     )}
                   </Field>
                 <ButtonWrapper>

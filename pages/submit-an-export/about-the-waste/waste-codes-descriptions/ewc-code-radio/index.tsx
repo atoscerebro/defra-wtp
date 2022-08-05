@@ -2,22 +2,14 @@ import { NextPage } from 'next';
 import { H1, FormGroup, Radio, Paragraph, Caption, Button } from 'govuk-react';
 import { DisplayInputField } from '../../../../../components/display-input-field';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
-import {
-  CaptionWrapper,
-  ButtonWrapper,
-} from '../../../../../components/form-pages/styled-components';
+import {CaptionWrapper, ButtonWrapper } from '../../../../../components/form-pages/styled-components';
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-interface Props {
-  code: string;
-}
-
-const EWCCodeRadio: NextPage<Props> = (props) => {
+const EWCCodeRadio: NextPage = () => {
   const router = useRouter();
   const [usingEWCCode, setUsingEWCCode] = useState(false);
-  const { code } = props;
 
   return (
     <BaseTaskPage

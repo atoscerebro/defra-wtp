@@ -1,19 +1,13 @@
 import { NextPage } from 'next';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button, InputField} from 'govuk-react';
-import { DisplayInputField } from '../../../../../../components/display-input-field';
+import { H1, FormGroup, Button, InputField} from 'govuk-react';
 import { BaseTaskPage } from '../../../../../../components/base-task-page';
-import {
-  CaptionWrapper,
-  ButtonWrapper,
-} from '../../../../../../components/form-pages/styled-components';
+import {ButtonWrapper} from '../../../../../../components/form-pages/styled-components';
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { EWCInputCaption } from './styled-component';
 
 const EWCCodeInput: NextPage = () => {
   const router = useRouter();
-  const [usingEWCCode, setUsingEWCCode] = useState(false);
 
   return (
     <BaseTaskPage
@@ -22,10 +16,7 @@ const EWCCodeInput: NextPage = () => {
         <Form
           onSubmit={(formObj) => {
             console.log(formObj);
-            const routerUrl = usingEWCCode
-              ? '/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-summary'
-              : '/submit-an-export/about-the-waste/waste-codes-descriptions/national-code-radio';
-            router.push(routerUrl);
+            router.push("/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-summary");
           }}
         >
           {({ handleSubmit }) => (
@@ -34,10 +25,6 @@ const EWCCodeInput: NextPage = () => {
                 <H1 size="LARGE">Enter an EWC code?</H1>
                   <Field name="ewc-code-input">
                     {({ input }) => (
-                    //   <DisplayInputField
-                    //     {...input}
-                    //     label={'Start typing, then chose from the list'}
-                    //   />
                     <InputField {...input} ><EWCInputCaption size="M">Start typing a code, then choose from the list</EWCInputCaption></InputField>
                     )}
                   </Field>

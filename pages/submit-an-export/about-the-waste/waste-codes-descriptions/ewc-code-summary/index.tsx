@@ -19,15 +19,15 @@ import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { SummaryList } from '../../../../../components/summary-list';
-import { summaryListRows } from '../../../../../payloads/summary-list-rows'; // change import for summary list rows
+
+// dummy data - change import for summary list rows
+import { summaryListRows } from '../../../../../payloads/summary-list-rows'; 
 
 const EWCCodeSummary: NextPage = () => {
   const router = useRouter();
   const [anotherEWCCode, setAnotherEWCCode] = useState(false);
 
   return (
-    <>
-
       <BaseTaskPage
         backHref="/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-radio"
         component={
@@ -91,7 +91,6 @@ const EWCCodeSummary: NextPage = () => {
           </>
         }
       ></BaseTaskPage>
-    </>
   );
 };
 

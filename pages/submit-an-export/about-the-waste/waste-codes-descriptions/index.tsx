@@ -22,7 +22,7 @@ const WasteCodes: NextPage = () => {
             <Form
               onSubmit={(formObj) => {
                 console.log(formObj);
-                router.push('/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-radio'); // TODO
+                router.push('/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-radio');
               }}
             >
               {({ handleSubmit }) => (
