@@ -17,20 +17,21 @@ import { DisplayInputField } from '../../../../../components/display-input-field
 import { useRouter } from 'next/router';
 import { ButtonWrapper } from '../../../../../components/form-pages/styled-components';
 import { NationalCodeInputCaption } from './styled-components';
+import { BaseTaskPage } from '../../../../../components/base-task-page';
 
 //Yes or No, link to Describe-The-Waste
 const NationalCodeRadio: NextPage = () => {
   const [hasNationalCode, setHasNationalCode] = useState(false);
   const router = useRouter();
   return (
-    <Main>
-      <GridRow>
-        <GridCol setWidth="two-thirds">
+          <BaseTaskPage
+          backHref="/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-summary"
+          component={
           <Form
             onSubmit={(formObj) => {
               console.log(formObj); //ref-number-answer: 'yes' or 'no'. (If 'yes') ref-number-input: 'reference number string'
 
-              router.push('/submit-export-task-list');
+              router.push('/submit-an-export/about-the-waste/waste-codes-descriptions/describe-the-waste');
             }}
           >
             {({ handleSubmit }) => (
@@ -87,9 +88,8 @@ const NationalCodeRadio: NextPage = () => {
               </FormGroup>
             )}
           </Form>
-        </GridCol>
-      </GridRow>
-    </Main>
+          }
+          ></BaseTaskPage>
   );
 };
 

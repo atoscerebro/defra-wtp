@@ -27,7 +27,6 @@ const EWCCodeSummary: NextPage = () => {
 
   return (
     <>
-      {/* Insert summary list component, where rows are EWC codes + change and remove links */}
 
       <BaseTaskPage
         backHref="/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-radio"

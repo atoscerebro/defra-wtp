@@ -9,6 +9,7 @@ import {
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { EWCInputCaption } from './styled-component';
 
 const EWCCodeInput: NextPage = () => {
   const router = useRouter();
@@ -16,7 +17,7 @@ const EWCCodeInput: NextPage = () => {
 
   return (
     <BaseTaskPage
-      backHref="/submit-an-export/about-the-waste/waste-codes-descriptions"
+      backHref="/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-summary"
       component={
         <Form
           onSubmit={(formObj) => {
@@ -37,7 +38,7 @@ const EWCCodeInput: NextPage = () => {
                     //     {...input}
                     //     label={'Start typing, then chose from the list'}
                     //   />
-                    <InputField {...input} >Start typing a code, then choose from the list</InputField>
+                    <InputField {...input} ><EWCInputCaption size="M">Start typing a code, then choose from the list</EWCInputCaption></InputField>
                     )}
                   </Field>
                 <ButtonWrapper>
