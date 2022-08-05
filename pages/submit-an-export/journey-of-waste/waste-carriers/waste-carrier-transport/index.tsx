@@ -47,7 +47,7 @@ const WasteCarrierTransport = () => {
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      ariaId={'conditional-contact-road'}
+                      id={'conditional-contact-road'}
                       renderConditional={() => (
                         <InputField hint="Enter container number or vehicle registration number (optional)">
                           <></>
@@ -66,7 +66,7 @@ const WasteCarrierTransport = () => {
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      ariaId={'conditional-contact-rail'}
+                      id={'conditional-contact-rail'}
                       renderConditional={() => (
                         <InputField hint="Enter container number (optional)">
                           <></>
@@ -85,7 +85,7 @@ const WasteCarrierTransport = () => {
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      ariaId={'conditional-contact-sea'}
+                      id={'conditional-contact-sea'}
                       renderConditional={() => (
                         <InputField hint="Enter container number (optional)">
                           <></>
@@ -104,7 +104,7 @@ const WasteCarrierTransport = () => {
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      ariaId={'conditional-contact-air'}
+                      id={'conditional-contact-air'}
                       renderConditional={() => (
                         <InputField hint="Enter flight number (optional)">
                           <></>

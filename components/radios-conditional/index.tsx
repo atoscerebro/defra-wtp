@@ -4,12 +4,12 @@ import { RadiosConditionalWrapper } from './styled-components';
 
 export interface IRadiosConditionalProps<T extends string>
   extends ComponentProps<typeof Radio> {
-  ariaId: string;
+  id: string;
   renderConditional: () => ReactNode;
 }
 
 export const RadiosConditional = <T extends string>({
-  ariaId,
+  id,
   checked,
   children,
   renderConditional,
@@ -20,12 +20,12 @@ export const RadiosConditional = <T extends string>({
       <Radio
         checked={checked}
         aria-expanded={checked}
-        aria-controls={ariaId}
+        aria-controls={id}
         {...rest}
       >
         {` ${children} `}
       </Radio>
-      <RadiosConditionalWrapper id={ariaId}>
+      <RadiosConditionalWrapper id={id}>
         {checked && renderConditional()}
       </RadiosConditionalWrapper>
     </div>
