@@ -26,12 +26,12 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Exporter details',
-        link: '',
+        link: '/submit-an-export/exporter-and-importer/exporter-details/exporter-address',
         status: TaskListStatus.IN_PROGRESS,
       },
       {
         title: 'Importer details',
-        link: '',
+        link: '/submit-an-export/exporter-and-importer/importer-details/importer-address',
         status: TaskListStatus.IN_PROGRESS,
       },
     ],
@@ -66,8 +66,8 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Recovery facility or laboratory',
-        link: '',
-        status: TaskListStatus.CANNOT_START_YET,
+        link: '/submit-an-export/treatment-of-waste/laboratory-details',
+        status: TaskListStatus.NOT_STARTED,
       },
     ],
   },
