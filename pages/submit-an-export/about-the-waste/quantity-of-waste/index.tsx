@@ -1,14 +1,13 @@
 import { NextPage } from 'next';
-import { BaseTaskPage } from '../../../../components/base-task-page'; 
-import { DisplayInputField } from '../../../../components/display-input-field';
-import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
+import { BaseTaskPage } from '../../../../components/base-task-page';
 import { Form, Field } from 'react-final-form';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button, GridRow, GridCol, Input, Link as GovUKLink } from 'govuk-react';
-import { Link as CustomLink } from '../../../../components/link';
+import { H1, FormGroup, Radio, Caption, Button } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { CaptionWrapper, ButtonWrapper } from '../../../../components/form-pages/styled-components';
-import { InputMeasurement, QuantityInputWrapper, LinkButton, InputBringToFront } from './styled-components';
+import {
+  CaptionWrapper,
+  ButtonWrapper,
+} from '../../../../components/form-pages/styled-components';
 import { QuantityInput } from './quantity-input';
 
 const QuantityOfWaste: NextPage = () => {
@@ -28,11 +27,12 @@ const QuantityOfWaste: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">
-                  Do you know the quantity of waste?
-                </H1>
+                <H1 size="LARGE">Do you know the quantity of waste?</H1>
                 <CaptionWrapper>
-                      <Caption size="M">Only provide the net weight or volume. Do not include the weight of the container or vehicle.</Caption>
+                  <Caption size="M">
+                    Only provide the net weight or volume. Do not include the
+                    weight of the container or vehicle.
+                  </Caption>
                 </CaptionWrapper>
                 <Field name="quantity-of-waste-radio" type="radio" value="yes">
                   {({ input }) => (
@@ -72,12 +72,7 @@ const QuantityOfWaste: NextPage = () => {
                 </Field>
                 {!knowQuantityOfWaste && (
                   <Field name="quantity-of-waste-input">
-                    {({ input }) => (
-                      <>
-                      
-                      <QuantityInput {...input} updateLaterMsg/>
-                      </>
-                    )}
+                    {({ input }) => <QuantityInput {...input} updateLaterMsg />}
                   </Field>
                 )}
                 <ButtonWrapper>
