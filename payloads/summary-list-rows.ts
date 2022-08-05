@@ -16,11 +16,11 @@ export const summaryListRows = [
   {
     key: 'Waste quantity',
     value: ['Estimate', '22 tonnes', ['something', 'else'], ['test', 'test2']],
-    action: { title: 'Update', link: '/' },
+    action: [{ title: 'Update', link: '/' }],
   },
   {
     key: 'Collection date',
     value: 'Estimate, 14 July 2022',
-    action: { title: 'Update', link: '/' },
+    action: [{ title: 'Update', link: '/' }],
   },
 ];

@@ -10,9 +10,14 @@ import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-const EWCCodeRadio: NextPage = () => {
+interface Props {
+  code: string;
+}
+
+const EWCCodeRadio: NextPage<Props> = (props) => {
   const router = useRouter();
   const [usingEWCCode, setUsingEWCCode] = useState(false);
+  const { code } = props;
 
   return (
     <BaseTaskPage

@@ -44,12 +44,12 @@ export const SummaryList: FC<ISummaryListProps> = ({ rows, border = true }) => {
             )}
           </StyledComponents.SummaryListValue>
           {row.action && (
-            <StyledComponents.SummaryListActions>
-              <StyledComponents.SummaryListLink href={row.action.link}>
-                {row.action.title}
+            row.action.map((action) => <StyledComponents.SummaryListActions>
+              <StyledComponents.SummaryListLink href={action.link}>
+                {action.title}
                 <VisuallyHidden>{row.key.toLowerCase()}</VisuallyHidden>
               </StyledComponents.SummaryListLink>
-            </StyledComponents.SummaryListActions>
+            </StyledComponents.SummaryListActions>)
           )}
         </StyledComponents.SummaryListRow>
       ))}

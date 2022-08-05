@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button, InputField } from 'govuk-react';
+import { H1, FormGroup, Radio, Paragraph, Caption, Button, InputField} from 'govuk-react';
 import { DisplayInputField } from '../../../../../../components/display-input-field';
 import { BaseTaskPage } from '../../../../../../components/base-task-page';
 import {
@@ -37,7 +37,7 @@ const EWCCodeInput: NextPage = () => {
                     //     {...input}
                     //     label={'Start typing, then chose from the list'}
                     //   />
-                    <InputField hint={"Start typing a code, then choose from the list"} />
+                    <InputField {...input} >Start typing a code, then choose from the list</InputField>
                     )}
                   </Field>
                 <ButtonWrapper>
