@@ -22,7 +22,7 @@ const EWCCodeRadio: NextPage = () => {
           onSubmit={(formObj) => {
             console.log(formObj);
             const routerUrl = usingEWCCode
-              ? '/'
+              ? '/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-summary'
               : '/submit-an-export/about-the-waste/waste-codes-descriptions/national-code-radio';
             router.push(routerUrl);
           }}
