@@ -5,23 +5,20 @@ import {
   H2,
   H3,
   InputField,
-  Link,
-  Paragraph,
+  TextArea,
 } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
-import { LineBreak } from '../../../../../components/line-break';
-import { links } from '../constants';
-import { links as importerLinks } from '../../importer-details/constants';
-import { EXPORTER_CONTACT_IDS, EXPORTER_CONTACT_LABELS } from './constants';
+import { links } from '../../../../submit-export-task-list/constants';
+import { IMPORTER_ADDRESS_IDS, IMPORTER_ADDRESS_LABELS } from './constants';
 
-const ExporterContact = () => {
+const ImporterAddress = () => {
   const router = useRouter();
 
   const handleSubmit = (data: any) => {
     console.log(data);
-    router.push(importerLinks.importerAddress);
+    router.push(links.submitExportTaskList);
   };
 
   return (
@@ -30,22 +27,30 @@ const ExporterContact = () => {
         <Form onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <H2 size="LARGE">Exporter&apos;s details</H2>
+              <H2 size="LARGE">Who&apos;s the importer?</H2>
               <FormGroup>
-                <LineBreak>
-                  {['5 Stafford Park', 'Telford', 'TRF 3RT', 'UK']}
-                </LineBreak>
-              </FormGroup>
-              <FormGroup>
-                <Link href={links.exporterAddress}>
-                  <Paragraph>Change address</Paragraph>
-                </Link>
-              </FormGroup>
-              <FormGroup>
-                <Field name={EXPORTER_CONTACT_IDS.ORGANISATION_NAME}>
+                <Field name={IMPORTER_ADDRESS_IDS.ORGANISATION_NAME}>
                   {({ input }) => (
                     <InputField {...input}>
-                      {EXPORTER_CONTACT_LABELS.ORGANISATION_NAME}
+                      {IMPORTER_ADDRESS_LABELS.ORGANISATION_NAME}
+                    </InputField>
+                  )}
+                </Field>
+              </FormGroup>
+              <FormGroup>
+                <Field name={IMPORTER_ADDRESS_IDS.ADDRESS}>
+                  {({ input }) => (
+                    <TextArea {...input}>
+                      {IMPORTER_ADDRESS_LABELS.ADDRESS}
+                    </TextArea>
+                  )}
+                </Field>
+              </FormGroup>
+              <FormGroup>
+                <Field name={IMPORTER_ADDRESS_IDS.COUNTRY}>
+                  {({ input }) => (
+                    <InputField {...input}>
+                      {IMPORTER_ADDRESS_LABELS.COUNTRY}
                     </InputField>
                   )}
                 </Field>
@@ -57,37 +62,43 @@ const ExporterContact = () => {
                   </Fieldset.Legend>
 
                   <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.FULL_NAME}>
+                    <Field name={IMPORTER_ADDRESS_IDS.FULL_NAME}>
                       {({ input }) => (
                         <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.FULL_NAME}
+                          {IMPORTER_ADDRESS_LABELS.FULL_NAME}
                         </InputField>
                       )}
                     </Field>
                   </FormGroup>
                   <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.EMAIL}>
+                    <Field name={IMPORTER_ADDRESS_IDS.EMAIL}>
                       {({ input }) => (
                         <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.EMAIL}
+                          {IMPORTER_ADDRESS_LABELS.EMAIL}
                         </InputField>
                       )}
                     </Field>
                   </FormGroup>
                   <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.PHONE_NUMBER}>
+                    <Field name={IMPORTER_ADDRESS_IDS.PHONE_NUMBER}>
                       {({ input }) => (
-                        <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.PHONE_NUMBER}
+                        <InputField
+                          {...input}
+                          hint="Include the country code for international numbers."
+                        >
+                          {IMPORTER_ADDRESS_LABELS.PHONE_NUMBER}
                         </InputField>
                       )}
                     </Field>
                   </FormGroup>
                   <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.FAX_NUMBER}>
+                    <Field name={IMPORTER_ADDRESS_IDS.FAX_NUMBER}>
                       {({ input }) => (
-                        <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.FAX_NUMBER}
+                        <InputField
+                          {...input}
+                          hint="Include the country code for international numbers."
+                        >
+                          {IMPORTER_ADDRESS_LABELS.FAX_NUMBER}
                         </InputField>
                       )}
                     </Field>
@@ -105,4 +116,4 @@ const ExporterContact = () => {
   );
 };
 
-export default ExporterContact;
+export default ImporterAddress;

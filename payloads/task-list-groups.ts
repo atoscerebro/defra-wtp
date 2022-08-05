@@ -31,7 +31,7 @@ export const taskListGroups = [
       },
       {
         title: 'Importer details',
-        link: '',
+        link: '/submit-an-export/exporter-and-importer/importer-details/importer-address',
         status: TaskListStatus.IN_PROGRESS,
       },
     ],
