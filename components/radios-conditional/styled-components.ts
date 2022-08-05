@@ -1,6 +1,5 @@
 import { SPACING, MEDIA_QUERIES } from '@govuk-react/constants';
 import styled from 'styled-components';
-import * as COLOURS from 'govuk-colours';
 
 export const RadiosConditionalWrapper = styled.div`
   margin-bottom: ${SPACING.SCALE_3};
