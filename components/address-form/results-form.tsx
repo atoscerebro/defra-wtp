@@ -50,10 +50,14 @@ export const ResultsForm: FC<IResultsForm> = ({
               {...rest}
               label="Select an address"
               input={{
+                defaultValue: 'none',
                 onChange: (e) =>
                   form.mutators.handleSelectAddress(results[e.target.value]),
               }}
             >
+              <option value="none" disabled>
+                Select address
+              </option>
               {Object.keys(results).map((key) => (
                 <option key={key} value={key}>
                   {key}
