@@ -41,22 +41,22 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Waste carriers',
-        link: 'submit-an-export/journey-of-waste/waste-carriers/waste-carrier',
+        link: '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier',
         status: TaskListStatus.NOT_STARTED,
       },
       {
         title: 'Waste collection details',
-        link: '',
+        link: '/submit-an-export/journey-of-waste/waste-collection-details/waste-carrier-collection-location',
         status: TaskListStatus.NOT_STARTED,
       },
       {
         title: 'Location waste leaves the UK',
-        link: '',
+        link: '/submit-an-export/journey-of-waste/waste-leave-location',
         status: TaskListStatus.NOT_STARTED,
       },
       {
         title: 'Countries waste will travel through',
-        link: '',
+        link: '/submit-an-export/journey-of-waste/waste-travel-locations',
         status: TaskListStatus.NOT_STARTED,
       },
     ],
