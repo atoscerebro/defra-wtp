@@ -3,11 +3,7 @@ import { NextPage } from 'next';
 import { Main } from 'govuk-react';
 
 const SubmitExport: NextPage = () => {
-  return (
-    <Main>
-      {/* <UniqueRefForm /> */}
-    </Main>
-  );
+  return <Main>{/* <UniqueRefForm /> */}</Main>;
 };
 
 export default SubmitExport;

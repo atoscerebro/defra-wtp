@@ -97,12 +97,3 @@ export const SummaryListActions = styled.dd`
   margin: unset;
   margin-bottom: ${SPACING.SCALE_3};
 `;
-
-export const SummaryListLink = styled(Link)`
-  :hover {
-    color: #003078;
-    text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
-  }
-  text-decoration-thickness: max(1px, 0.0625rem);
-  text-underline-offset: 0.1em;
-`;
