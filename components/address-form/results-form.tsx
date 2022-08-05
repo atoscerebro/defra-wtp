@@ -21,6 +21,16 @@ export const ResultsForm: FC<IResultsForm> = ({
   onResetPostcode,
   onSetManual,
 }) => {
+  const handleResetPostcode = () => {
+    onResetPostcode();
+    form.reset();
+  };
+
+  const handleSetManual = () => {
+    onSetManual();
+    form.reset();
+  };
+
   return (
     <>
       <Paragraph>{postcode}</Paragraph>
@@ -28,7 +38,7 @@ export const ResultsForm: FC<IResultsForm> = ({
         <StyledComponents.LinkButton
           as="button"
           type="button"
-          onClick={onResetPostcode}
+          onClick={handleResetPostcode}
         >
           Change postcode
         </StyledComponents.LinkButton>
@@ -57,7 +67,7 @@ export const ResultsForm: FC<IResultsForm> = ({
         <StyledComponents.LinkButton
           as="button"
           type="button"
-          onClick={onSetManual}
+          onClick={handleSetManual}
         >
           I cannot find my address in the list
         </StyledComponents.LinkButton>

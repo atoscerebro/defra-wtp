@@ -1,4 +1,4 @@
-import { MutableState, Tools } from 'final-form';
+import { FormApi, MutableState, Tools } from 'final-form';
 import { Button, FormGroup, InputField } from 'govuk-react';
 import { useState } from 'react';
 import { Form } from 'react-final-form';
@@ -67,6 +67,10 @@ export const AddressForm = ({ handleSubmit }: IAddressFormProps) => {
     Object.entries(args[0]).forEach(([key, value]) => {
       tools.changeValue(state, key, () => value);
     });
+  };
+
+  const handleResetAddress = (form: FormApi<IAddress, Partial<IAddress>>) => {
+    form.reset();
   };
 
   return (
