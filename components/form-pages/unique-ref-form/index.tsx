@@ -75,16 +75,11 @@ export const UniqueRefForm = () => {
                     </Radio>
                   )}
                 </Field>
-                <Field
-                  defaultValue="no"
-                  name="ref-number-answer"
-                  type="radio"
-                  value="maybe"
-                >
+                {/* <Field name="ref-number-answer" type="radio" value="maybe">
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      children={<label>Maybe</label>}
+                      children={'Maybe'}
                       renderConditional={() => (
                         <DisplayInputField
                           label={'Enter your reference number'}
@@ -92,25 +87,25 @@ export const UniqueRefForm = () => {
                       )}
                     />
                   )}
-                </Field>
-                <Field name="quant-waste-answer" type="radio" value="yes">
+                </Field> */}
+                {/* <Field name="quant-waste-answer" type="radio" value="yes">
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      children={<label>Yes</label>}
+                      children="Yes"
                       renderConditional={() => (
                         <DisplayInputField
-                          label={'Enter your reference number'}
+                          label={`Enter your reference number`}
                         />
                       )}
                     />
                   )}
-                </Field>
-                <Field name="quant-waste-answer" type="radio" value="no">
+                </Field> */}
+                <Field name="ref-number-answer" type="radio" value="maybe">
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      children={<label>No</label>}
+                      children="Maybe"
                       renderConditional={() => (
                         <DisplayInputField
                           body={

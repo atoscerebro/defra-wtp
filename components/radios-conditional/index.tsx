@@ -16,7 +16,7 @@ export const RadiosConditional = <T extends string>({
   return (
     <div>
       <Radio checked={checked} {...rest}>
-        {children}
+        {` ${children} `}
       </Radio>
       <RadiosConditionalWrapper>
         {checked && renderConditional()}
