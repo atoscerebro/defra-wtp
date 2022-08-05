@@ -1,7 +1,10 @@
+import { FormApi } from 'final-form';
 import { Button, FormGroup, InputField } from 'govuk-react';
 import { FC } from 'react';
 import { Field } from 'react-final-form';
 import { ADDRESS_FORM_IDS, ADDRESS_FORM_LABELS } from './constants';
+import * as StyledComponents from './styled-components';
+import { IAddress } from './types';
 
 export interface IManualFormProps {
   line1Hint?: string;
@@ -9,6 +12,8 @@ export interface IManualFormProps {
   townHint?: string;
   postcodeHint?: string;
   countryHint?: string;
+  form: FormApi<IAddress, Partial<IAddress>>;
+  onResetPostcode: () => void;
 }
 
 export const ManualForm: FC<IManualFormProps> = ({
@@ -17,9 +22,21 @@ export const ManualForm: FC<IManualFormProps> = ({
   townHint,
   postcodeHint,
   countryHint,
+  form,
+  onResetPostcode,
 }) => {
+  const handleResetPostcode = () => {
+    onResetPostcode();
+    form.reset();
+  };
+
   return (
     <>
+      <FormGroup>
+        <StyledComponents.LinkButton as="button" onClick={handleResetPostcode}>
+          Search by postcode
+        </StyledComponents.LinkButton>
+      </FormGroup>
       <FormGroup>
         <Field name={ADDRESS_FORM_IDS.LINE_1}>
           {({ input }) => (

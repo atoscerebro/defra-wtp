@@ -69,10 +69,6 @@ export const AddressForm = ({ handleSubmit }: IAddressFormProps) => {
     });
   };
 
-  const handleResetAddress = (form: FormApi<IAddress, Partial<IAddress>>) => {
-    form.reset();
-  };
-
   return (
     <Form onSubmit={handleSubmit} mutators={{ handleSelectAddress }}>
       {({ handleSubmit, form }) => (
@@ -95,7 +91,9 @@ export const AddressForm = ({ handleSubmit }: IAddressFormProps) => {
                   onSetManual={handleSetManual}
                 />
               ),
-              [ADDRESS_FORM_VIEW_KEY.MANUAL]: <ManualForm />,
+              [ADDRESS_FORM_VIEW_KEY.MANUAL]: (
+                <ManualForm form={form} onResetPostcode={handleResetPostcode} />
+              ),
             }[viewKey]
           }
         </form>
