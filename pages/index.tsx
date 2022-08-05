@@ -1,4 +1,4 @@
-import { H1, Main, SectionBreak } from 'govuk-react';
+import { H1, Main } from 'govuk-react';
 import type { NextPage } from 'next';
 import { PageBreadcrumbs } from '../components/page-breadcrumbs';
 import { homeCrumbs } from '../payloads/page-breadcumbs';
