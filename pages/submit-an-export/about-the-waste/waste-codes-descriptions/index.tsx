@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import WasteCodes from '../../../../components/form-pages/about-the-waste/waste-codes-form';
+import WasteCodes from '../../../../components/form-pages/waste-codes-form';
 
 const WasteCodesDescriptions: NextPage = () => {
   return <WasteCodes />;

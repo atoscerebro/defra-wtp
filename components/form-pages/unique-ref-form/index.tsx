@@ -2,22 +2,22 @@ import { FormGroup, Radio, H1, GridRow, GridCol, Button } from 'govuk-react';
 import { Form, Field } from 'react-final-form';
 import { useState } from 'react';
 import { DisplayInputField } from '../../display-input-field';
-import { ButtonWrapper } from '../styled-components';
+import { ButtonWrapper } from './styled-components';
 import { useRouter } from 'next/router';
 
+const PRENOTIFY_ROUTE = '/submit-export-task-list';
 export const UniqueRefForm = () => {
-  const [usingOwnRef, setUsingOwnRef] = useState(false);
   const router = useRouter();
+  const [usingOwnRef, setUsingOwnRef] = useState(false);
+
+  const handleFormSubmit = () => {
+    router.push(PRENOTIFY_ROUTE);
+  };
+
   return (
     <GridRow>
       <GridCol setWidth="two-thirds">
-        <Form
-          onSubmit={(formObj) => {
-            console.log(formObj); //ref-number-answer: 'yes' or 'no'. (If 'yes') ref-number-input: 'reference number string'
-
-            router.push('/submit-export-task-list');
-          }}
-        >
+        <Form onSubmit={(e) => handleFormSubmit()}>
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
@@ -46,12 +46,7 @@ export const UniqueRefForm = () => {
                     )}
                   </Field>
                 )}
-                <Field
-                  defaultValue="no"
-                  name="ref-number-answer"
-                  type="radio"
-                  value="no"
-                >
+                <Field name="ref-number-answer" type="radio" value="no">
                   {({ input }) => (
                     <Radio
                       {...input}
