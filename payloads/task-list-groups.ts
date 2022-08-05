@@ -16,7 +16,7 @@ export const taskListGroups = [
       },
       {
         title: 'Collection date',
-        link: 'collection-date',
+        link: 'submit-an-export/about-the-waste/collection-date',
         status: TaskListStatus.COMPLETED,
       },
     ],
