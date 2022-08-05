@@ -66,8 +66,8 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Recovery facility or laboratory',
-        link: '',
-        status: TaskListStatus.CANNOT_START_YET,
+        link: '/submit-an-export/treatment-of-waste/laboratory-details',
+        status: TaskListStatus.NOT_STARTED,
       },
     ],
   },
