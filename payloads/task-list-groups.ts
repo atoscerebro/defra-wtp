@@ -26,12 +26,12 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Exporter details',
-        link: '',
+        link: '/submit-an-export/exporter-and-importer/exporter-details/exporter-address',
         status: TaskListStatus.IN_PROGRESS,
       },
       {
         title: 'Importer details',
-        link: '',
+        link: '/submit-an-export/exporter-and-importer/importer-details/importer-address',
         status: TaskListStatus.IN_PROGRESS,
       },
     ],
