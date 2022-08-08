@@ -68,3 +68,41 @@ export const baselAnnexIX = [
     'B4020: Wastes from production, formulation and use of resins, latex, plasticisers',
     'B4030: Used single use cameras, with batteries not included on list A'
   ]
+
+// OECD autocomplete
+export const oecd = [
+    'GB040: Slags from precious metals and copper processing for further refining',
+    'GC010: Electrical assemblies consisting only of metals or alloys',
+    'GC020: Electronic scrap (e.g. printed circuit boards, electronic components, wire, etc.)',
+    'GC030: Vessels and other floating structures for breaking up',
+    'GC050: Spent fluid catalytic cracking (FCC) catalysts (e.g. aluminium oxide, zeolites)',
+    'GE020: Glass fibre waste',
+    'GF010: Ceramic wastes which have been fired after shaping, including ceramic vessels',
+    'GG030: Bottom ash and slag tap from coal fired power plants',
+    'GG040: Coal fired power plants fly ash',
+    'GN010: Waste of pigs’, hogs’ or boars’ bristles and hair or of badger hair and other brush making hair',
+    'GN020: Horsehair waste, whether or not put up as a layer with or without supporting material',
+    'GN030: Waste of skins and other parts of birds, with their feathers or down'
+  ]
+  
+// Basel Annex IIIA autocomplete
+export const annexIIIA = [
+    'B1010 and B1050: mixtures of wastes classified under Basel entries B1010 and B1050',
+    'B1010 and B1070: mixtures of wastes classified under Basel entries B1010 and B1070',
+    'B3040 and B3080: mixtures of wastes classified under Basel entries B3040 and B3080',
+    'GB040 and B1100: mixtures of wastes classified under (OECD) entry GB040 and under Basel entry B1100 restricted to hard zinc spelter, zinc-containing drosses, aluminium skimmings (or skims) excluding salt slag and wastes of refractory linings, including crucibles, originating from copper smelting',
+    'GB040, B1070, and B1100: mixtures of wastes classified under (OECD) entry GB040, under Basel entry B1070 and under Basel entry B1100 restricted to wastes of refractory linings, including crucibles, originating from copper smelting',
+    'B1010: mixtures of wastes classified under Basel entry B1010',
+    'B2010: mixtures of wastes classified under Basel entry B2010',
+    'B2030: mixtures of wastes classified under Basel entry B2030',
+    'B3020: mixtures of wastes classified under Basel entry B3020 restricted to unbleached paper or paperboard or of corrugated paper or paperboard, other paper or paperboard, made mainly of bleached chemical pulp, not coloured in the mass, paper or paperboard made mainly of mechanical pulp (for example, newspapers, journals and similar printed matter)',
+    'B3030: mixtures of wastes classified under Basel entry B3030',
+    'B3040: mixtures of wastes classified under Basel entry B3040',
+    'B3050: mixtures of wastes classified under Basel entry B3050'
+  ]
+  
+// Basel Annex IIIB autocomplete
+export const annexIIIB = [
+    'BEU04: Composite packaging consisting of mainly paper and some plastic, not containing residues and not covered by Basel entry B3020',
+    'BEU05: Clean biodegradable waste from agriculture, horticulture, forestry, gardens, parks and cemeteries'
+  ]  

@@ -2,6 +2,7 @@ import Layout from '../components/layout';
 import type { AppProps } from 'next/app';
 import { GlobalStyle } from 'govuk-react';
 import '../styles/globals.css';
+import '../styles/typeahead.css';
 import 'normalize.css';
 
 function MyApp({ Component, pageProps }: AppProps) {

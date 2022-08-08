@@ -2,20 +2,18 @@ import { NextPage } from 'next';
 import { H1, FormGroup, Radio, Paragraph, Caption, Button, SearchBox } from 'govuk-react';
 import { DisplayInputField } from '../../../../components/display-input-field';
 import { BaseTaskPage } from '../../../../components/base-task-page';
-import { useState, ChangeEvent } from 'react';
+import { useState} from 'react';
 import { CaptionWrapper } from '../../../../components/form-pages/styled-components';
-import { WASTE_CODES_LABELS, baselAnnexIX } from '../../../../components/form-pages/constants';
+import { WASTE_CODES_LABELS, baselAnnexIX, oecd, annexIIIA, annexIIIB } from '../../../../components/form-pages/constants';
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
-import { TypeAhead } from '../../../../components/type-ahead-search';
+import { GovUKAutocomplete } from '../../../../components/govuk-autocomplete';
 import Autocomplete from 'accessible-autocomplete/react';
-import { Typeahead } from 'react-bootstrap-typeahead';
+
 
 const WasteCodes: NextPage = () => {
   const [wasteCode, setWasteCode] = useState('');
   const router = useRouter();
-  const [singleSelections, setSingleSelections] = useState([]);
-
 
   return (
     <>
@@ -63,16 +61,7 @@ const WasteCodes: NextPage = () => {
                             label={'Start typing, then choose from the list'}
                             onChange={(e: any) => TypeAhead(e.target.value, baselAnnexIX)}
                           /> */}
-                          {/* <Autocomplete id='autocomplete' source={baselAnnexIX} /> */}
-                          <Typeahead
-                            id="basic-typeahead-single"
-                            labelKey="name"
-                            onChange={setSingleSelections}
-                            options={baselAnnexIX}
-                            placeholder="Choose a state..."
-                            selected={singleSelections}
-                          />
-                  
+                          <GovUKAutocomplete {...input} options={baselAnnexIX} />
                           </>
                         )}
                       </Field>
