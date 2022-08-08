@@ -41,7 +41,7 @@ const EWCCodeInput: NextPage = () => {
           )}
         </Form>
       }
-    ></BaseTaskPage>
+    />
   );
 };
 

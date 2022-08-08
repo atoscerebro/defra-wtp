@@ -1,13 +1,26 @@
 import { NextPage } from 'next';
-import { BaseTaskPage } from '../../../../components/base-task-page'; 
+import { BaseTaskPage } from '../../../../components/base-task-page';
 import { DisplayInputField } from '../../../../components/display-input-field';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
 import { Form, Field } from 'react-final-form';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button, GridRow, GridCol, Input } from 'govuk-react';
+import {
+  H1,
+  FormGroup,
+  Radio,
+  Paragraph,
+  Caption,
+  Button,
+  GridRow,
+  GridCol,
+  Input,
+} from 'govuk-react';
 import { Link } from '../../../../components/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { CaptionWrapper, ButtonWrapper } from '../../../../components/form-pages/styled-components';
+import {
+  CaptionWrapper,
+  ButtonWrapper,
+} from '../../../../components/form-pages/styled-components';
 import { InputMeasurement, QuantityInputWrapper } from './styled-components';
 
 const QuantityOfWaste: NextPage = () => {
@@ -16,7 +29,6 @@ const QuantityOfWaste: NextPage = () => {
 
   return (
     <BaseTaskPage
-      backHref="/submit-export-task-list"
       component={
         <Form
           onSubmit={(formObj) => {
@@ -27,11 +39,12 @@ const QuantityOfWaste: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">
-                  Do you know the quantity of waste?
-                </H1>
+                <H1 size="LARGE">Do you know the quantity of waste?</H1>
                 <CaptionWrapper>
-                      <Caption size="M">Only provide the net weight or volume. Do not include the weight of the container or vehicle.</Caption>
+                  <Caption size="M">
+                    Only provide the net weight or volume. Do not include the
+                    weight of the container or vehicle.
+                  </Caption>
                 </CaptionWrapper>
                 <Field name="quantity-of-waste-radio" type="radio" value="yes">
                   {({ input }) => (
@@ -51,13 +64,15 @@ const QuantityOfWaste: NextPage = () => {
                       <>
                         <GridRow>
                           <GridCol setWidth="one-third">
-                              <DisplayInputFieldWrapper>
-                                <Caption size="M">Weight, in tonnes</Caption>
-                                <QuantityInputWrapper>
-                                  <Input {...input}></Input>
-                                  <InputMeasurement><Paragraph>Mg</Paragraph></InputMeasurement>
-                                </QuantityInputWrapper>
-                              </DisplayInputFieldWrapper>
+                            <DisplayInputFieldWrapper>
+                              <Caption size="M">Weight, in tonnes</Caption>
+                              <QuantityInputWrapper>
+                                <Input {...input}></Input>
+                                <InputMeasurement>
+                                  <Paragraph>Mg</Paragraph>
+                                </InputMeasurement>
+                              </QuantityInputWrapper>
+                            </DisplayInputFieldWrapper>
                           </GridCol>
                         </GridRow>
                       </>
@@ -89,7 +104,7 @@ const QuantityOfWaste: NextPage = () => {
           )}
         </Form>
       }
-    ></BaseTaskPage>
+    />
   );
 };
 
