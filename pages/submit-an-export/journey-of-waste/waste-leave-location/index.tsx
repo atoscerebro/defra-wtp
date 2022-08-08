@@ -1,8 +1,9 @@
-import { Button, FormGroup, H2, InputField, Radio } from 'govuk-react';
+import { Button, FormGroup, H2, Radio } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { RadiosConditional } from '../../../../components/radios-conditional';
+import { TwoThirdsInputField } from '../../../../components/two-thirds-input-field/styled-components';
 import { links } from '../constants';
 import {
   WASTE_CARRIER_COLLECT_LEAVE_GROUP,
@@ -38,7 +39,9 @@ const WasteCarrierCollectLeave = () => {
                       {...input}
                       id={'conditional-contact-1'}
                       renderConditional={() => (
-                        <InputField>Enter location</InputField>
+                        <TwoThirdsInputField>
+                          Enter location
+                        </TwoThirdsInputField>
                       )}
                     >
                       {WASTE_CARRIER_COLLECT_LEAVE_LABELS.YES}
