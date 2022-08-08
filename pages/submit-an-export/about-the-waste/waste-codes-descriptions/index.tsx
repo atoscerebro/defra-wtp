@@ -1,16 +1,19 @@
 import { NextPage } from 'next';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button } from 'govuk-react';
+import { H1, FormGroup, Radio, Paragraph, Caption, Button, SearchBox } from 'govuk-react';
 import { DisplayInputField } from '../../../../components/display-input-field';
 import { BaseTaskPage } from '../../../../components/base-task-page';
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { CaptionWrapper } from '../../../../components/form-pages/styled-components';
-import { WASTE_CODES_LABELS } from '../../../../components/form-pages/constants';
+import { WASTE_CODES_LABELS, baselAnnexIX } from '../../../../components/form-pages/constants';
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
+import { TypeAhead } from '../../../../components/type-ahead-search';
+import Autocomplete from 'accessible-autocomplete/react';
 
 const WasteCodes: NextPage = () => {
   const [wasteCode, setWasteCode] = useState('');
   const router = useRouter();
+
 
   return (
     <>
@@ -52,10 +55,15 @@ const WasteCodes: NextPage = () => {
                     {wasteCode === WASTE_CODES_LABELS.BASEL_ANNEX_IX && (
                       <Field name="waste-code-input">
                         {({ input }) => (
+                          <>
                           <DisplayInputField
                             {...input}
                             label={'Start typing, then choose from the list'}
+                            onChange={(e: any) => TypeAhead(e.target.value, baselAnnexIX)}
                           />
+                          {/* <Autocomplete id='autocomplete' source={baselAnnexIX} /> */}
+                  
+                          </>
                         )}
                       </Field>
                     )}
