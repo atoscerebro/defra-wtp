@@ -1,14 +1,12 @@
 import { FormGroup, Radio, H1, GridRow, GridCol, Button } from 'govuk-react';
 import { Form, Field } from 'react-final-form';
-import { useState } from 'react';
-import { DisplayInputField } from '../../display-input-field';
-import { ButtonWrapper } from './styled-components';
+import * as StyledComponents from './styled-components';
 import { useRouter } from 'next/router';
+import { RadiosConditional } from '../../radios-conditional';
 
 const PRENOTIFY_ROUTE = '/submit-export-task-list';
 export const UniqueRefForm = () => {
   const router = useRouter();
-  const [usingOwnRef, setUsingOwnRef] = useState(false);
 
   const handleFormSubmit = () => {
     router.push(PRENOTIFY_ROUTE);
@@ -26,41 +24,25 @@ export const UniqueRefForm = () => {
                 </H1>
                 <Field name="ref-number-answer" type="radio" value="yes">
                   {({ input }) => (
-                    <Radio
+                    <RadiosConditional
                       {...input}
-                      onClick={() => {
-                        setUsingOwnRef(true);
-                      }}
+                      id={'conditional-contact'}
+                      renderConditional={() => (
+                        <StyledComponents.TwoThirdsInputField>
+                          Enter your reference number
+                        </StyledComponents.TwoThirdsInputField>
+                      )}
                     >
                       Yes
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
-                {usingOwnRef && (
-                  <Field name="ref-number-input">
-                    {({ input }) => (
-                      <DisplayInputField
-                        {...input}
-                        label={'Enter your reference number'}
-                      />
-                    )}
-                  </Field>
-                )}
                 <Field name="ref-number-answer" type="radio" value="no">
-                  {({ input }) => (
-                    <Radio
-                      {...input}
-                      onClick={() => {
-                        setUsingOwnRef(false);
-                      }}
-                    >
-                      No
-                    </Radio>
-                  )}
+                  {({ input }) => <Radio {...input}>No</Radio>}
                 </Field>
-                <ButtonWrapper>
+                <StyledComponents.ButtonWrapper>
                   <Button type="submit">Save and continue</Button>
-                </ButtonWrapper>
+                </StyledComponents.ButtonWrapper>
               </form>
             </FormGroup>
           )}
