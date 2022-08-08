@@ -36,6 +36,9 @@ export const Actions = Template.bind({});
 Actions.args = {
   rows: defaultData.map((row) => ({
     ...row,
-    action: { title: 'Change', link: '' },
+    action: [
+      { title: 'Update', link: '' },
+      { title: 'Cancel', link: '' },
+    ],
   })),
 };
