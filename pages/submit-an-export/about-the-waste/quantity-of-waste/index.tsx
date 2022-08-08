@@ -21,7 +21,7 @@ import {
   CaptionWrapper,
   ButtonWrapper,
 } from '../../../../components/form-pages/styled-components';
-import { InputMeasurement, QuantityInputWrapper } from './styled-components';
+import { QuantityInput } from './quantity-input';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
@@ -61,21 +61,7 @@ const QuantityOfWaste: NextPage = () => {
                 {knowQuantityOfWaste && (
                   <Field name="quantity-of-waste-input">
                     {({ input }) => (
-                      <>
-                        <GridRow>
-                          <GridCol setWidth="one-third">
-                            <DisplayInputFieldWrapper>
-                              <Caption size="M">Weight, in tonnes</Caption>
-                              <QuantityInputWrapper>
-                                <Input {...input}></Input>
-                                <InputMeasurement>
-                                  <Paragraph>Mg</Paragraph>
-                                </InputMeasurement>
-                              </QuantityInputWrapper>
-                            </DisplayInputFieldWrapper>
-                          </GridCol>
-                        </GridRow>
-                      </>
+                      <QuantityInput {...input} updateLaterMsg={false} />
                     )}
                   </Field>
                 )}
@@ -96,6 +82,11 @@ const QuantityOfWaste: NextPage = () => {
                     </Radio>
                   )}
                 </Field>
+                {!knowQuantityOfWaste && (
+                  <Field name="quantity-of-waste-input">
+                    {({ input }) => <QuantityInput {...input} updateLaterMsg />}
+                  </Field>
+                )}
                 <ButtonWrapper>
                   <Button type="submit">Save and continue</Button>
                 </ButtonWrapper>
