@@ -47,14 +47,15 @@ export const SummaryList: FC<ISummaryListProps> = ({ rows, border = true }) => {
               )
             )}
           </StyledComponents.SummaryListValue>
-          {row.action && (
-            <StyledComponents.SummaryListActions>
-              <Link href={row.action.link}>
-                {row.action.title}
-                <VisuallyHidden>{row.key.toLowerCase()}</VisuallyHidden>
-              </Link>
-            </StyledComponents.SummaryListActions>
-          )}
+          {row.action &&
+            row.action.map((action) => (
+              <StyledComponents.SummaryListActions>
+                <Link href={action.link}>
+                  {action.title}
+                  <VisuallyHidden>{row.key.toLowerCase()}</VisuallyHidden>
+                </Link>
+              </StyledComponents.SummaryListActions>
+            ))}
         </StyledComponents.SummaryListRow>
       ))}
     </StyledComponents.SummaryList>
