@@ -9,10 +9,12 @@ import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { TypeAhead } from '../../../../components/type-ahead-search';
 import Autocomplete from 'accessible-autocomplete/react';
+import { Typeahead } from 'react-bootstrap-typeahead';
 
 const WasteCodes: NextPage = () => {
   const [wasteCode, setWasteCode] = useState('');
   const router = useRouter();
+  const [singleSelections, setSingleSelections] = useState([]);
 
 
   return (
@@ -56,12 +58,20 @@ const WasteCodes: NextPage = () => {
                       <Field name="waste-code-input">
                         {({ input }) => (
                           <>
-                          <DisplayInputField
+                          {/* <DisplayInputField
                             {...input}
                             label={'Start typing, then choose from the list'}
                             onChange={(e: any) => TypeAhead(e.target.value, baselAnnexIX)}
-                          />
+                          /> */}
                           {/* <Autocomplete id='autocomplete' source={baselAnnexIX} /> */}
+                          <Typeahead
+                            id="basic-typeahead-single"
+                            labelKey="name"
+                            onChange={setSingleSelections}
+                            options={baselAnnexIX}
+                            placeholder="Choose a state..."
+                            selected={singleSelections}
+                          />
                   
                           </>
                         )}
