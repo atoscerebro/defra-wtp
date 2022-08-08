@@ -17,14 +17,14 @@ import {
 } from './constants';
 import { Link } from '../../../../../components/link';
 import { useRouter } from 'next/router';
-import { links } from '../constants';
+import { links } from '../../constants';
 
-const WasteCarrierCollectDetails = () => {
+const WasteCarrierCollectionContact = () => {
   const router = useRouter();
 
   const handleSubmit = (data: any) => {
     console.log(data);
-    router.push(links.wasteCarrierCollectLeave);
+    router.push(links.wasteLeaveLocation);
   };
 
   return (
@@ -43,7 +43,7 @@ const WasteCarrierCollectDetails = () => {
                 <HintText>
                   We&apos;ll use this as the exporting country.
                 </HintText>
-                <Link href={links.wasteCarrierCollect}>
+                <Link href={links.wasteCarrierCollectLocation}>
                   <Paragraph>Change address</Paragraph>
                 </Link>
               </FormGroup>
@@ -115,4 +115,4 @@ const WasteCarrierCollectDetails = () => {
   );
 };
 
-export default WasteCarrierCollectDetails;
+export default WasteCarrierCollectionContact;

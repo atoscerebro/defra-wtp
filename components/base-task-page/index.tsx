@@ -1,13 +1,6 @@
 import { Paragraph } from 'govuk-react';
-import {
-  BackLink as GovUKBackLink,
-  Main,
-  GridRow,
-  GridCol,
-  FormGroup,
-  Link,
-} from 'govuk-react';
-import { BackLink } from '../back-link';
+import { BackLink, Main, GridRow, GridCol, FormGroup } from 'govuk-react';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 import { useRouter } from 'next/router';
 
@@ -16,14 +9,16 @@ interface IProps {
   backHref: string;
 }
 
-export const BaseTaskPage: FC<IProps> = ({ component, backHref }) => {
+export const BaseTaskPage: FC<IProps> = ({ component }) => {
   const router = useRouter();
   return (
     <>
       <Main>
         <GridRow>
-          <GridCol>
-            <BackLink href={backHref}>Back</BackLink>
+          <GridCol setWidth="two-thirds">
+            <BackLink href="#" onClick={() => router.back()}>
+              Back
+            </BackLink>
             <FormGroup>{component}</FormGroup>
             {console.log(router.route)}
             <Paragraph>
