@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { DisplayInputField } from '../../display-input-field';
 import { ButtonWrapper } from './styled-components';
 import { useRouter } from 'next/router';
+import { t } from 'i18next';
 
 const PRENOTIFY_ROUTE = '/submit-export-task-list';
 export const UniqueRefForm = () => {
@@ -21,9 +22,7 @@ export const UniqueRefForm = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">
-                  Do you want to add your own reference number to this export?
-                </H1>
+                <H1 size="LARGE">{t('greenListWasteOverview')}</H1>
                 <Field name="ref-number-answer" type="radio" value="yes">
                   {({ input }) => (
                     <Radio

@@ -7,4 +7,10 @@ export const TRANSLATIONS_CYM = {
   updateAnExportWithActualDetails:
     'Diweddaru allforyn gyda manylion gwirioneddol',
   viewSubmittedExports: 'Gweld allforion a gyflwynwyd',
+  accessibilityStatement: 'Datganiad hygyrchedd',
+  cookies: 'Cwcis',
+  privacyNotice: 'Hysbysiad preifatrwydd',
+  clearData: 'Data clir',
+  crownCopyright: 'Hawlfraint y Goron',
+  exportGreenListWaste: 'Allforio gwastraff rhestr werdd',
 };

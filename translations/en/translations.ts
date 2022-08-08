@@ -6,4 +6,11 @@ export const TRANSLATIONS_EN = {
   allExports: 'All exports',
   updateAnExportWithActualDetails: 'Update an export with actual details',
   viewSubmittedExports: 'View submitted exports',
+  accessibilityStatement: 'Accessibility statement',
+  cookies: 'Cookies',
+  privacyNotice: 'Privacy notice',
+  change: 'Change?',
+  clearData: 'Clear data',
+  crownCopyright: 'Crown copyright',
+  exportGreenListWaste: 'Export green list waste',
 };

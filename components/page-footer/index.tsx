@@ -1,4 +1,5 @@
 import { Footer } from 'govuk-react';
+import { t } from 'i18next';
 
 export const PageFooter = () => {
   return (
@@ -10,18 +11,24 @@ export const PageFooter = () => {
           width: 125,
         },
         link: 'https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/',
-        text: 'Crown copyright',
+        text: t('crownCopyright'),
       }}
       meta={
         <>
           <Footer.MetaLinks heading="Support Links">
-            <Footer.Link href="/">Accessibility statement</Footer.Link>
-            <Footer.Link href="/footer-meta-item-2">Cookies</Footer.Link>
-            <Footer.Link href="/">Privacy notice</Footer.Link>
+            <Footer.Link href="/">
+              {t('accessibilityStatement') as string}
+            </Footer.Link>
+            <Footer.Link href="/footer-meta-item-2">
+              {t('cookies') as string}
+            </Footer.Link>
+            <Footer.Link href="/">{t('privacyNotice') as string}</Footer.Link>
           </Footer.MetaLinks>
           <Footer.MetaLinks heading="Support Links">
-            <Footer.Link href="/">GOV.UK Prototype Kit v12.1.1</Footer.Link>
-            <Footer.Link href="/footer-meta-item-2">Clear data</Footer.Link>
+            <Footer.Link href="/">{t('change') as string}</Footer.Link>
+            <Footer.Link href="/footer-meta-item-2">
+              {t('clearData') as string}
+            </Footer.Link>
           </Footer.MetaLinks>
         </>
       }
