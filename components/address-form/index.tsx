@@ -1,20 +1,19 @@
-import { FormApi, MutableState, Tools } from 'final-form';
-import { Button, FormGroup, InputField } from 'govuk-react';
-import { useState } from 'react';
+import { MutableState, Tools } from 'final-form';
+import { FC, useState } from 'react';
 import { Form } from 'react-final-form';
 import { ADDRESS_FORM_VIEW_KEY } from './constants';
 import { ManualForm } from './manual-form';
 import { PostcodeForm } from './postcode-form';
 import { ResultsForm } from './results-form';
-import * as StyledComponents from './styled-components';
-import { IAddress } from './types';
+import { IAddress, IHints } from './types';
 import { getAddressString } from './utils';
 
 export interface IAddressFormProps {
+  hints?: IHints;
   handleSubmit: (address: IAddress) => void;
 }
 
-export const AddressForm = ({ handleSubmit }: IAddressFormProps) => {
+export const AddressForm: FC<IAddressFormProps> = ({ hints, handleSubmit }) => {
   const [viewKey, setViewKey] = useState(ADDRESS_FORM_VIEW_KEY.SEARCH);
   const [postcode, setPostcode] = useState('');
   const [results, setResults] = useState<Record<string, IAddress>>({});
@@ -92,7 +91,11 @@ export const AddressForm = ({ handleSubmit }: IAddressFormProps) => {
                 />
               ),
               [ADDRESS_FORM_VIEW_KEY.MANUAL]: (
-                <ManualForm form={form} onResetPostcode={handleResetPostcode} />
+                <ManualForm
+                  hints={hints}
+                  form={form}
+                  onResetPostcode={handleResetPostcode}
+                />
               ),
             }[viewKey]
           }

@@ -4,24 +4,16 @@ import { FC } from 'react';
 import { Field } from 'react-final-form';
 import { ADDRESS_FORM_IDS, ADDRESS_FORM_LABELS } from './constants';
 import * as StyledComponents from './styled-components';
-import { IAddress } from './types';
+import { IAddress, IHints } from './types';
 
 export interface IManualFormProps {
-  line1Hint?: string;
-  line2Hint?: string;
-  townHint?: string;
-  postcodeHint?: string;
-  countryHint?: string;
+  hints?: IHints;
   form: FormApi<IAddress, Partial<IAddress>>;
   onResetPostcode: () => void;
 }
 
 export const ManualForm: FC<IManualFormProps> = ({
-  line1Hint,
-  line2Hint,
-  townHint,
-  postcodeHint,
-  countryHint,
+  hints = {},
   form,
   onResetPostcode,
 }) => {
@@ -40,7 +32,7 @@ export const ManualForm: FC<IManualFormProps> = ({
       <FormGroup>
         <Field name={ADDRESS_FORM_IDS.LINE_1}>
           {({ input }) => (
-            <InputField {...input} hint={line1Hint}>
+            <InputField {...input} hint={hints.line1}>
               {ADDRESS_FORM_LABELS.LINE_1}
             </InputField>
           )}
@@ -49,7 +41,7 @@ export const ManualForm: FC<IManualFormProps> = ({
       <FormGroup>
         <Field name={ADDRESS_FORM_IDS.LINE_2}>
           {({ input }) => (
-            <InputField {...input} hint={line2Hint}>
+            <InputField {...input} hint={hints.line2}>
               {ADDRESS_FORM_LABELS.LINE_2}
             </InputField>
           )}
@@ -58,7 +50,7 @@ export const ManualForm: FC<IManualFormProps> = ({
       <FormGroup>
         <Field name={ADDRESS_FORM_IDS.TOWN}>
           {({ input }) => (
-            <InputField {...input} hint={townHint}>
+            <InputField {...input} hint={hints.town}>
               {ADDRESS_FORM_LABELS.TOWN}
             </InputField>
           )}
@@ -67,7 +59,7 @@ export const ManualForm: FC<IManualFormProps> = ({
       <FormGroup>
         <Field name={ADDRESS_FORM_IDS.POSTCODE}>
           {({ input }) => (
-            <InputField {...input} hint={postcodeHint}>
+            <InputField {...input} hint={hints.postcode}>
               {ADDRESS_FORM_LABELS.POSTCODE}
             </InputField>
           )}
@@ -76,7 +68,7 @@ export const ManualForm: FC<IManualFormProps> = ({
       <FormGroup>
         <Field name={ADDRESS_FORM_IDS.COUNTRY}>
           {({ input }) => (
-            <InputField {...input} hint={countryHint}>
+            <InputField {...input} hint={hints.country}>
               {ADDRESS_FORM_LABELS.COUNTRY}
             </InputField>
           )}

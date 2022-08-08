@@ -5,3 +5,5 @@ export interface IAddress {
   country: string;
   postcode: string;
 }
+
+export type IHints = Partial<IAddress>;
