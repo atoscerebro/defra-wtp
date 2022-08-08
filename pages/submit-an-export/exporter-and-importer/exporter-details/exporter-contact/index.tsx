@@ -12,8 +12,7 @@ import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { LineBreak } from '../../../../../components/line-break';
-import { links } from '../constants';
-import { links as importerLinks } from '../../importer-details/constants';
+import { links } from '../../constants';
 import { EXPORTER_CONTACT_IDS, EXPORTER_CONTACT_LABELS } from './constants';
 
 const ExporterContact = () => {
@@ -21,7 +20,7 @@ const ExporterContact = () => {
 
   const handleSubmit = (data: any) => {
     console.log(data);
-    router.push(importerLinks.importerAddress);
+    router.push(links.importerAddress);
   };
 
   return (
