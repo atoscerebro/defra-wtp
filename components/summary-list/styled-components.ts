@@ -79,11 +79,21 @@ export const SummaryListSubParagraphContainer = styled.div`
 export const SummaryListSubParagraph = styled(Paragraph)``;
 
 export const SummaryListActions = styled.dd`
-  margin: unset;
-  margin-bottom: ${SPACING.SCALE_3};
+  margin: 0;
 
   ${MEDIA_QUERIES.TABLET} {
     display: table-cell;
-    padding: ${SPACING.SCALE_2} 0px;
+    padding: ${SPACING.SCALE_2} ${SPACING.SCALE_4} ${SPACING.SCALE_2} 0;
   }
+
+  margin-bottom: ${SPACING.SCALE_3};
+
+  ${MEDIA_QUERIES.TABLET} {
+    width: 20%;
+    padding-right: 0;
+    text-align: right;
+  }
+
+  margin: unset;
+  margin-bottom: ${SPACING.SCALE_3};
 `;

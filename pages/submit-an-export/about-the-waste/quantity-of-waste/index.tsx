@@ -1,7 +1,20 @@
 import { NextPage } from 'next';
 import { BaseTaskPage } from '../../../../components/base-task-page';
+import { DisplayInputField } from '../../../../components/display-input-field';
+import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
 import { Form, Field } from 'react-final-form';
-import { H1, FormGroup, Radio, Caption, Button } from 'govuk-react';
+import {
+  H1,
+  FormGroup,
+  Radio,
+  Paragraph,
+  Caption,
+  Button,
+  GridRow,
+  GridCol,
+  Input,
+} from 'govuk-react';
+import { Link } from '../../../../components/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import {
@@ -16,7 +29,6 @@ const QuantityOfWaste: NextPage = () => {
 
   return (
     <BaseTaskPage
-      backHref="/submit-export-task-list"
       component={
         <Form
           onSubmit={(formObj) => {
@@ -83,7 +95,7 @@ const QuantityOfWaste: NextPage = () => {
           )}
         </Form>
       }
-    ></BaseTaskPage>
+    />
   );
 };
 
