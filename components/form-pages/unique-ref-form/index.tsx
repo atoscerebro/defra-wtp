@@ -3,6 +3,7 @@ import { Form, Field } from 'react-final-form';
 import * as StyledComponents from './styled-components';
 import { useRouter } from 'next/router';
 import { RadiosConditional } from '../../radios-conditional';
+import { TwoThirdsInputField } from '../../two-thirds-input-field/styled-components';
 
 const PRENOTIFY_ROUTE = '/submit-export-task-list';
 export const UniqueRefForm = () => {
@@ -28,9 +29,9 @@ export const UniqueRefForm = () => {
                       {...input}
                       id={'conditional-contact'}
                       renderConditional={() => (
-                        <StyledComponents.TwoThirdsInputField>
+                        <TwoThirdsInputField>
                           Enter your reference number
-                        </StyledComponents.TwoThirdsInputField>
+                        </TwoThirdsInputField>
                       )}
                     >
                       Yes

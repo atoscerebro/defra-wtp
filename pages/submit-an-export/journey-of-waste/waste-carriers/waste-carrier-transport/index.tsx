@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { RadiosConditional } from '../../../../../components/radios-conditional';
+import { TwoThirdsInputField } from '../../../../../components/two-thirds-input-field/styled-components';
 import { links } from '../../constants';
 import {
   WASTE_CARRIER_TRANSPORT_GROUP,
@@ -49,9 +50,9 @@ const WasteCarrierTransport = () => {
                       {...input}
                       id={'conditional-contact-road'}
                       renderConditional={() => (
-                        <InputField hint="Enter container number or vehicle registration number (optional)">
+                        <TwoThirdsInputField hint="Enter container number or vehicle registration number (optional)">
                           <></>
-                        </InputField>
+                        </TwoThirdsInputField>
                       )}
                     >
                       {WASTE_CARRIER_TRANSPORT_LABELS.ROAD}
@@ -68,9 +69,9 @@ const WasteCarrierTransport = () => {
                       {...input}
                       id={'conditional-contact-rail'}
                       renderConditional={() => (
-                        <InputField hint="Enter container number (optional)">
+                        <TwoThirdsInputField hint="Enter container number (optional)">
                           <></>
-                        </InputField>
+                        </TwoThirdsInputField>
                       )}
                     >
                       {WASTE_CARRIER_TRANSPORT_LABELS.RAIL}
@@ -87,9 +88,9 @@ const WasteCarrierTransport = () => {
                       {...input}
                       id={'conditional-contact-sea'}
                       renderConditional={() => (
-                        <InputField hint="Enter container number (optional)">
+                        <TwoThirdsInputField hint="Enter container number (optional)">
                           <></>
-                        </InputField>
+                        </TwoThirdsInputField>
                       )}
                     >
                       {WASTE_CARRIER_TRANSPORT_LABELS.SEA}
@@ -106,9 +107,9 @@ const WasteCarrierTransport = () => {
                       {...input}
                       id={'conditional-contact-air'}
                       renderConditional={() => (
-                        <InputField hint="Enter flight number (optional)">
+                        <TwoThirdsInputField hint="Enter flight number (optional)">
                           <></>
-                        </InputField>
+                        </TwoThirdsInputField>
                       )}
                     >
                       {WASTE_CARRIER_TRANSPORT_LABELS.AIR}
