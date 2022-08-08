@@ -27,9 +27,11 @@ export const PostcodeForm: FC<IPostcodeForm> = ({
           Enter address manually
         </StyledComponents.LinkButton>
       </FormGroup>
-      <Button type="button" onClick={onSetResults}>
-        Find address
-      </Button>
+      <div>
+        <Button type="button" onClick={onSetResults}>
+          Find address
+        </Button>
+      </div>
     </>
   );
 };

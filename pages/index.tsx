@@ -13,8 +13,6 @@ const Home: NextPage = () => {
         currentPage="Green list waste overview"
       />
 
-      <AddressForm handleSubmit={(address) => console.log(address)} />
-
       <H1 size="XLARGE">Green list waste overview</H1>
 
       <HomePageGroup>
