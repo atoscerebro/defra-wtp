@@ -2,7 +2,7 @@ import { Button, FormGroup, H2, InputField } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
-import { links } from '../constants';
+import { links } from '../../constants';
 import {
   WASTE_CARRIER_COLLECT_IDS,
   WASTE_CARRIER_COLLECT_LABELS,
@@ -13,7 +13,7 @@ const WasteCarrierCollect = () => {
 
   const handleSubmit = (data: any) => {
     console.log(data);
-    router.push(links.wasteCarrierCollectDetails);
+    router.push(links.wasteCarrierCollectContact);
   };
 
   return (

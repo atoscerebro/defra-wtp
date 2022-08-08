@@ -2,7 +2,7 @@ import { Button, FormGroup, H2, Paragraph, Radio } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
-import { links } from '../constants';
+import { links } from '../../constants';
 import {
   WASTE_CARRIER_TRANSPORT_GROUP,
   WASTE_CARRIER_TRANSPORT_IDS,
