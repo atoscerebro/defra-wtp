@@ -3,6 +3,7 @@ import { BackLink, Main, GridRow, GridCol, FormGroup } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { FC } from 'react';
 import { Link } from '../link';
+import { FormContentWrapper } from './styled-components';
 
 interface IProps {
   component?: React.ReactNode;
@@ -10,7 +11,6 @@ interface IProps {
 
 export const BaseTaskPage: FC<IProps> = ({ component }) => {
   const router = useRouter();
-
   return (
     <>
       <Main>
@@ -19,7 +19,9 @@ export const BaseTaskPage: FC<IProps> = ({ component }) => {
             <BackLink href="#" onClick={() => router.back()}>
               Back
             </BackLink>
-            <FormGroup>{component}</FormGroup>
+            <FormContentWrapper>
+              <FormGroup>{component}</FormGroup>
+            </FormContentWrapper>
             <Link href="/submit-export-task-list">
               <Paragraph>Return to submit an export</Paragraph>
             </Link>

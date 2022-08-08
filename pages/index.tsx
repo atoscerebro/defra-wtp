@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <H1 size="MEDIUM">Tell us about an export</H1>
 
         <LinkWrapper>
-          <HomepageLink href={'submit-an-export'}>
+          <HomepageLink href={'submit-an-export/unique-ref'}>
             Submit an export
           </HomepageLink>
         </LinkWrapper>
