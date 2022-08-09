@@ -13,5 +13,8 @@ export interface ITaskListGroup {
 export interface ITaskListSection {
   title: string;
   link: string;
-  status: TaskListStatus;
+  status: {
+    label: string;
+    value: TaskListStatus;
+  };
 }
