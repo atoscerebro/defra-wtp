@@ -1,18 +1,21 @@
 import { PageHeader } from '../page-header';
 import { PageFooter } from '../page-footer';
-import type { ReactElement } from 'react';
+import { ReactNode } from 'react';
+import * as StyledComponents from './styled-components';
 
 type LayoutProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <StyledComponents.LayoutContainer>
       <PageHeader />
-      <div>{children}</div>
+      <StyledComponents.LayoutWrapper>
+        {children}
+      </StyledComponents.LayoutWrapper>
       <PageFooter />
-    </>
+    </StyledComponents.LayoutContainer>
   );
 };
 
