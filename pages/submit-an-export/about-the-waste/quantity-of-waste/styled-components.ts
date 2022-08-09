@@ -70,7 +70,6 @@ export const LinkButton = styled.button`
   :visited {
     color: ${COLOURS.LINK_VISITED_COLOUR};
   }
-
   :hover {
     color: #003078;
   }

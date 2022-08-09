@@ -23,7 +23,7 @@ export const taskListGroups = [
       },
       {
         title: TRANSLATION_KEYS.collectionDate,
-        link: 'collection-date',
+        link: 'submit-an-export/about-the-waste/collection-date',
         status: {
           label: TRANSLATION_KEYS.completed,
           value: TaskListStatus.COMPLETED,
