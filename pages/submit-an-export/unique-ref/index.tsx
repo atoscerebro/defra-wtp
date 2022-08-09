@@ -60,7 +60,7 @@ const UniqueRef: NextPage = () => {
                         ariaId={'conditional-contact'}
                         renderConditional={() => (
                           <TwoThirdsInputField>
-                            t(TRANSLATION_KEYS.enterYourReferenceNumber)
+                            {t(TRANSLATION_KEYS.enterYourReferenceNumber)}
                           </TwoThirdsInputField>
                         )}
                       >
@@ -70,7 +70,9 @@ const UniqueRef: NextPage = () => {
                   </Field>
 
                   <Field name="ref-number-answer" type="radio" value="no">
-                    {({ input }) => <Radio {...input}>t(TRANSLATION_KEYS.no)</Radio>}
+                    {({ input }) => (
+                      <Radio {...input}>{t(TRANSLATION_KEYS.no)}</Radio>
+                    )}
                   </Field>
                   <ButtonWrapper>
                     <Button type="submit">
