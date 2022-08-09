@@ -69,7 +69,7 @@ export const LinkButton = styled.button`
   :visited {
     color: ${COLOURS.LINK_VISITED_COLOUR};
   }
-  <<<<<<< HEAD :hover {
+  :hover {
     color: #003078;
   }
 
@@ -77,15 +77,7 @@ export const LinkButton = styled.button`
     color: ${COLOURS.BLACK};
   }
 
-  ======= :hover {
-    color: #003078;
-  }
-
-  :active {
-    color: ${COLOURS.BLACK};
-  }
-
-  >>>>>>>eb50f42611dca44129265b030f046dfa2f11e487 :focus {
+  :focus {
     color: ${COLOURS.BLACK};
   }
 `;
