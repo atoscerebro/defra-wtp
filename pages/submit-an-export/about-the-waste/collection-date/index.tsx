@@ -16,14 +16,13 @@ import {
   ButtonWrapper,
 } from '../../../../components/form-pages/styled-components';
 import { DateInputField } from '../../../../components/date-input-field';
+import { RadiosConditional } from '../../../../components/radios-conditional';
 
 const CollectionDate: NextPage = () => {
   const router = useRouter();
-  const [knowCollectionDate, setKnowCollectionDate] = useState(false);
 
   return (
     <BaseTaskPage
-      backHref="/submit-an-export/about-the-waste/quantity-of-waste"
       component={
         <Form
           onSubmit={(formObj) => {
@@ -44,23 +43,24 @@ const CollectionDate: NextPage = () => {
                 </CaptionWrapper>
                 <Field name="collection-date-radio" type="radio" value="yes">
                   {({ input }) => (
-                    <Radio
+                    <RadiosConditional
                       {...input}
-                      onClick={() => {
-                        setKnowCollectionDate(true);
-                      }}
+                      ariaId=""
+                      renderConditional={() => (
+                        <Field name="collection-date">
+                          {({ input }) => (
+                            <DateInputField
+                              {...input}
+                              label={'Enter the date'}
+                            />
+                          )}
+                        </Field>
+                      )}
                     >
                       Yes
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
-                {knowCollectionDate && (
-                  <Field name="collection-date">
-                    {({ input }) => (
-                      <DateInputField {...input} label={'Enter the date'} />
-                    )}
-                  </Field>
-                )}
                 <Field
                   defaultValue="no"
                   name="collection-date-radio"
@@ -68,29 +68,21 @@ const CollectionDate: NextPage = () => {
                   value="no"
                 >
                   {({ input }) => (
-                    <Radio
+                    <RadiosConditional
                       {...input}
-                      onClick={() => {
-                        setKnowCollectionDate(false);
-                      }}
-                    >
-                      No, I&apos;ll enter an estimate
-                    </Radio>
-                  )}
-                </Field>
-                {!knowCollectionDate && (
-                  <Field name="collection-date">
-                    {({ input }) => (
-                      <>
+                      ariaId=""
+                      renderConditional={() => (
                         <DateInputField
                           {...input}
                           label={'Enter an estimate date'}
                           caption={`You'll need to update this with actual details assoon as possible after submitting this export.`}
                         />
-                      </>
-                    )}
-                  </Field>
-                )}
+                      )}
+                    >
+                      No, I&apos;ll enter an estimate
+                    </RadiosConditional>
+                  )}
+                </Field>
                 <ButtonWrapper>
                   <Button type="submit">Save and continue</Button>
                 </ButtonWrapper>
@@ -99,7 +91,7 @@ const CollectionDate: NextPage = () => {
           )}
         </Form>
       }
-    ></BaseTaskPage>
+    />
   );
 };
 
