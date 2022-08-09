@@ -15,7 +15,6 @@ const WasteCodes: NextPage = () => {
   return (
     <>
       <BaseTaskPage
-        backHref="/submit-export-task-list"
         component={
           <>
             <Form
@@ -23,7 +22,7 @@ const WasteCodes: NextPage = () => {
                 console.log(formObj);
                 router.push(
                   '/submit-an-export/about-the-waste/waste-codes-descriptions/ewc-code-radio',
-                ); // TODO
+                );
               }}
             >
               {({ handleSubmit }) => (

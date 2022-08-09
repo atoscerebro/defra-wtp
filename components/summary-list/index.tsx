@@ -9,6 +9,9 @@ export interface ISummaryListProps {
   border?: boolean;
 }
 
+/**
+ *  Use the summary list component to present pairs of related information, known as key-value pairs, in a list.
+ */
 export const SummaryList: FC<ISummaryListProps> = ({ rows, border = true }) => {
   return (
     <StyledComponents.SummaryList>
@@ -44,14 +47,15 @@ export const SummaryList: FC<ISummaryListProps> = ({ rows, border = true }) => {
               )
             )}
           </StyledComponents.SummaryListValue>
-          {row.action && (
-            <StyledComponents.SummaryListActions>
-              <Link href={row.action.link}>
-                {row.action.title}
-                <VisuallyHidden>{row.key.toLowerCase()}</VisuallyHidden>
-              </Link>
-            </StyledComponents.SummaryListActions>
-          )}
+          {row.action &&
+            row.action.map((action) => (
+              <StyledComponents.SummaryListActions key={action.link}>
+                <Link href={action.link}>
+                  {action.title}
+                  <VisuallyHidden>{row.key.toLowerCase()}</VisuallyHidden>
+                </Link>
+              </StyledComponents.SummaryListActions>
+            ))}
         </StyledComponents.SummaryListRow>
       ))}
     </StyledComponents.SummaryList>

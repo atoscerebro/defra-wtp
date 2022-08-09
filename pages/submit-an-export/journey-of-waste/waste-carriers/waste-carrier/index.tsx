@@ -11,7 +11,7 @@ import {
 import { useRouter } from 'next/router';
 import { Form, Field } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
-import { links } from '../constants';
+import { links } from '../../constants';
 import { WASTE_CARRIERS_IDS, WASTE_CARRIERS_LABELS } from './constants';
 
 const WasteCarrier = () => {

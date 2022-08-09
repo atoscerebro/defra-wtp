@@ -26,12 +26,12 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Exporter details',
-        link: '',
+        link: '/submit-an-export/exporter-and-importer/exporter-details/exporter-address',
         status: TaskListStatus.IN_PROGRESS,
       },
       {
         title: 'Importer details',
-        link: '',
+        link: '/submit-an-export/exporter-and-importer/importer-details/importer-address',
         status: TaskListStatus.IN_PROGRESS,
       },
     ],
@@ -41,22 +41,22 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Waste carriers',
-        link: 'submit-an-export/journey-of-waste/waste-carriers/waste-carrier',
+        link: '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier',
         status: TaskListStatus.NOT_STARTED,
       },
       {
         title: 'Waste collection details',
-        link: '',
+        link: '/submit-an-export/journey-of-waste/waste-collection-details/waste-carrier-collection-location',
         status: TaskListStatus.NOT_STARTED,
       },
       {
         title: 'Location waste leaves the UK',
-        link: '',
+        link: '/submit-an-export/journey-of-waste/waste-leave-location',
         status: TaskListStatus.NOT_STARTED,
       },
       {
         title: 'Countries waste will travel through',
-        link: '',
+        link: '/submit-an-export/journey-of-waste/waste-travel-locations',
         status: TaskListStatus.NOT_STARTED,
       },
     ],
@@ -66,8 +66,8 @@ export const taskListGroups = [
     sections: [
       {
         title: 'Recovery facility or laboratory',
-        link: '',
-        status: TaskListStatus.CANNOT_START_YET,
+        link: '/submit-an-export/treatment-of-waste/laboratory-details',
+        status: TaskListStatus.NOT_STARTED,
       },
     ],
   },

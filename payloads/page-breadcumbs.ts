@@ -12,5 +12,5 @@ export const uniqueRefCrumbs: IBreadcrumb[] = [
 export const prenotifyCrumbs: IBreadcrumb[] = [
   { label: 'Waste tracking service ', route: '/' },
   { label: 'Green list waste overview', route: '/' },
-  { label: 'Your reference number', route: '/submit-an-export' },
+  { label: 'Your reference number', route: '/submit-an-export/unique-ref' },
 ];
