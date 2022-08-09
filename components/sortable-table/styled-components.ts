@@ -11,6 +11,7 @@ export const SortTableButton = styled.button`
   border: unset;
   background: unset;
   padding: 0px ${SPACING.SCALE_2} 0px 0px;
+  font-size: inherit;
   font-weight: inherit;
   text-align: inherit;
 `;
@@ -69,7 +70,8 @@ export const SortTableCell = styled(Table.Cell)<{ formatType?: FormatType }>`
     `@supports (font-variant-numeric: tabular-nums) {
     font-feature-settings: normal;
     font-variant-numeric: tabular-nums;
-  } 
-  
+  }
+
   text-align: right;`}
+  vertical-align: middle;
 `;
