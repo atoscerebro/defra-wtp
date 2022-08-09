@@ -10,8 +10,11 @@ import {
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../components/base-task-page';
+import { ContactForm } from '../../../../components/contact-form';
 import { links } from '../constants';
 import { LABORATORY_DETAILS_IDS, LABORATORY_DETAILS_LABELS } from './constants';
+import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { countryList } from '../../../../components/form-pages/constants';
 
 const ImporterAddress = () => {
   const router = useRouter();
@@ -49,9 +52,12 @@ const ImporterAddress = () => {
               <FormGroup>
                 <Field name={LABORATORY_DETAILS_IDS.COUNTRY}>
                   {({ input }) => (
-                    <InputField {...input}>
-                      {LABORATORY_DETAILS_LABELS.COUNTRY}
-                    </InputField>
+                    <AccessibleAutocomplete
+                      {...input}
+                      options={countryList}
+                      hintText={`We'll also use this as the importing country.`}
+                      label={LABORATORY_DETAILS_LABELS.COUNTRY}
+                    />
                   )}
                 </Field>
               </FormGroup>
@@ -60,49 +66,13 @@ const ImporterAddress = () => {
                   <Fieldset.Legend>
                     <H3>Contact Details</H3>
                   </Fieldset.Legend>
-
-                  <FormGroup>
-                    <Field name={LABORATORY_DETAILS_IDS.FULL_NAME}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {LABORATORY_DETAILS_LABELS.FULL_NAME}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={LABORATORY_DETAILS_IDS.EMAIL}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {LABORATORY_DETAILS_LABELS.EMAIL}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={LABORATORY_DETAILS_IDS.PHONE_NUMBER}>
-                      {({ input }) => (
-                        <InputField
-                          {...input}
-                          hint="Include the country code for international numbers."
-                        >
-                          {LABORATORY_DETAILS_LABELS.PHONE_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={LABORATORY_DETAILS_IDS.FAX_NUMBER}>
-                      {({ input }) => (
-                        <InputField
-                          {...input}
-                          hint="Include the country code for international numbers."
-                        >
-                          {LABORATORY_DETAILS_LABELS.FAX_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
+                  <ContactForm
+                    hints={{
+                      phone:
+                        'Include the country code for international numbers.',
+                      fax: 'Include the country code for international numbers.',
+                    }}
+                  />
                 </Fieldset>
               </FormGroup>
               <div>

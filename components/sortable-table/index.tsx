@@ -12,6 +12,9 @@ export interface ISortableTableProps<T extends string> {
   children?: (renderProps: { actionCell: ICell<T> }) => ReactNode;
 }
 
+/**
+ * Use the sortable table component to let users sort columns in ascending or descending order.
+ */
 export const SortableTable = <T extends string>({
   caption,
   headers,

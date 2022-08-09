@@ -10,7 +10,10 @@ import {
 } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Form, Field } from 'react-final-form';
+import { AccessibleAutocomplete } from '../../../../../components/accessible-autocomplete/accessible-autocomplete';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { countryList } from '../../../../../components/form-pages/constants';
+import { ContactForm } from '../../../../../components/contact-form';
 import { links } from '../../constants';
 import { WASTE_CARRIERS_IDS, WASTE_CARRIERS_LABELS } from './constants';
 
@@ -54,9 +57,13 @@ const WasteCarrier = () => {
               <FormGroup>
                 <Field name={WASTE_CARRIERS_IDS.COUNTRY}>
                   {({ input }) => (
-                    <InputField {...input}>
-                      {WASTE_CARRIERS_LABELS.COUNTRY}
-                    </InputField>
+                    <>
+                      <AccessibleAutocomplete
+                        {...input}
+                        options={countryList}
+                        label={WASTE_CARRIERS_LABELS.COUNTRY}
+                      />
+                    </>
                   )}
                 </Field>
               </FormGroup>
@@ -65,50 +72,13 @@ const WasteCarrier = () => {
                   <Fieldset.Legend>
                     <H3>Contact Details</H3>
                   </Fieldset.Legend>
-                  <FormGroup>
-                    <Field name={WASTE_CARRIERS_IDS.FULL_NAME}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {WASTE_CARRIERS_LABELS.FULL_NAME}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={WASTE_CARRIERS_IDS.EMAIL_ADDRESS}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {WASTE_CARRIERS_LABELS.EMAIL_ADDRESS}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={WASTE_CARRIERS_IDS.PHONE_NUMBER}>
-                      {({ input }) => (
-                        <InputField
-                          {...input}
-                          input={{ type: 'tel' }}
-                          hint="Include the country code for international numbers."
-                        >
-                          {WASTE_CARRIERS_LABELS.PHONE_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={WASTE_CARRIERS_IDS.FAX_NUMBER}>
-                      {({ input }) => (
-                        <InputField
-                          {...input}
-                          input={{ type: 'tel' }}
-                          hint="Include the country code for international numbers."
-                        >
-                          {WASTE_CARRIERS_LABELS.FAX_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
+                  <ContactForm
+                    hints={{
+                      phone:
+                        'Include the country code for international numbers.',
+                      fax: 'Include the country code for international numbers.',
+                    }}
+                  />
                 </Fieldset>
               </FormGroup>
               <div>

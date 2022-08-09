@@ -8,6 +8,9 @@ export interface ITaskListProps {
   groups: ITaskListGroup[];
 }
 
+/**
+ * Use a task list page for longer transactions involving multiple tasks that users may need to complete over a number of sessions.
+ */
 export const TaskList: FC<ITaskListProps> = ({ groups }) => {
   return (
     <StyledComponents.TaskList listStyleType="none">
@@ -22,15 +25,15 @@ export const TaskList: FC<ITaskListProps> = ({ groups }) => {
           <StyledComponents.TaskListItems listStyleType="none">
             {group.sections.map((section) => (
               <StyledComponents.TaskListItem key={section.title}>
-                {section.status === TaskListStatus.CANNOT_START_YET ? (
+                {section.status.value === TaskListStatus.CANNOT_START_YET ? (
                   <StyledComponents.TaskListParagraph>
                     {section.title}
                   </StyledComponents.TaskListParagraph>
                 ) : (
                   <Link href={section.link}>{section.title}</Link>
                 )}
-                <StyledComponents.TaskListTag status={section.status}>
-                  {section.status}
+                <StyledComponents.TaskListTag status={section.status.value}>
+                  {section.status.label}
                 </StyledComponents.TaskListTag>
               </StyledComponents.TaskListItem>
             ))}

@@ -18,6 +18,7 @@ import {
 import { Link } from '../../../../../components/link';
 import { useRouter } from 'next/router';
 import { links } from '../../constants';
+import { ContactForm } from '../../../../../components/contact-form';
 
 const WasteCarrierCollectionContact = () => {
   const router = useRouter();
@@ -63,45 +64,7 @@ const WasteCarrierCollectionContact = () => {
                   <Fieldset.Legend>
                     <H3>Contact Details</H3>
                   </Fieldset.Legend>
-
-                  <FormGroup>
-                    <Field name={WASTE_CARRIER_COLLECT_DETAILS_IDS.FULL_NAME}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {WASTE_CARRIER_COLLECT_DETAILS_LABELS.FULL_NAME}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={WASTE_CARRIER_COLLECT_DETAILS_IDS.EMAIL}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {WASTE_CARRIER_COLLECT_DETAILS_LABELS.EMAIL}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field
-                      name={WASTE_CARRIER_COLLECT_DETAILS_IDS.PHONE_NUMBER}
-                    >
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {WASTE_CARRIER_COLLECT_DETAILS_LABELS.PHONE_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={WASTE_CARRIER_COLLECT_DETAILS_IDS.FAX_NUMBER}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {WASTE_CARRIER_COLLECT_DETAILS_LABELS.FAX_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
+                  <ContactForm />
                 </Fieldset>
               </FormGroup>
               <div>
