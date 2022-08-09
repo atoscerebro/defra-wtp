@@ -63,4 +63,19 @@ export const TRANSLATIONS_EN = {
   [TRANSLATION_KEYS.notStartedYet]: 'Not started yet',
   [TRANSLATION_KEYS.inProgress]: 'In progress',
   [TRANSLATION_KEYS.completed]: 'Completed',
+
+
+  [TRANSLATION_KEYS.back]: 'Back',
+  [TRANSLATION_KEYS.returnToSubmitAnExport]: 'Return to submit an export',
+  [TRANSLATION_KEYS.whatIsTheWasteCode]: 'What is the waste code?',
+  [TRANSLATION_KEYS.selectOneOption]: 'Select one option',
+
+
+  [TRANSLATION_KEYS.startTypingThenChooseFromTheList]: 'Start typing, then choose from the list',
+  [TRANSLATION_KEYS.or]: 'or',
+  [TRANSLATION_KEYS.notApplicable]: 'Not applicable',
+  [TRANSLATION_KEYS.onlySelectThisOptionIfTheWasteIsGoingToALaboratory]: 'Only select this option if the waste is going to a laboratory',
+  [TRANSLATION_KEYS.saveAndContinue]: 'Save and continue',
+
+
 };

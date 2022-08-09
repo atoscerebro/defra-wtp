@@ -62,4 +62,12 @@ export const TRANSLATIONS_CYM = {
   [TRANSLATION_KEYS.notStartedYet]: 'Heb ei gychwyn eto',
   [TRANSLATION_KEYS.inProgress]: 'Ar y gweill',
   [TRANSLATION_KEYS.completed]: 'Cwblhawyd',
+  [TRANSLATION_KEYS.back]: 'Yn ol',
+  [TRANSLATION_KEYS.returnToSubmitAnExport]: 'Dychwelyd i gyflwyno allforiad',
+  [TRANSLATION_KEYS.whatIsTheWasteCode]: "Beth yw'r cod gwastraff?",
+  [TRANSLATION_KEYS.selectOneOption]: 'Dewiswch un opsiwn',
+  [TRANSLATION_KEYS.startTypingThenChooseFromTheList]: "Dechreuwch deipio, yna dewiswch o'r rhestr",
+[TRANSLATION_KEYS.or]: 'neu',
+[TRANSLATION_KEYS.notApplicable]: 'Amherthnasol',
+[TRANSLATION_KEYS.onlySelectThisOptionIfTheWasteIsGoingToALaboratory]: "Dewiswch yr opsiwn hwn dim ond os yw'r gwastraff yn mynd i labordy",
 };

@@ -55,4 +55,16 @@ export const TRANSLATION_KEYS = {
   notStartedYet: 'notStartedYet',
   inProgress: 'inProgress',
   completed: 'completed',
+
+  // About the waste
+  back: 'back',
+  returnToSubmitAnExport: 'returnToSubmitAnExport',
+  whatIsTheWasteCode: 'whatIsTheWasteCode',
+  selectOneOption: 'selectOneOption',
+  startTypingThenChooseFromTheList: 'startTypingThenChooseFromTheList',
+  or: 'or',
+  notApplicable: 'Not applicable',
+  onlySelectThisOptionIfTheWasteIsGoingToALaboratory: 'onlySelectThisOptionIfTheWasteIsGoingToALaboratory',
+
+
 };

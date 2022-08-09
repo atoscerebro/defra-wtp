@@ -22,10 +22,13 @@ import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
 import { RadiosConditional } from '../../../../components/radios-conditional';
+import { useTranslation } from 'react-i18next';
+import { TRANSLATION_KEYS } from '../../../../translations/constants';
 
 const WasteCodes: NextPage = () => {
   const [wasteCode, setWasteCode] = useState('');
   const router = useRouter();
+  const {t} = useTranslation();
 
   return (
     <>
@@ -43,9 +46,9 @@ const WasteCodes: NextPage = () => {
               {({ handleSubmit }) => (
                 <FormGroup>
                   <form onSubmit={handleSubmit}>
-                    <H1 size="LARGE">What is the waste code?</H1>
+                    <H1 size="LARGE">{t(TRANSLATION_KEYS.whatIsTheWasteCode)}</H1>
                     <CaptionWrapper>
-                      <Caption size="M">Select one option.</Caption>
+                      <Caption size="M">{t(TRANSLATION_KEYS.selectOneOption)}</Caption>
                     </CaptionWrapper>
                     <Field
                       name="waste-code-radio"
@@ -61,7 +64,7 @@ const WasteCodes: NextPage = () => {
                               {...input}
                               options={baselAnnexIX}
                               hintText={
-                                'Start typing, then choose from the list'
+                                t(TRANSLATION_KEYS.startTypingThenChooseFromTheList)
                               }
                             />
                           )}
@@ -84,8 +87,7 @@ const WasteCodes: NextPage = () => {
                               {...input}
                               options={oecd}
                               hintText={
-                                'Start typing, then choose from the list'
-                              }
+                                t(TRANSLATION_KEYS.startTypingThenChooseFromTheList)                              }
                             />
                           )}
                         >
@@ -107,8 +109,7 @@ const WasteCodes: NextPage = () => {
                               {...input}
                               options={annexIIIA}
                               hintText={
-                                'Start typing, then choose from the list'
-                              }
+                                t(TRANSLATION_KEYS.startTypingThenChooseFromTheList)                              }
                             />
                           )}
                         >
@@ -130,8 +131,7 @@ const WasteCodes: NextPage = () => {
                               {...input}
                               options={annexIIIB}
                               hintText={
-                                'Start typing, then choose from the list'
-                              }
+                                t(TRANSLATION_KEYS.startTypingThenChooseFromTheList)                              }
                             />
                           )}
                         >
@@ -149,7 +149,7 @@ const WasteCodes: NextPage = () => {
                         )}
                       </Field>
                     )}
-                    <Paragraph>or</Paragraph>
+                    <Paragraph>{t(TRANSLATION_KEYS.or) as string}</Paragraph>
                     <Field
                       name="waste-code-radio"
                       type="radio"
@@ -159,13 +159,13 @@ const WasteCodes: NextPage = () => {
                         <Radio
                           {...input}
                           name="waste-code"
-                          hint="Only select this option if the waste is going to a laboratory"
+                          hint={t(TRANSLATION_KEYS.onlySelectThisOptionIfTheWasteIsGoingToALaboratory)}
                         >
-                          Not applicable
+                         {t(TRANSLATION_KEYS.notApplicable)}
                         </Radio>
                       )}
                     </Field>
-                    <Button type="submit">Save and continue</Button>
+                    <Button type="submit">{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
                   </form>
                 </FormGroup>
               )}
