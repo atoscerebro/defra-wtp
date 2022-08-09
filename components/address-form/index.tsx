@@ -13,6 +13,10 @@ export interface IAddressFormProps {
   handleSubmit: (address: IAddress) => void;
 }
 
+/**
+ * Use the address form to allow users to choose between searching for and
+ * manually inputting their address.
+ */
 export const AddressForm: FC<IAddressFormProps> = ({ hints, handleSubmit }) => {
   const [viewKey, setViewKey] = useState(ADDRESS_FORM_VIEW_KEY.SEARCH);
   const [postcode, setPostcode] = useState('');

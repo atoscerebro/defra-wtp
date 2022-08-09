@@ -19,7 +19,7 @@ const rows = [
   {
     key: 'Collection date',
     value: 'Estimate, 14 July 2022',
-    action: { title: 'Update', link: '/' },
+    action: [{ title: 'Update', link: '/' }],
   },
 ];
 

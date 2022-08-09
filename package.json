@@ -7,10 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@govuk-react/icon-crown": "^0.0.7",
+    "accessible-autocomplete": "^2.0.4",
     "final-form": "^4.20.7",
     "govuk-colours": "^1.1.0",
     "govuk-react": "^0.10.1",
@@ -27,6 +30,15 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.3.0",
@@ -35,6 +47,7 @@
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "^5.1.25",
+    "babel-loader": "^8.2.5",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3",
     "jest": "^28.1.3",
