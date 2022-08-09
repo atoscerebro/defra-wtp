@@ -9,7 +9,6 @@ import {
   Heading,
   Fieldset,
 } from 'govuk-react';
-import { DisplayInputField } from '../../../../../components/display-input-field';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import {
   CaptionWrapper,

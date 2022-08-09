@@ -1,12 +1,27 @@
 import { NextPage } from 'next';
-import { H1, FormGroup, Radio, Paragraph, Caption, Button } from 'govuk-react';
-import { DisplayInputField } from '../../../../components/display-input-field';
+import {
+  H1,
+  FormGroup,
+  Radio,
+  Paragraph,
+  Caption,
+  Button,
+  LabelText,
+} from 'govuk-react';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { useState } from 'react';
 import { CaptionWrapper } from '../../../../components/form-pages/styled-components';
-import { WASTE_CODES_LABELS } from '../../../../components/form-pages/constants';
+import {
+  WASTE_CODES_LABELS,
+  baselAnnexIX,
+  oecd,
+  annexIIIA,
+  annexIIIB,
+} from '../../../../components/form-pages/constants';
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
+import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { RadiosConditional } from '../../../../components/radios-conditional';
 
 const WasteCodes: NextPage = () => {
   const [wasteCode, setWasteCode] = useState('');
@@ -38,103 +53,98 @@ const WasteCodes: NextPage = () => {
                       value={WASTE_CODES_LABELS.BASEL_ANNEX_IX}
                     >
                       {({ input }) => (
-                        <Radio
+                        <RadiosConditional
                           {...input}
-                          name="waste-code"
-                          onClick={() =>
-                            setWasteCode(WASTE_CODES_LABELS.BASEL_ANNEX_IX)
-                          }
+                          ariaId={''}
+                          renderConditional={() => (
+                            <AccessibleAutocomplete
+                              {...input}
+                              options={baselAnnexIX}
+                              hintText={
+                                'Start typing, then choose from the list'
+                              }
+                            />
+                          )}
                         >
                           {WASTE_CODES_LABELS.BASEL_ANNEX_IX}
-                        </Radio>
+                        </RadiosConditional>
                       )}
                     </Field>
-                    {wasteCode === WASTE_CODES_LABELS.BASEL_ANNEX_IX && (
-                      <Field name="waste-code-input">
-                        {({ input }) => (
-                          <DisplayInputField
-                            {...input}
-                            label={'Start typing, then choose from the list'}
-                          />
-                        )}
-                      </Field>
-                    )}
                     <Field
                       name="waste-code-radio"
                       type="radio"
                       value={WASTE_CODES_LABELS.OECD}
                     >
                       {({ input }) => (
-                        <Radio
+                        <RadiosConditional
                           {...input}
-                          name="waste-code"
-                          onClick={() => setWasteCode(WASTE_CODES_LABELS.OECD)}
+                          ariaId={''}
+                          renderConditional={() => (
+                            <AccessibleAutocomplete
+                              {...input}
+                              options={oecd}
+                              hintText={
+                                'Start typing, then choose from the list'
+                              }
+                            />
+                          )}
                         >
                           {WASTE_CODES_LABELS.OECD}
-                        </Radio>
+                        </RadiosConditional>
                       )}
                     </Field>
-                    {wasteCode === WASTE_CODES_LABELS.OECD && (
-                      <Field name="waste-code-input">
-                        {({ input }) => (
-                          <DisplayInputField
-                            {...input}
-                            label={'Start typing, then choose from the list'}
-                          />
-                        )}
-                      </Field>
-                    )}
                     <Field
                       name="waste-code-radio"
                       type="radio"
                       value={WASTE_CODES_LABELS.ANNEX_IIIA}
                     >
                       {({ input }) => (
-                        <Radio
+                        <RadiosConditional
                           {...input}
-                          name="waste-code"
-                          onClick={() =>
-                            setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIA)
-                          }
+                          ariaId={''}
+                          renderConditional={() => (
+                            <AccessibleAutocomplete
+                              {...input}
+                              options={annexIIIA}
+                              hintText={
+                                'Start typing, then choose from the list'
+                              }
+                            />
+                          )}
                         >
                           {WASTE_CODES_LABELS.ANNEX_IIIA}
-                        </Radio>
+                        </RadiosConditional>
                       )}
                     </Field>
-                    {wasteCode === WASTE_CODES_LABELS.ANNEX_IIIA && (
-                      <Field name="waste-code-input">
-                        {({ input }) => (
-                          <DisplayInputField
-                            {...input}
-                            label={'Start typing, then choose from the list'}
-                          />
-                        )}
-                      </Field>
-                    )}
-
                     <Field
                       name="waste-code-radio"
                       type="radio"
                       value={WASTE_CODES_LABELS.ANNEX_IIIB}
                     >
                       {({ input }) => (
-                        <Radio
+                        <RadiosConditional
                           {...input}
-                          name="waste-code"
-                          onClick={() =>
-                            setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIB)
-                          }
+                          ariaId={''}
+                          renderConditional={() => (
+                            <AccessibleAutocomplete
+                              {...input}
+                              options={annexIIIB}
+                              hintText={
+                                'Start typing, then choose from the list'
+                              }
+                            />
+                          )}
                         >
                           {WASTE_CODES_LABELS.ANNEX_IIIB}
-                        </Radio>
+                        </RadiosConditional>
                       )}
                     </Field>
                     {wasteCode === WASTE_CODES_LABELS.ANNEX_IIIB && (
                       <Field name="waste-code-input">
                         {({ input }) => (
-                          <DisplayInputField
+                          <AccessibleAutocomplete
                             {...input}
-                            label={'Start typing, then choose from the list'}
+                            options={baselAnnexIX}
                           />
                         )}
                       </Field>

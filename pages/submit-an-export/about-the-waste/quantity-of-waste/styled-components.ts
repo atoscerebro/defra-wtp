@@ -8,6 +8,7 @@ export const QuantityInputWrapper = styled.div`
 
 export const InputBringToFront = styled.div`
   z-index: 9;
+  min-width: 8rem;
 `;
 
 export const InputMeasurement = styled.div`

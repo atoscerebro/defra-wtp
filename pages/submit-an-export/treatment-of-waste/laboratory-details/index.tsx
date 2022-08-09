@@ -13,6 +13,8 @@ import { BaseTaskPage } from '../../../../components/base-task-page';
 import { ContactForm } from '../../../../components/contact-form';
 import { links } from '../constants';
 import { LABORATORY_DETAILS_IDS, LABORATORY_DETAILS_LABELS } from './constants';
+import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { countryList } from '../../../../components/form-pages/constants';
 
 const ImporterAddress = () => {
   const router = useRouter();
@@ -50,9 +52,12 @@ const ImporterAddress = () => {
               <FormGroup>
                 <Field name={LABORATORY_DETAILS_IDS.COUNTRY}>
                   {({ input }) => (
-                    <InputField {...input}>
-                      {LABORATORY_DETAILS_LABELS.COUNTRY}
-                    </InputField>
+                    <AccessibleAutocomplete
+                      {...input}
+                      options={countryList}
+                      hintText={`We'll also use this as the importing country.`}
+                      label={LABORATORY_DETAILS_LABELS.COUNTRY}
+                    />
                   )}
                 </Field>
               </FormGroup>
