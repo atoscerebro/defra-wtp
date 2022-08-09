@@ -44,7 +44,7 @@ const UniqueRef: NextPage = () => {
                     {({ input }) => (
                       <RadiosConditional
                         {...input}
-                        id={'conditional-contact'}
+                        ariaId={'conditional-contact'}
                         renderConditional={() => (
                           <TwoThirdsInputField>
                             Enter your reference number
