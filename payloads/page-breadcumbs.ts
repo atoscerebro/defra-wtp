@@ -1,16 +1,16 @@
 import { IBreadcrumb } from '../components/page-breadcrumbs';
 
 export const homeCrumbs: IBreadcrumb[] = [
-  { label: 'Waste tracking service ', route: '/' },
+  { label: 'wasteTrackingService', route: '/' },
 ];
 
 export const uniqueRefCrumbs: IBreadcrumb[] = [
-  { label: 'Waste tracking service ', route: '/' },
-  { label: 'Green list waste overview', route: '/' },
+  { label: 'wasteTrackingService', route: '/' },
+  { label: 'greenListWasteOverview', route: '/' },
 ];
 
 export const prenotifyCrumbs: IBreadcrumb[] = [
-  { label: 'Waste tracking service ', route: '/' },
-  { label: 'Green list waste overview', route: '/' },
-  { label: 'Your reference number', route: '/submit-an-export/unique-ref' },
+  { label: 'wasteTrackingService', route: '/' },
+  { label: 'greenListWasteOverview', route: '/' },
+  { label: 'yourReferenceNumber', route: '/submit-an-export/unique-ref' },
 ];

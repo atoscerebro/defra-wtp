@@ -1,34 +1,59 @@
+import { TRANSLATION_KEYS } from '../constants';
+
 export const TRANSLATIONS_CYM = {
   // Homepage translation:
-  greenListWasteOverview: 'Trosolwg gwastraff rhestr werdd',
-  tellUsAboutAnExport: 'Dywedwch wrthym am allforio',
-  submitAnExport: 'Cyflwyno allforio',
-  continueADraftExport: 'Parhau ag allforio drafft',
-  allExports: 'Pob allforion',
-  updateAnExportWithActualDetails:
+  [TRANSLATION_KEYS.greenListWasteOverview]: 'Trosolwg gwastraff rhestr werdd',
+  [TRANSLATION_KEYS.tellUsAboutAnExport]: 'Dywedwch wrthym am allforio',
+  [TRANSLATION_KEYS.submitAnExport]: 'Cyflwyno allforio',
+  [TRANSLATION_KEYS.continueADraftExport]: 'Parhau ag allforio drafft',
+  [TRANSLATION_KEYS.allExports]: 'Pob allforion',
+  [TRANSLATION_KEYS.updateAnExportWithActualDetails]:
     'Diweddaru allforyn gyda manylion gwirioneddol',
-  viewSubmittedExports: 'Gweld allforion a gyflwynwyd',
+  [TRANSLATION_KEYS.viewSubmittedExports]: 'Gweld allforion a gyflwynwyd',
   //Footer
-  accessibilityStatement: 'Datganiad hygyrchedd',
-  cookies: 'Cwcis',
-  privacyNotice: 'Hysbysiad preifatrwydd',
-  clearData: 'Data clir',
-  crownCopyright: 'Hawlfraint y Goron',
+  [TRANSLATION_KEYS.accessibilityStatement]: 'Datganiad hygyrchedd',
+  [TRANSLATION_KEYS.cookies]: 'Cwcis',
+  [TRANSLATION_KEYS.privacyNotice]: 'Hysbysiad preifatrwydd',
+  [TRANSLATION_KEYS.clearData]: 'Data clir',
+  [TRANSLATION_KEYS.crownCopyright]: 'Hawlfraint y Goron',
 
   //Header
-  exportGreenListWaste: 'Allforio gwastraff rhestr werdd',
+  [TRANSLATION_KEYS.exportGreenListWaste]: 'Allforio gwastraff rhestr werdd',
 
   //Unique reference page
-  yourReferenceNumber: 'Eich rhif cyfeirnod',
-  doYouWantToAddYourOwnReferenceNumberToThisExport:
+  [TRANSLATION_KEYS.yourReferenceNumber]: 'Eich rhif cyfeirnod',
+  [TRANSLATION_KEYS.doYouWantToAddYourOwnReferenceNumberToThisExport]:
     'Ydych chi am ychwanegu eich rhif cyfeirnod eich hun at yr allforyn hwn?',
-  yes: 'Oes',
-  no: 'Nac ydw',
-  saveAndContinue: 'Achub a pharhau',
-  enterYourReferenceNumber: 'Rhowch eich rhif cyfeirnod',
-  submissionIncomplete: 'Cyflwyniad Anghyflawn',
-  submissionComplete: "Cyflwyniad wedi'i gwblhau",
-  youHaveCompleted: 'Rydych chi wedi cwblhau',
-  of: 'o',
-  sections: 'adrannau',
+  [TRANSLATION_KEYS.yes]: 'Oes',
+  [TRANSLATION_KEYS.no]: 'Nac ydw',
+  [TRANSLATION_KEYS.saveAndContinue]: 'Achub a pharhau',
+  [TRANSLATION_KEYS.enterYourReferenceNumber]: 'Rhowch eich rhif cyfeirnod',
+  [TRANSLATION_KEYS.submissionIncomplete]: 'Cyflwyniad Anghyflawn',
+  [TRANSLATION_KEYS.submissionComplete]: "Cyflwyniad wedi'i gwblhau",
+  [TRANSLATION_KEYS.youHaveCompleted]: 'Rydych chi wedi cwblhau',
+  [TRANSLATION_KEYS.of]: 'o',
+  [TRANSLATION_KEYS.sections]: 'adrannau',
+
+  //Task list groups
+  [TRANSLATION_KEYS.aboutTheWaste]: 'Am y gwastraff',
+  [TRANSLATION_KEYS.wasteCodesAndDescriptions]:
+    'Codau a disgrifiadau gwastraff',
+  [TRANSLATION_KEYS.quantityOfWaste]: 'Swm o wastraff',
+  [TRANSLATION_KEYS.collectionDate]: 'Dyddiad casglu',
+  [TRANSLATION_KEYS.exporterAndImporter]: 'Allforiwr a mewnforiwr',
+  [TRANSLATION_KEYS.exporterDetails]: 'Manylion yr allforiwr',
+  [TRANSLATION_KEYS.importerDetails]: 'Manylion y mewnforiwr',
+  [TRANSLATION_KEYS.journeyOfWaste]: 'Taith gwastraff',
+  [TRANSLATION_KEYS.wasteCarriers]: 'Cludwyr gwastraff',
+  [TRANSLATION_KEYS.wasteCollectionDetails]: 'Manylion casglu gwastraff',
+  [TRANSLATION_KEYS.locationWasteLeavesTheUk]:
+    'Mae gwastraff lleoliad yn gadael y DU',
+  [TRANSLATION_KEYS.countriesWasteWillTravelThrough]:
+    'Bydd gwastraff gwledydd yn teithio drwodd',
+  [TRANSLATION_KEYS.treatmentOfWaste]: 'Trin gwastraff',
+  [TRANSLATION_KEYS.recoveryFacilityOrLaboratory]:
+    'Cyfleuster adfer neu labordy',
+
+  //BreadCrumbs
+  [TRANSLATION_KEYS.wasteTrackingService]: 'Gwasanaeth olrhain gwastraff',
 };

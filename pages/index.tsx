@@ -4,17 +4,20 @@ import { AddressForm } from '../components/address-form';
 import { PageBreadcrumbs } from '../components/page-breadcrumbs';
 import { homeCrumbs } from '../payloads/page-breadcumbs';
 import { HomepageLink, LinkWrapper, HomePageGroup } from './styled-components';
-
-import React from 'react';
+import React, { useMemo } from 'react';
+import { translateCrumbs } from '../translations/utils';
 import { useTranslation } from 'react-i18next';
 import '../translations/i18n';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
+
+  const translatedCrumbs = useMemo(() => translateCrumbs(homeCrumbs, t), [t]);
+
   return (
     <Main>
       <PageBreadcrumbs
-        crumbs={homeCrumbs}
+        crumbs={translatedCrumbs}
         currentPage={t('greenListWasteOverview')}
       />
 
