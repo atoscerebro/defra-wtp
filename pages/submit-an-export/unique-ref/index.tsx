@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { ButtonWrapper } from '../../../components/form-pages/styled-components';
 import { uniqueRefCrumbs } from '../../../payloads/page-breadcumbs';
 import { PageBreadcrumbs } from '../../../components/page-breadcrumbs';
+import { t } from 'i18next';
 
 // const PRENOTIFY_ROUTE = 'prenotify';
 const PRENOTIFY_ROUTE = '/submit-export-task-list';
@@ -24,7 +25,7 @@ const UniqueRef: NextPage = () => {
     <Main>
       <PageBreadcrumbs
         crumbs={uniqueRefCrumbs}
-        currentPage="Your reference number"
+        currentPage={t('yourReferenceNumber')}
       />
       <GridRow>
         <GridCol setWidth="two-thirds">
@@ -39,7 +40,7 @@ const UniqueRef: NextPage = () => {
               <FormGroup>
                 <form onSubmit={handleSubmit}>
                   <H1 size="LARGE">
-                    Do you want to add your own reference number to this export?
+                    {t('doYouWantToAddYourOwnReferenceNumberToThisExport')}
                   </H1>
                   <Field name="ref-number-answer" type="radio" value="yes">
                     {({ input }) => (
@@ -49,7 +50,7 @@ const UniqueRef: NextPage = () => {
                           setUsingOwnRef(true);
                         }}
                       >
-                        Yes
+                        {t('yes') as string}
                       </Radio>
                     )}
                   </Field>
@@ -58,7 +59,7 @@ const UniqueRef: NextPage = () => {
                       {({ input }) => (
                         <DisplayInputField
                           {...input}
-                          label={'Enter your reference number'}
+                          label={t('enterYourReferenceNumber')}
                         />
                       )}
                     </Field>
@@ -76,12 +77,14 @@ const UniqueRef: NextPage = () => {
                           setUsingOwnRef(false);
                         }}
                       >
-                        No
+                        {t('no') as string}
                       </Radio>
                     )}
                   </Field>
                   <ButtonWrapper>
-                    <Button type="submit">Save and continue</Button>
+                    <Button type="submit">
+                      {t('saveAndContinue') as string}
+                    </Button>
                   </ButtonWrapper>
                 </form>
               </FormGroup>

@@ -9,6 +9,13 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    interpolation: {
+      format: function (value) {
+        if (typeof value === 'number')
+          return new Intl.NumberFormat().format(value);
+        return value;
+      },
+    },
     resources: {
       en: {
         translation: TRANSLATIONS_EN,
@@ -19,6 +26,6 @@ i18n
     },
   });
 
-i18n.changeLanguage('en');
+i18n.changeLanguage('cym');
 
 export default i18n;

@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { HeaderWrapper } from './styled-components';
 import { PageBreadcrumbs } from '../../components/page-breadcrumbs';
 import { prenotifyCrumbs } from '../../payloads/page-breadcumbs';
+import { t } from 'i18next';
+import { stringify } from 'querystring';
 
 const SubmitExportTaskList: NextPage = () => {
   const maxActions = 4; //temporary
@@ -16,19 +18,27 @@ const SubmitExportTaskList: NextPage = () => {
       <HeaderWrapper>
         <PageBreadcrumbs
           crumbs={prenotifyCrumbs}
-          currentPage="Submit an export"
+          currentPage={t('submitAnExport')}
         />
       </HeaderWrapper>
-      <H1 size="LARGE">Submit an export</H1>
+      <H1 size="LARGE">{t('submitAnExport')}</H1>
       <HeaderWrapper>
         <H1 size="SMALL">
           {actionsNum < maxActions
-            ? 'Submission incomplete'
-            : 'Submission complete'}
+            ? t('submissionIncomplete')
+            : t('submissionComplete')}
         </H1>
       </HeaderWrapper>
       <LeadParagraph>
-        You have completed {actionsNum} of {maxActions} sections
+        {t('youHaveCompleted') +
+          ' ' +
+          actionsNum +
+          ' ' +
+          t('of') +
+          ' ' +
+          maxActions +
+          ' ' +
+          t('sections')}
       </LeadParagraph>
       <GridCol>
         <GridRow>

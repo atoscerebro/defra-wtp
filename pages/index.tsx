@@ -25,7 +25,7 @@ const Home: NextPage = () => {
 
         <LinkWrapper>
           <HomepageLink href={'submit-an-export/unique-ref'}>
-            Submit an export
+            {t('submitAnExport')}
           </HomepageLink>
         </LinkWrapper>
 
