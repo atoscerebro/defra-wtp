@@ -8,6 +8,9 @@ export interface ITaskListProps {
   groups: ITaskListGroup[];
 }
 
+/**
+ * Use a task list page for longer transactions involving multiple tasks that users may need to complete over a number of sessions.
+ */
 export const TaskList: FC<ITaskListProps> = ({ groups }) => {
   return (
     <StyledComponents.TaskList listStyleType="none">
