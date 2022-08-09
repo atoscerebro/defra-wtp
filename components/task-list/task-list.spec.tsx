@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import { TaskList } from '.';
+import { TRANSLATION_KEYS } from '../../translations/constants';
 import { TaskListStatus } from './types';
 
 const groups = [
@@ -9,12 +10,18 @@ const groups = [
       {
         title: 'Waste codes and descriptions',
         link: '/',
-        status: TaskListStatus.COMPLETED,
+        status: {
+          label: TRANSLATION_KEYS.completed,
+          value: TaskListStatus.COMPLETED,
+        },
       },
       {
         title: 'Quantity of waste',
         link: '/',
-        status: TaskListStatus.CANNOT_START_YET,
+        status: {
+          label: TRANSLATION_KEYS.cannotStart,
+          value: TaskListStatus.CANNOT_START_YET,
+        },
       },
     ],
   },
@@ -24,17 +31,26 @@ const groups = [
       {
         title: 'Exporter details',
         link: '/',
-        status: TaskListStatus.IN_PROGRESS,
+        status: {
+          label: TRANSLATION_KEYS.inProgress,
+          value: TaskListStatus.IN_PROGRESS,
+        },
       },
       {
         title: 'Importer details',
         link: '/',
-        status: TaskListStatus.IN_PROGRESS,
+        status: {
+          label: TRANSLATION_KEYS.inProgress,
+          value: TaskListStatus.IN_PROGRESS,
+        },
       },
       {
         title: 'Collection date',
         link: '/',
-        status: TaskListStatus.CANNOT_START_YET,
+        status: {
+          label: TRANSLATION_KEYS.cannotStart,
+          value: TaskListStatus.CANNOT_START_YET,
+        },
       },
     ],
   },
@@ -56,7 +72,7 @@ describe('TaskList Component', () => {
     const { links, notLinks } = groups.reduce(
       (out: { links: string[]; notLinks: string[] }, curr) => {
         curr.sections.forEach((section) =>
-          section.status === TaskListStatus.CANNOT_START_YET
+          section.status.value === TaskListStatus.CANNOT_START_YET
             ? out.notLinks.push(section.title)
             : out.links.push(section.title),
         );

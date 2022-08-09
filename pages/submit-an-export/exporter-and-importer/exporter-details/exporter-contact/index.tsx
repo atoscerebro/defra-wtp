@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { ContactForm } from '../../../../../components/contact-form';
 import { LineBreak } from '../../../../../components/line-break';
 import { links } from '../../constants';
 import { EXPORTER_CONTACT_IDS, EXPORTER_CONTACT_LABELS } from './constants';
@@ -54,43 +55,7 @@ const ExporterContact = () => {
                   <Fieldset.Legend>
                     <H3>Contact Details</H3>
                   </Fieldset.Legend>
-
-                  <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.FULL_NAME}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.FULL_NAME}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.EMAIL}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.EMAIL}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.PHONE_NUMBER}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.PHONE_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Field name={EXPORTER_CONTACT_IDS.FAX_NUMBER}>
-                      {({ input }) => (
-                        <InputField {...input}>
-                          {EXPORTER_CONTACT_LABELS.FAX_NUMBER}
-                        </InputField>
-                      )}
-                    </Field>
-                  </FormGroup>
+                  <ContactForm />
                 </Fieldset>
               </FormGroup>
               <div>

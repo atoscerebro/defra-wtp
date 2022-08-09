@@ -1,16 +1,20 @@
 import { IBreadcrumb } from '../components/page-breadcrumbs';
+import { TRANSLATION_KEYS } from '../translations/constants';
 
 export const homeCrumbs: IBreadcrumb[] = [
-  { label: 'Waste tracking service ', route: '/' },
+  { label: TRANSLATION_KEYS.wasteTrackingService, route: '/' },
 ];
 
 export const uniqueRefCrumbs: IBreadcrumb[] = [
-  { label: 'Waste tracking service ', route: '/' },
-  { label: 'Green list waste overview', route: '/' },
+  { label: TRANSLATION_KEYS.wasteTrackingService, route: '/' },
+  { label: TRANSLATION_KEYS.greenListWasteOverview, route: '/' },
 ];
 
 export const prenotifyCrumbs: IBreadcrumb[] = [
-  { label: 'Waste tracking service ', route: '/' },
-  { label: 'Green list waste overview', route: '/' },
-  { label: 'Your reference number', route: '/submit-an-export/unique-ref' },
+  { label: TRANSLATION_KEYS.wasteTrackingService, route: '/' },
+  { label: TRANSLATION_KEYS.greenListWasteOverview, route: '/' },
+  {
+    label: TRANSLATION_KEYS.yourReferenceNumber,
+    route: '/submit-an-export/unique-ref',
+  },
 ];

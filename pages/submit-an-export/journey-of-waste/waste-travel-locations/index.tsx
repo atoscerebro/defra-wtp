@@ -1,7 +1,8 @@
-import { Button, FormGroup, H2, HintText, Radio } from 'govuk-react';
+import { Button, FormGroup, H2, HintText, Radio, TextArea } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../components/base-task-page';
+import { RadiosConditional } from '../../../../components/radios-conditional';
 import { links } from '../../../submit-export-task-list/constants';
 import {
   WASTE_CARRIER_COLLECT_TRAVEL_GROUP,
@@ -36,9 +37,17 @@ const WasteCarrierCollectTravel = () => {
                   value={WASTE_CARRIER_COLLECT_TRAVEL_IDS.YES}
                 >
                   {({ input }) => (
-                    <Radio {...input}>
+                    <RadiosConditional
+                      {...input}
+                      id={'conditional-contact-1'}
+                      renderConditional={() => (
+                        <TextArea hint="Enter countries in order of travel">
+                          <></>
+                        </TextArea>
+                      )}
+                    >
                       {WASTE_CARRIER_COLLECT_TRAVEL_LABELS.YES}
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
                 <Field
@@ -47,7 +56,7 @@ const WasteCarrierCollectTravel = () => {
                   value={WASTE_CARRIER_COLLECT_TRAVEL_IDS.NO}
                 >
                   {({ input }) => (
-                    <Radio {...input}>
+                    <Radio {...input} id={'conditional-contact-2'}>
                       {WASTE_CARRIER_COLLECT_TRAVEL_LABELS.NO}
                     </Radio>
                   )}
