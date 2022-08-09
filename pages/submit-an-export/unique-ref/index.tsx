@@ -3,11 +3,12 @@ import { FormGroup, Radio, H1, Button, GridRow, GridCol } from 'govuk-react';
 import { Main } from 'govuk-react';
 import { useMemo, useState } from 'react';
 import { Form, Field } from 'react-final-form';
-import { DisplayInputField } from '../../../components/display-input-field';
 import { useRouter } from 'next/router';
 import { ButtonWrapper } from '../../../components/form-pages/styled-components';
 import { uniqueRefCrumbs } from '../../../payloads/page-breadcumbs';
 import { PageBreadcrumbs } from '../../../components/page-breadcrumbs';
+import { RadiosConditional } from '../../../components/radios-conditional';
+import { TwoThirdsInputField } from '../../../components/two-thirds-input-field/styled-components';
 import { useTranslation } from 'react-i18next';
 import { translateCrumbs } from '../../../translations/utils';
 import { TRANSLATION_KEYS } from '../../../translations/constants';
@@ -16,7 +17,6 @@ import { TRANSLATION_KEYS } from '../../../translations/constants';
 const PRENOTIFY_ROUTE = '/submit-export-task-list';
 
 const UniqueRef: NextPage = () => {
-  const [usingOwnRef, setUsingOwnRef] = useState(false);
   const router = useRouter();
 
   const handleFormSubmit = () => {
@@ -55,41 +55,23 @@ const UniqueRef: NextPage = () => {
                   </H1>
                   <Field name="ref-number-answer" type="radio" value="yes">
                     {({ input }) => (
-                      <Radio
+                      <RadiosConditional
                         {...input}
-                        onClick={() => {
-                          setUsingOwnRef(true);
-                        }}
+                        ariaId={'conditional-contact'}
+                        renderConditional={() => (
+                          <TwoThirdsInputField>
+                            {t(TRANSLATION_KEYS.enterYourReferenceNumber)}
+                          </TwoThirdsInputField>
+                        )}
                       >
                         {t(TRANSLATION_KEYS.yes)}
-                      </Radio>
+                      </RadiosConditional>
                     )}
                   </Field>
-                  {usingOwnRef && (
-                    <Field name="ref-number-input">
-                      {({ input }) => (
-                        <DisplayInputField
-                          {...input}
-                          label={t(TRANSLATION_KEYS.enterYourReferenceNumber)}
-                        />
-                      )}
-                    </Field>
-                  )}
-                  <Field
-                    defaultValue="no"
-                    name="ref-number-answer"
-                    type="radio"
-                    value="no"
-                  >
+
+                  <Field name="ref-number-answer" type="radio" value="no">
                     {({ input }) => (
-                      <Radio
-                        {...input}
-                        onClick={() => {
-                          setUsingOwnRef(false);
-                        }}
-                      >
-                        {t(TRANSLATION_KEYS.no)}
-                      </Radio>
+                      <Radio {...input}>{t(TRANSLATION_KEYS.no)}</Radio>
                     )}
                   </Field>
                   <ButtonWrapper>

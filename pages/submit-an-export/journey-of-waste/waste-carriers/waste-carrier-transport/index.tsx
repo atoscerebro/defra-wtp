@@ -1,7 +1,9 @@
-import { Button, FormGroup, H2, Paragraph, Radio } from 'govuk-react';
+import { Button, FormGroup, H2, Paragraph } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { RadiosConditional } from '../../../../../components/radios-conditional';
+import { TwoThirdsInputField } from '../../../../../components/two-thirds-input-field/styled-components';
 import { links } from '../../constants';
 import {
   WASTE_CARRIER_TRANSPORT_GROUP,
@@ -37,9 +39,17 @@ const WasteCarrierTransport = () => {
                   type="radio"
                 >
                   {({ input }) => (
-                    <Radio {...input}>
+                    <RadiosConditional
+                      {...input}
+                      id={'conditional-contact-road'}
+                      renderConditional={() => (
+                        <TwoThirdsInputField hint="Enter container number or vehicle registration number (optional)">
+                          <></>
+                        </TwoThirdsInputField>
+                      )}
+                    >
                       {WASTE_CARRIER_TRANSPORT_LABELS.ROAD}
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
                 <Field
@@ -48,9 +58,17 @@ const WasteCarrierTransport = () => {
                   type="radio"
                 >
                   {({ input }) => (
-                    <Radio {...input}>
+                    <RadiosConditional
+                      {...input}
+                      id={'conditional-contact-rail'}
+                      renderConditional={() => (
+                        <TwoThirdsInputField hint="Enter container number (optional)">
+                          <></>
+                        </TwoThirdsInputField>
+                      )}
+                    >
                       {WASTE_CARRIER_TRANSPORT_LABELS.RAIL}
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
                 <Field
@@ -59,9 +77,17 @@ const WasteCarrierTransport = () => {
                   type="radio"
                 >
                   {({ input }) => (
-                    <Radio {...input}>
+                    <RadiosConditional
+                      {...input}
+                      id={'conditional-contact-sea'}
+                      renderConditional={() => (
+                        <TwoThirdsInputField hint="Enter container number (optional)">
+                          <></>
+                        </TwoThirdsInputField>
+                      )}
+                    >
                       {WASTE_CARRIER_TRANSPORT_LABELS.SEA}
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
                 <Field
@@ -70,9 +96,17 @@ const WasteCarrierTransport = () => {
                   type="radio"
                 >
                   {({ input }) => (
-                    <Radio {...input}>
+                    <RadiosConditional
+                      {...input}
+                      id={'conditional-contact-air'}
+                      renderConditional={() => (
+                        <TwoThirdsInputField hint="Enter flight number (optional)">
+                          <></>
+                        </TwoThirdsInputField>
+                      )}
+                    >
                       {WASTE_CARRIER_TRANSPORT_LABELS.AIR}
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
               </FormGroup>
