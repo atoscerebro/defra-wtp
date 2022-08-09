@@ -56,4 +56,10 @@ export const TRANSLATIONS_CYM = {
 
   //BreadCrumbs
   [TRANSLATION_KEYS.wasteTrackingService]: 'Gwasanaeth olrhain gwastraff',
+
+  //Status
+  [TRANSLATION_KEYS.cannotStart]: 'Methu cychwyn',
+  [TRANSLATION_KEYS.notStartedYet]: 'Heb ei gychwyn eto',
+  [TRANSLATION_KEYS.inProgress]: 'Ar y gweill',
+  [TRANSLATION_KEYS.completed]: 'Cwblhawyd',
 };

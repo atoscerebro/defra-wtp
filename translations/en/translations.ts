@@ -57,4 +57,10 @@ export const TRANSLATIONS_EN = {
 
   // Breadcrumbs:
   [TRANSLATION_KEYS.wasteTrackingService]: 'Waste tracking service',
+
+  //Status
+  [TRANSLATION_KEYS.cannotStart]: 'Cannot start',
+  [TRANSLATION_KEYS.notStartedYet]: 'Not started yet',
+  [TRANSLATION_KEYS.inProgress]: 'In progress',
+  [TRANSLATION_KEYS.completed]: 'Completed',
 };

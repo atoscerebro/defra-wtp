@@ -27,7 +27,9 @@ export const PageFooter = () => {
             <Footer.Link href="/">{t('privacyNotice') as string}</Footer.Link>
           </Footer.MetaLinks>
           <Footer.MetaLinks heading="Support Links">
-            <Footer.Link href="/">{t('change') as string}</Footer.Link>
+            <Footer.Link href="https://github.com/govuk-react/govuk-react">
+              GOV.UK React
+            </Footer.Link>
             <Footer.Link href="/footer-meta-item-2">
               {t('clearData') as string}
             </Footer.Link>

@@ -22,5 +22,9 @@ export const translateTasklistGroups = (
     sections: group.sections.map((section) => ({
       ...section,
       title: t(section.title),
+      status: {
+        ...section.status,
+        label: t(section.status.label),
+      },
     })),
   }));

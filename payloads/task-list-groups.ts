@@ -1,74 +1,104 @@
-import { t } from 'i18next';
 import { TaskListStatus } from '../components/task-list/types';
+import { TRANSLATION_KEYS } from '../translations/constants';
 
 export const taskListGroups = [
   {
-    title: 'aboutTheWaste',
+    title: TRANSLATION_KEYS.aboutTheWaste,
     sections: [
       {
-        title: 'wasteCodesAndDescriptions',
+        title: TRANSLATION_KEYS.wasteCodesAndDescriptions,
         link: 'submit-an-export/about-the-waste/waste-codes-descriptions',
-        status: TaskListStatus.COMPLETED,
+        status: {
+          label: TRANSLATION_KEYS.completed,
+          value: TaskListStatus.COMPLETED,
+        },
       },
       {
-        title: 'quantityOfWaste',
+        title: TRANSLATION_KEYS.quantityOfWaste,
         link: 'submit-an-export/about-the-waste/quantity-of-waste',
-        status: TaskListStatus.COMPLETED,
+        status: {
+          label: TRANSLATION_KEYS.completed,
+          value: TaskListStatus.COMPLETED,
+        },
       },
       {
-        title: 'collectionDate',
+        title: TRANSLATION_KEYS.collectionDate,
         link: 'collection-date',
-        status: TaskListStatus.COMPLETED,
+        status: {
+          label: TRANSLATION_KEYS.completed,
+          value: TaskListStatus.COMPLETED,
+        },
       },
     ],
   },
   {
-    title: 'exporterAndImporter',
+    title: TRANSLATION_KEYS.exporterAndImporter,
     sections: [
       {
-        title: 'exporterDetails',
+        title: TRANSLATION_KEYS.exporterDetails,
         link: '/submit-an-export/exporter-and-importer/exporter-details/exporter-address',
-        status: TaskListStatus.IN_PROGRESS,
+        status: {
+          label: TRANSLATION_KEYS.inProgress,
+          value: TaskListStatus.IN_PROGRESS,
+        },
       },
       {
-        title: 'importerDetails',
+        title: TRANSLATION_KEYS.importerDetails,
         link: '/submit-an-export/exporter-and-importer/importer-details/importer-address',
-        status: TaskListStatus.IN_PROGRESS,
+        status: {
+          label: TRANSLATION_KEYS.inProgress,
+          value: TaskListStatus.IN_PROGRESS,
+        },
       },
     ],
   },
   {
-    title: 'journeyOfWaste',
+    title: TRANSLATION_KEYS.journeyOfWaste,
     sections: [
       {
-        title: 'wasteCarriers',
+        title: TRANSLATION_KEYS.wasteCarriers,
         link: '/submit-an-export/journey-of-waste/waste-carriers/waste-carrier',
-        status: TaskListStatus.NOT_STARTED,
+        status: {
+          label: TRANSLATION_KEYS.notStartedYet,
+          value: TaskListStatus.NOT_STARTED,
+        },
       },
       {
-        title: 'wasteCollectionDetails',
+        title: TRANSLATION_KEYS.wasteCollectionDetails,
         link: '/submit-an-export/journey-of-waste/waste-collection-details/waste-carrier-collection-location',
-        status: TaskListStatus.NOT_STARTED,
+        status: {
+          label: TRANSLATION_KEYS.notStartedYet,
+          value: TaskListStatus.NOT_STARTED,
+        },
       },
       {
-        title: 'locationWasteLeavesTheUk',
+        title: TRANSLATION_KEYS.locationWasteLeavesTheUk,
         link: '/submit-an-export/journey-of-waste/waste-leave-location',
-        status: TaskListStatus.NOT_STARTED,
+        status: {
+          label: TRANSLATION_KEYS.notStartedYet,
+          value: TaskListStatus.NOT_STARTED,
+        },
       },
       {
-        title: 'countriesWasteWillTravelThrough',
+        title: TRANSLATION_KEYS.countriesWasteWillTravelThrough,
         link: '/submit-an-export/journey-of-waste/waste-travel-locations',
-        status: TaskListStatus.NOT_STARTED,
+        status: {
+          label: TRANSLATION_KEYS.notStartedYet,
+          value: TaskListStatus.NOT_STARTED,
+        },
       },
     ],
   },
   {
-    title: 'treatmentOfWaste',
+    title: TRANSLATION_KEYS.treatmentOfWaste,
     sections: [
       {
-        title: 'recoveryFacilityOrLaboratory',
+        title: TRANSLATION_KEYS.recoveryFacilityOrLaboratory,
         link: '/submit-an-export/treatment-of-waste/laboratory-details',
-        status: TaskListStatus.NOT_STARTED,
+        status: {
+          label: TRANSLATION_KEYS.notStartedYet,
+          value: TaskListStatus.NOT_STARTED,
+        },
       },
     ],
   },

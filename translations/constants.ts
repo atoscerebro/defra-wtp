@@ -49,4 +49,10 @@ export const TRANSLATION_KEYS = {
 
   // Breadcrumbs
   wasteTrackingService: 'wasteTrackingService',
+
+  // Task List Statuses
+  cannotStart: 'cannotStart',
+  notStartedYet: 'notStartedYet',
+  inProgress: 'inProgress',
+  completed: 'completed',
 };

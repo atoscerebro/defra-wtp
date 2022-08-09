@@ -10,6 +10,7 @@ import { uniqueRefCrumbs } from '../../../payloads/page-breadcumbs';
 import { PageBreadcrumbs } from '../../../components/page-breadcrumbs';
 import { useTranslation } from 'react-i18next';
 import { translateCrumbs } from '../../../translations/utils';
+import { TRANSLATION_KEYS } from '../../../translations/constants';
 
 // const PRENOTIFY_ROUTE = 'prenotify';
 const PRENOTIFY_ROUTE = '/submit-export-task-list';
@@ -33,7 +34,7 @@ const UniqueRef: NextPage = () => {
     <Main>
       <PageBreadcrumbs
         crumbs={translatedCrumbs}
-        currentPage={t('yourReferenceNumber')}
+        currentPage={t(TRANSLATION_KEYS.yourReferenceNumber)}
       />
       <GridRow>
         <GridCol setWidth="two-thirds">
@@ -48,7 +49,9 @@ const UniqueRef: NextPage = () => {
               <FormGroup>
                 <form onSubmit={handleSubmit}>
                   <H1 size="LARGE">
-                    {t('doYouWantToAddYourOwnReferenceNumberToThisExport')}
+                    {t(
+                      TRANSLATION_KEYS.doYouWantToAddYourOwnReferenceNumberToThisExport,
+                    )}
                   </H1>
                   <Field name="ref-number-answer" type="radio" value="yes">
                     {({ input }) => (
@@ -58,7 +61,7 @@ const UniqueRef: NextPage = () => {
                           setUsingOwnRef(true);
                         }}
                       >
-                        {t('yes')}
+                        {t(TRANSLATION_KEYS.yes)}
                       </Radio>
                     )}
                   </Field>
@@ -67,7 +70,7 @@ const UniqueRef: NextPage = () => {
                       {({ input }) => (
                         <DisplayInputField
                           {...input}
-                          label={t('enterYourReferenceNumber')}
+                          label={t(TRANSLATION_KEYS.enterYourReferenceNumber)}
                         />
                       )}
                     </Field>
@@ -85,12 +88,14 @@ const UniqueRef: NextPage = () => {
                           setUsingOwnRef(false);
                         }}
                       >
-                        {t('no')}
+                        {t(TRANSLATION_KEYS.no)}
                       </Radio>
                     )}
                   </Field>
                   <ButtonWrapper>
-                    <Button type="submit">{t('saveAndContinue')}</Button>
+                    <Button type="submit">
+                      {t(TRANSLATION_KEYS.saveAndContinue)}
+                    </Button>
                   </ButtonWrapper>
                 </form>
               </FormGroup>
