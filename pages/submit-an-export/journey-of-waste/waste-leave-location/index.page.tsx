@@ -37,7 +37,7 @@ const WasteCarrierCollectLeave = () => {
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      id={'conditional-contact-1'}
+                      ariaId={'conditional-contact-1'}
                       renderConditional={() => (
                         <TwoThirdsInputField>
                           Enter location
