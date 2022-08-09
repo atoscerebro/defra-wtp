@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@govuk-react/icon-crown": "^0.0.7",
+    "accessible-autocomplete": "^2.0.4",
     "final-form": "^4.20.7",
     "govuk-colours": "^1.1.0",
     "govuk-react": "^0.10.1",
