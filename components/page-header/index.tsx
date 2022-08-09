@@ -33,15 +33,6 @@ export const PageHeader = () => {
           </TopNav.NavLink>
         }
       >
-        {/* <TopNav.NavLink href="https://example.com?q=catdog" target="new">
-          Navigation item
-        </TopNav.NavLink>
-        <TopNav.NavLink href="https://example.com?q=dogcat" target="new">
-          Navigation item
-        </TopNav.NavLink>
-        <TopNav.NavLink href="https://example.com?q=dogcat" target="new">
-          Navigation item
-        </TopNav.NavLink> */}
       </TopNav>
     </div>
   );

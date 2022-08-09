@@ -1,5 +1,6 @@
 import { H1, Main } from 'govuk-react';
 import type { NextPage } from 'next';
+import { AddressForm } from '../components/address-form';
 import { PageBreadcrumbs } from '../components/page-breadcrumbs';
 import { homeCrumbs } from '../payloads/page-breadcumbs';
 import { HomepageLink, LinkWrapper, HomePageGroup } from './styled-components';
@@ -23,8 +24,8 @@ const Home: NextPage = () => {
         <H1 size="MEDIUM">{t('tellUsAboutAnExport')}</H1>
 
         <LinkWrapper>
-          <HomepageLink href={'submit-an-export'}>
-            {t('submitAnExport')}
+          <HomepageLink href={'submit-an-export/unique-ref'}>
+            Submit an export
           </HomepageLink>
         </LinkWrapper>
 
