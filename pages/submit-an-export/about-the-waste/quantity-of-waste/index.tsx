@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import { BaseTaskPage } from '../../../../components/base-task-page';
-import { DisplayInputField } from '../../../../components/display-input-field';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
 import { Form, Field } from 'react-final-form';
 import {
@@ -22,10 +21,10 @@ import {
   ButtonWrapper,
 } from '../../../../components/form-pages/styled-components';
 import { QuantityInput } from './quantity-input';
+import { RadiosConditional } from '../../../../components/radios-conditional';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
-  const [knowQuantityOfWaste, setKnowQuantityOfWaste] = useState(false);
 
   return (
     <BaseTaskPage
@@ -48,23 +47,17 @@ const QuantityOfWaste: NextPage = () => {
                 </CaptionWrapper>
                 <Field name="quantity-of-waste-radio" type="radio" value="yes">
                   {({ input }) => (
-                    <Radio
+                    <RadiosConditional
                       {...input}
-                      onClick={() => {
-                        setKnowQuantityOfWaste(true);
-                      }}
+                      ariaId=""
+                      renderConditional={() => (
+                        <QuantityInput updateLaterMsg={false} />
+                      )}
                     >
                       Yes
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
-                {knowQuantityOfWaste && (
-                  <Field name="quantity-of-waste-input">
-                    {({ input }) => (
-                      <QuantityInput {...input} updateLaterMsg={false} />
-                    )}
-                  </Field>
-                )}
                 <Field
                   defaultValue="no"
                   name="quantity-of-waste-radio"
@@ -72,21 +65,17 @@ const QuantityOfWaste: NextPage = () => {
                   value="no"
                 >
                   {({ input }) => (
-                    <Radio
+                    <RadiosConditional
                       {...input}
-                      onClick={() => {
-                        setKnowQuantityOfWaste(false);
-                      }}
+                      ariaId=""
+                      renderConditional={() => (
+                        <QuantityInput updateLaterMsg={false} />
+                      )}
                     >
                       No
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
-                {!knowQuantityOfWaste && (
-                  <Field name="quantity-of-waste-input">
-                    {({ input }) => <QuantityInput {...input} updateLaterMsg />}
-                  </Field>
-                )}
                 <ButtonWrapper>
                   <Button type="submit">Save and continue</Button>
                 </ButtonWrapper>

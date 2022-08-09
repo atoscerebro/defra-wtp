@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import { H1, FormGroup, Radio, Paragraph, Caption, Button } from 'govuk-react';
-import { DisplayInputField } from '../../../../../components/display-input-field';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import {
   CaptionWrapper,
@@ -9,6 +8,9 @@ import {
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { AccessibleAutocomplete } from '../../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { ecWastes } from '../../../../../components/form-pages/constants';
+import { RadiosConditional } from '../../../../../components/radios-conditional';
 
 const EWCCodeRadio: NextPage = () => {
   const router = useRouter();
@@ -38,26 +40,24 @@ const EWCCodeRadio: NextPage = () => {
                 </CaptionWrapper>
                 <Field name="ewc-code-radio" type="radio" value="yes">
                   {({ input }) => (
-                    <Radio
-                      {...input}
+                    <RadiosConditional
                       onClick={() => {
                         setUsingEWCCode(true);
                       }}
+                      {...input}
+                      ariaId=""
+                      renderConditional={() => (
+                        <AccessibleAutocomplete
+                          {...input}
+                          options={ecWastes}
+                          hintText={'Start typing, then choose from the list'}
+                        />
+                      )}
                     >
                       Yes
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
-                {usingEWCCode && (
-                  <Field name="ewc-code-input">
-                    {({ input }) => (
-                      <DisplayInputField
-                        {...input}
-                        label={'Start typing, then chose from the list'}
-                      />
-                    )}
-                  </Field>
-                )}
                 <Field
                   defaultValue="no"
                   name="ewc-code-radio"

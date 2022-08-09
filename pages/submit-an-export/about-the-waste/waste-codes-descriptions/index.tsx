@@ -8,7 +8,6 @@ import {
   Button,
   LabelText,
 } from 'govuk-react';
-import { DisplayInputField } from '../../../../components/display-input-field';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { useState } from 'react';
 import { CaptionWrapper } from '../../../../components/form-pages/styled-components';
@@ -54,15 +53,6 @@ const WasteCodes: NextPage = () => {
                       value={WASTE_CODES_LABELS.BASEL_ANNEX_IX}
                     >
                       {({ input }) => (
-                        // <Radio
-                        //   {...input}
-                        //   name="waste-code"
-                        //   onClick={() =>
-                        //     setWasteCode(WASTE_CODES_LABELS.BASEL_ANNEX_IX)
-                        //   }
-                        // >
-                        //   {WASTE_CODES_LABELS.BASEL_ANNEX_IX}
-                        // </Radio>
                         <RadiosConditional
                           {...input}
                           ariaId={''}
@@ -80,29 +70,12 @@ const WasteCodes: NextPage = () => {
                         </RadiosConditional>
                       )}
                     </Field>
-                    {/* {wasteCode === WASTE_CODES_LABELS.BASEL_ANNEX_IX && (
-                      <Field name="waste-code-input">
-                        {({ input }) => (
-                          <AccessibleAutocomplete
-                            {...input}
-                            options={baselAnnexIX}
-                          />
-                        )}
-                      </Field>
-                    )} */}
                     <Field
                       name="waste-code-radio"
                       type="radio"
                       value={WASTE_CODES_LABELS.OECD}
                     >
                       {({ input }) => (
-                        // <Radio
-                        //   {...input}
-                        //   name="waste-code"
-                        //   onClick={() => setWasteCode(WASTE_CODES_LABELS.OECD)}
-                        // >
-                        //   {WASTE_CODES_LABELS.OECD}
-                        // </Radio>
                         <RadiosConditional
                           {...input}
                           ariaId={''}
@@ -120,35 +93,12 @@ const WasteCodes: NextPage = () => {
                         </RadiosConditional>
                       )}
                     </Field>
-                    {/* {wasteCode === WASTE_CODES_LABELS.OECD && (
-                      <Field name="waste-code-input">
-                        {({ input }) => (
-                          // <DisplayInputField
-                          //   {...input}
-                          //   label={'Start typing, then choose from the list'}
-                          // />
-                          <AccessibleAutocomplete
-                            {...input}
-                            options={baselAnnexIX}
-                          />
-                        )}
-                      </Field>
-                    )} */}
                     <Field
                       name="waste-code-radio"
                       type="radio"
                       value={WASTE_CODES_LABELS.ANNEX_IIIA}
                     >
                       {({ input }) => (
-                        // <Radio
-                        //   {...input}
-                        //   name="waste-code"
-                        //   onClick={() =>
-                        //     setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIA)
-                        //   }
-                        // >
-                        //   {WASTE_CODES_LABELS.ANNEX_IIIA}
-                        // </Radio>
                         <RadiosConditional
                           {...input}
                           ariaId={''}
@@ -166,36 +116,12 @@ const WasteCodes: NextPage = () => {
                         </RadiosConditional>
                       )}
                     </Field>
-                    {/* {wasteCode === WASTE_CODES_LABELS.ANNEX_IIIA && (
-                      <Field name="waste-code-input">
-                        {({ input }) => (
-                          // <DisplayInputField
-                          //   {...input}
-                          //   label={'Start typing, then choose from the list'}
-                          // />
-                          <AccessibleAutocomplete
-                            {...input}
-                            options={baselAnnexIX}
-                          />
-                        )}
-                      </Field>
-                    )} */}
-
                     <Field
                       name="waste-code-radio"
                       type="radio"
                       value={WASTE_CODES_LABELS.ANNEX_IIIB}
                     >
                       {({ input }) => (
-                        // <Radio
-                        //   {...input}
-                        //   name="waste-code"
-                        //   onClick={() =>
-                        //     setWasteCode(WASTE_CODES_LABELS.ANNEX_IIIB)
-                        //   }
-                        // >
-                        //   {WASTE_CODES_LABELS.ANNEX_IIIB}
-                        // </Radio>
                         <RadiosConditional
                           {...input}
                           ariaId={''}
@@ -216,10 +142,6 @@ const WasteCodes: NextPage = () => {
                     {wasteCode === WASTE_CODES_LABELS.ANNEX_IIIB && (
                       <Field name="waste-code-input">
                         {({ input }) => (
-                          // <DisplayInputField
-                          //   {...input}
-                          //   label={'Start typing, then choose from the list'}
-                          // />
                           <AccessibleAutocomplete
                             {...input}
                             options={baselAnnexIX}

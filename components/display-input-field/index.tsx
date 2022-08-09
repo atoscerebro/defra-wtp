@@ -6,9 +6,7 @@ export const DisplayInputField = ({ ...props }) => {
   return (
     <GridRow>
       <GridCol setWidth="two-thirds">
-        <DisplayInputFieldWrapper>
-          <InputField {...props}>{props.label}</InputField>
-        </DisplayInputFieldWrapper>
+        <InputField {...props}>{props.label}</InputField>
       </GridCol>
     </GridRow>
   );

@@ -5,6 +5,8 @@ import { ButtonWrapper } from '../../../../../../components/form-pages/styled-co
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { EWCInputCaption } from './styled-component';
+import { AccessibleAutocomplete } from '../../../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { ecWastes } from '../../../../../../components/form-pages/constants';
 
 const EWCCodeInput: NextPage = () => {
   const router = useRouter();
@@ -26,11 +28,11 @@ const EWCCodeInput: NextPage = () => {
                 <H1 size="LARGE">Enter an EWC code?</H1>
                 <Field name="ewc-code-input">
                   {({ input }) => (
-                    <InputField {...input}>
-                      <EWCInputCaption size="M">
-                        Start typing a code, then choose from the list
-                      </EWCInputCaption>
-                    </InputField>
+                    <AccessibleAutocomplete
+                      {...input}
+                      options={ecWastes}
+                      hintText={'Start typing, then choose from the list'}
+                    />
                   )}
                 </Field>
                 <ButtonWrapper>

@@ -9,9 +9,11 @@ import {
 } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
+import { AccessibleAutocomplete } from '../../../../../components/accessible-autocomplete/accessible-autocomplete';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { links } from '../../../../submit-export-task-list/constants';
 import { IMPORTER_ADDRESS_IDS, IMPORTER_ADDRESS_LABELS } from './constants';
+import { countryList } from '../../../../../components/form-pages/constants';
 
 const ImporterAddress = () => {
   const router = useRouter();
@@ -49,9 +51,11 @@ const ImporterAddress = () => {
               <FormGroup>
                 <Field name={IMPORTER_ADDRESS_IDS.COUNTRY}>
                   {({ input }) => (
-                    <InputField {...input}>
-                      {IMPORTER_ADDRESS_LABELS.COUNTRY}
-                    </InputField>
+                    <AccessibleAutocomplete
+                      {...input}
+                      options={countryList}
+                      label={IMPORTER_ADDRESS_LABELS.COUNTRY}
+                    />
                   )}
                 </Field>
               </FormGroup>

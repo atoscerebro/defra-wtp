@@ -9,19 +9,18 @@ import {
   Paragraph,
   LeadParagraph,
   Caption,
+  InputField,
 } from 'govuk-react';
 import { Main } from 'govuk-react';
 import { useState } from 'react';
 import { Form, Field } from 'react-final-form';
-import { DisplayInputField } from '../../../../../components/display-input-field';
 import { useRouter } from 'next/router';
 import { ButtonWrapper } from '../../../../../components/form-pages/styled-components';
 import { NationalCodeInputCaption } from './styled-components';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { RadiosConditional } from '../../../../../components/radios-conditional';
 
-//Yes or No, link to Describe-The-Waste
 const NationalCodeRadio: NextPage = () => {
-  const [hasNationalCode, setHasNationalCode] = useState(false);
   const router = useRouter();
   return (
     <BaseTaskPage
@@ -48,39 +47,25 @@ const NationalCodeRadio: NextPage = () => {
                 </NationalCodeInputCaption>
                 <Field name="ref-number-answer" type="radio" value="yes">
                   {({ input }) => (
-                    <Radio
+                    <RadiosConditional
                       {...input}
-                      onClick={() => {
-                        setHasNationalCode(true);
-                      }}
+                      ariaId=""
+                      id="national-code-input"
+                      renderConditional={() => (
+                        <InputField>Enter code</InputField>
+                      )}
                     >
                       Yes
-                    </Radio>
+                    </RadiosConditional>
                   )}
                 </Field>
-                {hasNationalCode && (
-                  <Field name="ref-number-input">
-                    {({ input }) => (
-                      <DisplayInputField {...input} label={'Enter code'} />
-                    )}
-                  </Field>
-                )}
                 <Field
                   defaultValue="no"
                   name="ref-number-answer"
                   type="radio"
                   value="no"
                 >
-                  {({ input }) => (
-                    <Radio
-                      {...input}
-                      onClick={() => {
-                        setHasNationalCode(false);
-                      }}
-                    >
-                      No
-                    </Radio>
-                  )}
+                  {({ input }) => <Radio {...input}>No</Radio>}
                 </Field>
                 <ButtonWrapper>
                   <Button type="submit">Save and continue</Button>

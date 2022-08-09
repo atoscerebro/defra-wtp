@@ -10,7 +10,9 @@ import {
 } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Form, Field } from 'react-final-form';
+import { AccessibleAutocomplete } from '../../../../../components/accessible-autocomplete/accessible-autocomplete';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { countryList } from '../../../../../components/form-pages/constants';
 import { links } from '../../constants';
 import { WASTE_CARRIERS_IDS, WASTE_CARRIERS_LABELS } from './constants';
 
@@ -54,9 +56,13 @@ const WasteCarrier = () => {
               <FormGroup>
                 <Field name={WASTE_CARRIERS_IDS.COUNTRY}>
                   {({ input }) => (
-                    <InputField {...input}>
-                      {WASTE_CARRIERS_LABELS.COUNTRY}
-                    </InputField>
+                    <>
+                      <AccessibleAutocomplete
+                        {...input}
+                        options={countryList}
+                        label={WASTE_CARRIERS_LABELS.COUNTRY}
+                      />
+                    </>
                   )}
                 </Field>
               </FormGroup>
