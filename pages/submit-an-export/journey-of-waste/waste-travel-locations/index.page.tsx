@@ -39,7 +39,7 @@ const WasteCarrierCollectTravel = () => {
                   {({ input }) => (
                     <RadiosConditional
                       {...input}
-                      id={'conditional-contact-1'}
+                      ariaId={'conditional-contact-1'}
                       renderConditional={() => (
                         <TextArea hint="Enter countries in order of travel">
                           <></>
