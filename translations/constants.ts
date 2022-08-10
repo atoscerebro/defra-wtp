@@ -57,6 +57,7 @@ export const TRANSLATION_KEYS = {
   completed: 'completed',
 
   // About the waste
+  // Waste Codes and Descriptions
   back: 'back',
   returnToSubmitAnExport: 'returnToSubmitAnExport',
   whatIsTheWasteCode: 'whatIsTheWasteCode',
@@ -64,7 +65,44 @@ export const TRANSLATION_KEYS = {
   startTypingThenChooseFromTheList: 'startTypingThenChooseFromTheList',
   or: 'or',
   notApplicable: 'Not applicable',
-  onlySelectThisOptionIfTheWasteIsGoingToALaboratory: 'onlySelectThisOptionIfTheWasteIsGoingToALaboratory',
+  onlySelectThisOptionIfTheWasteIsGoingToALaboratory:
+    'onlySelectThisOptionIfTheWasteIsGoingToALaboratory',
+  doYouHaveAnEWCCode: 'doYouHaveAnEWCCode',
+  anEwcCodeEuropeanWasteCatalogueCodeIsAlsoKnownAsAnECListOfWaste:
+    'anEwcCodeEuropeanWasteCatalogueCodeIsAlsoKnownAsAnECListOfWaste',
+  enterAnEWCCode: 'enterAnEWCCode',
+  doYouNeedToAddAnotherEWCCode: 'doYouNeedToAddAnotherEWCCode',
+  doYouHaveANationalCode: 'doYouHaveANationalCode',
+  aNationalCodeIsAlsoKnownAsACommodityCodeAndMayBeRequiredByTheCountryYoureExportingTo:
+    'aNationalCodeIsAlsoKnownAsACommodityCodeAndMayBeRequiredByTheCountryYoureExportingTo',
+  itsNotRequiredByUkRegulators: 'itsNotRequiredByUkRegulators',
+  enterCode: 'enterCode',
+  describeTheWaste: 'describeTheWaste',
+  yourDescriptionCouldIncludeThingsLike:
+    'yourDescriptionCouldIncludeThingsLike',
+  internationalSpecificationOrGradeForExampleEN643ForPaper:
+    'internationalSpecificationOrGradeForExampleEN643ForPaper',
+  polymerTypeForPlasticForExampleLpdeFilm:
+    'polymerTypeForPlasticForExampleLpdeFilm',
 
+  //Quantity of Waste
+  doYouKnowTheQuantityOfWaste: 'doYouKnowTheQuantityOfWaste',
+  onlyProvideTheNetWeightOrVolumeDoNotIncludeTheWeightOfTheContainerOrVehicle:
+    'onlyProvideTheNetWeightOrVolumeDoNotIncludeTheWeightOfTheContainerOrVehicle',
+  weightIn: 'weightIn',
+  tonnes: 'tonnes',
+  cubicMetres: 'cubicMetres',
+  switchMeasurementTo: 'switchMeasurementTo',
+  cubicMetresM3: 'cubicMetresM3',
+  tonnesMg: 'tonnesMg',
+  youllNeedToUpdateThisWithActualDetailsAsSoonAsPossibleAfterSubmittingThisExport:
+    'youllNeedToUpdateThisWithActualDetailsAsSoonAsPossibleAfterSubmittingThisExport',
+  doYouKnowWhenTheWasteWillBeCollected: 'doYouKnowWhenTheWasteWillBeCollected',
 
+  //EWC Waste code Descriptions
+  acidAlkylSludges050104: 'acidAlkylSludges050104',
+  wastesFromMineralMetalliferousExcavation010101:
+    'wastesFromMineralMetalliferousExcavation010101',
+  oilContainingAcids050112: 'oilContainingAcids050112',
+  youHaveAdded3EWCCodes: 'youHaveAdded3EWCCodes',
 };

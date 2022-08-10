@@ -1,6 +1,8 @@
 import { GridCol, GridRow, Input, Paragraph, Caption } from 'govuk-react';
 import { useState, FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
+import { TRANSLATION_KEYS } from '../../../../translations/constants';
 import {
   QuantityInputWrapper,
   InputMeasurement,
@@ -15,6 +17,7 @@ interface IProps {
 
 export const QuantityInput: FC<IProps> = ({ updateLaterMsg, ...input }) => {
   const [measurementInTonnes, setMeasurementInTonnes] = useState(true);
+  const { t } = useTranslation();
 
   return (
     <GridRow>
@@ -28,7 +31,10 @@ export const QuantityInput: FC<IProps> = ({ updateLaterMsg, ...input }) => {
           )}
         </UpdateLaterMsg>
         <Caption size="M">
-          Weight, in {measurementInTonnes ? 'tonnes' : 'cubic metres'}
+          {t(TRANSLATION_KEYS.weightIn)}{' '}
+          {measurementInTonnes
+            ? t(TRANSLATION_KEYS.tonnes)
+            : t(TRANSLATION_KEYS.cubicMetres)}
         </Caption>
         <GridRow>
           <GridCol setWidth="one-third">
@@ -49,8 +55,10 @@ export const QuantityInput: FC<IProps> = ({ updateLaterMsg, ...input }) => {
             setMeasurementInTonnes(!measurementInTonnes);
           }}
         >
-          Switch measurement to{' '}
-          {measurementInTonnes ? 'Cubic Metres (m3)' : 'Tonnes (Mg)'}
+          {t(TRANSLATION_KEYS.switchMeasurementTo)}{' '}
+          {measurementInTonnes
+            ? t(TRANSLATION_KEYS.cubicMetresM3)
+            : t(TRANSLATION_KEYS.tonnesMg)}
         </LinkButton>
       </GridCol>
     </GridRow>

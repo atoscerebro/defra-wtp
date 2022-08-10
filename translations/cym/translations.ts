@@ -62,12 +62,60 @@ export const TRANSLATIONS_CYM = {
   [TRANSLATION_KEYS.notStartedYet]: 'Heb ei gychwyn eto',
   [TRANSLATION_KEYS.inProgress]: 'Ar y gweill',
   [TRANSLATION_KEYS.completed]: 'Cwblhawyd',
+
   [TRANSLATION_KEYS.back]: 'Yn ol',
   [TRANSLATION_KEYS.returnToSubmitAnExport]: 'Dychwelyd i gyflwyno allforiad',
   [TRANSLATION_KEYS.whatIsTheWasteCode]: "Beth yw'r cod gwastraff?",
   [TRANSLATION_KEYS.selectOneOption]: 'Dewiswch un opsiwn',
-  [TRANSLATION_KEYS.startTypingThenChooseFromTheList]: "Dechreuwch deipio, yna dewiswch o'r rhestr",
-[TRANSLATION_KEYS.or]: 'neu',
-[TRANSLATION_KEYS.notApplicable]: 'Amherthnasol',
-[TRANSLATION_KEYS.onlySelectThisOptionIfTheWasteIsGoingToALaboratory]: "Dewiswch yr opsiwn hwn dim ond os yw'r gwastraff yn mynd i labordy",
+
+  [TRANSLATION_KEYS.startTypingThenChooseFromTheList]:
+    "Dechreuwch deipio, yna dewiswch o'r rhestr",
+  [TRANSLATION_KEYS.or]: 'neu',
+
+  //About the Waste - Waste codes and descriptions
+  [TRANSLATION_KEYS.notApplicable]: 'Amherthnasol',
+  [TRANSLATION_KEYS.onlySelectThisOptionIfTheWasteIsGoingToALaboratory]:
+    "Dewiswch yr opsiwn hwn dim ond os yw'r gwastraff yn mynd i labordy",
+  [TRANSLATION_KEYS.doYouHaveAnEWCCode]: 'Oes gennych chi god EWC?',
+  [TRANSLATION_KEYS.anEwcCodeEuropeanWasteCatalogueCodeIsAlsoKnownAsAnECListOfWaste]:
+    'Gelwir cod EWC (cod Catalog Gwastraff Ewropeaidd) hefyd yn rhestr gwastraff y GE.',
+  [TRANSLATION_KEYS.enterAnEWCCode]: 'Rhowch god EWC?',
+  [TRANSLATION_KEYS.doYouNeedToAddAnotherEWCCode]:
+    'Oes angen i chi ychwanegu cod EWC arall?',
+  [TRANSLATION_KEYS.doYouHaveANationalCode]:
+    'Oes gennych chi god cenedlaethol?',
+  [TRANSLATION_KEYS.aNationalCodeIsAlsoKnownAsACommodityCodeAndMayBeRequiredByTheCountryYoureExportingTo]:
+    'Gelwir cod cenedlaethol hefyd yn god nwyddau ac efallai y bydd ei angen gan y wlad rydych yn allforio iddi.',
+  [TRANSLATION_KEYS.itsNotRequiredByUkRegulators]:
+    "Nid yw'n ofynnol gan reoleiddwyr y DU.",
+  [TRANSLATION_KEYS.enterCode]: 'Rhowch god',
+  [TRANSLATION_KEYS.describeTheWaste]: 'Disgrifiwch y gwastraff',
+  [TRANSLATION_KEYS.yourDescriptionCouldIncludeThingsLike]:
+    'Gallai eich disgrifiad gynnwys pethau fel:',
+  [TRANSLATION_KEYS.internationalSpecificationOrGradeForExampleEN643ForPaper]:
+    'manyleb neu radd ryngwladol (er enghraifft, EN643 2.05.00 ar gyfer papur)',
+  [TRANSLATION_KEYS.polymerTypeForPlasticForExampleLpdeFilm]:
+    'math polymer ar gyfer plastig (er enghraifft, ffilm LPDE)',
+
+  //Quantity of Waste
+  [TRANSLATION_KEYS.doYouKnowTheQuantityOfWaste]:
+    "Ydych chi'n gwybod faint o wastraff?",
+  [TRANSLATION_KEYS.onlyProvideTheNetWeightOrVolumeDoNotIncludeTheWeightOfTheContainerOrVehicle]:
+    "Rhowch y pwysau neu'r cyfaint net yn unig. Peidiwch â chynnwys pwysau'r cynhwysydd neu'r cerbyd.",
+  [TRANSLATION_KEYS.weightIn]: 'Pwysau, mewn ',
+  [TRANSLATION_KEYS.tonnes]: 'tunnell',
+  [TRANSLATION_KEYS.cubicMetres]: 'metrau ciwbig',
+  [TRANSLATION_KEYS.switchMeasurementTo]: 'Newid mesuriad i ',
+  [TRANSLATION_KEYS.cubicMetresM3]: 'Mesuryddion ciwbig (m3)',
+  [TRANSLATION_KEYS.tonnesMg]: 'Tunnell (Mg)',
+  [TRANSLATION_KEYS.youllNeedToUpdateThisWithActualDetailsAsSoonAsPossibleAfterSubmittingThisExport]:
+    "Bydd angen i chi ddiweddaru hwn gyda'r manylion gwirioneddol cyn gynted â phosibl ar ôl cyflwyno'r allforyn hwn.",
+  [TRANSLATION_KEYS.doYouKnowWhenTheWasteWillBeCollected]:
+    "Ydych chi'n gwybod pryd fydd y gwastraff yn cael ei gasglu?",
+  [TRANSLATION_KEYS.acidAlkylSludges050104]: '050104*: llaid alcyl asid',
+  [TRANSLATION_KEYS.wastesFromMineralMetalliferousExcavation010101]:
+    '010101: gwastraff o gloddiad metelifferaidd mwynol',
+  [TRANSLATION_KEYS.oilContainingAcids050112]:
+    '050112*: olew yn cynnwys asidau',
+  [TRANSLATION_KEYS.youHaveAdded3EWCCodes]: 'Rydych wedi ychwanegu 3 chod EWC',
 };

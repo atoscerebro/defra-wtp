@@ -22,9 +22,12 @@ import {
 } from '../../../../components/form-pages/styled-components';
 import { QuantityInput } from './quantity-input';
 import { RadiosConditional } from '../../../../components/radios-conditional';
+import { useTranslation } from 'react-i18next';
+import { TRANSLATION_KEYS } from '../../../../translations/constants';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
+  const {t} = useTranslation();
 
   return (
     <BaseTaskPage
@@ -38,11 +41,11 @@ const QuantityOfWaste: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">Do you know the quantity of waste?</H1>
+                <H1 size="LARGE">{t(TRANSLATION_KEYS.doYouKnowTheQuantityOfWaste)}</H1>
                 <CaptionWrapper>
                   <Caption size="M">
-                    Only provide the net weight or volume. Do not include the
-                    weight of the container or vehicle.
+                    {t(TRANSLATION_KEYS.onlyProvideTheNetWeightOrVolumeDoNotIncludeTheWeightOfTheContainerOrVehicle)}
+                   
                   </Caption>
                 </CaptionWrapper>
                 <Field name="quantity-of-waste-radio" type="radio" value="yes">
@@ -54,7 +57,7 @@ const QuantityOfWaste: NextPage = () => {
                         <QuantityInput updateLaterMsg={false} />
                       )}
                     >
-                      Yes
+                      {t(TRANSLATION_KEYS.yes)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -72,12 +75,12 @@ const QuantityOfWaste: NextPage = () => {
                         <QuantityInput updateLaterMsg={false} />
                       )}
                     >
-                      No
+                      {t(TRANSLATION_KEYS.no)}
                     </RadiosConditional>
                   )}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">Save and continue</Button>
+                  <Button type="submit">{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>

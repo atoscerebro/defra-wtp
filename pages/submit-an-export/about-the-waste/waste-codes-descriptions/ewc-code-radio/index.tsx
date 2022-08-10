@@ -11,10 +11,13 @@ import { useState } from 'react';
 import { AccessibleAutocomplete } from '../../../../../components/accessible-autocomplete/accessible-autocomplete';
 import { ecWastes } from '../../../../../components/form-pages/constants';
 import { RadiosConditional } from '../../../../../components/radios-conditional';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
 
 const EWCCodeRadio: NextPage = () => {
   const router = useRouter();
   const [usingEWCCode, setUsingEWCCode] = useState(false);
+  const {t} = useTranslation();
 
   return (
     <BaseTaskPage
@@ -31,11 +34,10 @@ const EWCCodeRadio: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">Do you have an EWC code?</H1>
+                <H1 size="LARGE">{t(TRANSLATION_KEYS.doYouHaveAnEWCCode)}</H1>
                 <CaptionWrapper>
-                  <Caption size="M">
-                    An EWC code (European Waste Catalogue code) is also known as
-                    an EC list of waste.
+                  <Caption size="M">{t(TRANSLATION_KEYS.anEwcCodeEuropeanWasteCatalogueCodeIsAlsoKnownAsAnECListOfWaste)}
+                    
                   </Caption>
                 </CaptionWrapper>
                 <Field name="ewc-code-radio" type="radio" value="yes">
@@ -50,11 +52,11 @@ const EWCCodeRadio: NextPage = () => {
                         <AccessibleAutocomplete
                           {...input}
                           options={ecWastes}
-                          hintText={'Start typing, then choose from the list'}
+                          hintText={t(TRANSLATION_KEYS.startTypingThenChooseFromTheList)}
                         />
                       )}
                     >
-                      Yes
+                      {t(TRANSLATION_KEYS.yes)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -71,12 +73,12 @@ const EWCCodeRadio: NextPage = () => {
                         setUsingEWCCode(false);
                       }}
                     >
-                      No
+                      {t(TRANSLATION_KEYS.no)}
                     </Radio>
                   )}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">Save and continue</Button>
+                  <Button type="submit">{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>

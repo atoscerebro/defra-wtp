@@ -17,9 +17,13 @@ import {
 } from '../../../../components/form-pages/styled-components';
 import { DateInputField } from '../../../../components/date-input-field';
 import { RadiosConditional } from '../../../../components/radios-conditional';
+import { t } from 'i18next';
+import { TRANSLATION_KEYS } from '../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
 
 const CollectionDate: NextPage = () => {
   const router = useRouter();
+  const {t} = useTranslation();
 
   return (
     <BaseTaskPage
@@ -34,7 +38,7 @@ const CollectionDate: NextPage = () => {
             <FormGroup>
               <form onSubmit={handleSubmit}>
                 <H1 size="LARGE">
-                  Do you know when the waste will be collected?
+                  {t(TRANSLATION_KEYS.doYouKnowWhenTheWasteWillBeCollected)}
                 </H1>
                 <CaptionWrapper>
                   <Caption size="M">
