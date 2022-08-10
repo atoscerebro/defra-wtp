@@ -21,7 +21,7 @@ import { RadiosConditional } from '../../../../components/radios-conditional';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
-  const mustBeNumber = (value) => (isNaN(value) ? 'Must be a number' : undefined);
+  const mustBeNumber = (value: any) => (isNaN(value) ? 'Must be a number' : undefined);
 
   return (
     <BaseTaskPage
