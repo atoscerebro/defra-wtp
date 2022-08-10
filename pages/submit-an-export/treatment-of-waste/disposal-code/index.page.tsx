@@ -13,6 +13,8 @@ import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { links } from '../../../submit-export-task-list/constants';
 import { DISPOSAL_CODE_IDS } from './constants';
+import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { dCode } from '../../../../components/form-pages/constants';
 
 const ImporterAddress = () => {
   const router = useRouter();
@@ -29,10 +31,15 @@ const ImporterAddress = () => {
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <H2 size="LARGE">What is the disposal code?</H2>
-              <HintText>Start typing then choose from the list.</HintText>
               <FormGroup>
                 <Field name={DISPOSAL_CODE_IDS.CODE}>
-                  {({ input }) => <InputField {...input}>{}</InputField>}
+                  {({ input }) => (
+                    <AccessibleAutocomplete
+                      hintText="Start typing then choose from the list."
+                      options={dCode}
+                      {...input}
+                    />
+                  )}
                 </Field>
               </FormGroup>
               <div>
