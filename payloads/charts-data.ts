@@ -1,5 +1,7 @@
 /*
- * Sections completed/Started completion
+ * Add a average-visit-minutes/user-count line chart
+ * Convert pie chart to bar chart
+ * Add labels to sankey nodes
  */
 
 // Unique Users
