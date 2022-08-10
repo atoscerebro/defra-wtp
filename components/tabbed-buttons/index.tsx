@@ -7,6 +7,10 @@ export interface ITabbedButtonsProps<T extends string> {
   onClick: (key: T, e: MouseEvent<HTMLButtonElement>) => void;
 }
 
+/**
+ * Use Tabbed Buttons to differentiate and switch between the currently selected option
+ * and other available ones.
+ */
 export const TabbedButtons = <T extends string>({
   current,
   keys,
