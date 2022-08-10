@@ -1,16 +1,23 @@
-import { MEDIA_QUERIES, RESPONSIVE_7, FONT_SIZE } from '@govuk-react/constants';
+import {
+  MEDIA_QUERIES,
+  RESPONSIVE_4,
+  RESPONSIVE_7,
+  FONT_SIZE,
+} from '@govuk-react/constants';
 import styled from 'styled-components';
 import * as COLOURS from 'govuk-colours';
 
 export const TabbedButtonsContainer = styled.div`
   display: flex;
   align-items: flex-start;
+  margin-bottom: ${RESPONSIVE_4.mobile}px;
 
   & :not(:last-child) {
     margin-right: ${RESPONSIVE_7.mobile}px;
   }
 
   ${MEDIA_QUERIES.TABLET} {
+    margin-bottom: ${RESPONSIVE_4.tablet}px;
     & :not(:last-child) {
       margin-right: ${RESPONSIVE_7.tablet}px;
     }

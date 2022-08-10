@@ -10,26 +10,57 @@ import {
   Pie,
   Cell,
   Legend,
+  Sankey,
 } from 'recharts';
 import { NextPage } from 'next';
-import { dailyUsersData, userLanguagesData } from '../../payloads/charts-data';
+import {
+  dailyUsersData,
+  dailyExporterJourneysData,
+  userLanguagesData,
+  weeklyUsersData,
+  yearlyUsersData,
+  weeklyExporterJourneysData,
+  monthlyExporterJourneysData,
+} from '../../payloads/charts-data';
 import { GridCol, GridRow, H4, Main } from 'govuk-react';
 import { formatToolTip } from './utils';
 import * as COLOURS from 'govuk-colours';
-import { RESPONSIVE_7 } from '@govuk-react/constants';
+import { TabbedButtons } from '../../components/tabbed-buttons';
+import { durationTypes } from './constants';
+import { useState } from 'react';
 
 const Admin: NextPage = () => {
+  const [userCountKey, setUserCountKey] = useState(durationTypes[0]);
+  const [exporterJourneyKey, setExporterJourneyKey] = useState(
+    durationTypes[0],
+  );
+  const userCountData = {
+    Week: dailyUsersData,
+    Month: weeklyUsersData,
+    Year: yearlyUsersData,
+  }[userCountKey];
+  const exporterJourneysData = {
+    Week: dailyExporterJourneysData,
+    Month: weeklyExporterJourneysData,
+    Year: monthlyExporterJourneysData,
+  }[exporterJourneyKey];
+
   return (
     <Main>
-      <H4>User Activity</H4>
       <GridRow margin={{ direction: 'bottom', size: 9 }}>
-        <GridCol>
+        <GridCol setWidth="full">
+          <H4>Unique Users</H4>
+          <TabbedButtons
+            current={userCountKey}
+            keys={durationTypes}
+            onClick={(key) => setUserCountKey(key)}
+          />
           <ResponsiveContainer width={'100%'} height={250}>
-            <BarChart data={dailyUsersData}>
+            <BarChart data={userCountData}>
               <CartesianGrid vertical={false} />
               <Tooltip formatter={formatToolTip} />
               <XAxis axisLine={false} tickLine={false} dataKey="date" />
-              <YAxis axisLine={false} tickLine={false} width={25} />
+              <YAxis axisLine={false} tickLine={false} width={30} />
               <Bar dataKey="users" fill={COLOURS.BLUE} />
             </BarChart>
           </ResponsiveContainer>
@@ -52,6 +83,27 @@ const Admin: NextPage = () => {
                 ))}
               </Pie>
             </PieChart>
+          </ResponsiveContainer>
+        </GridCol>
+      </GridRow>
+      <GridRow margin={{ direction: 'bottom', size: 9 }}>
+        <GridCol setWidth="full">
+          <H4>Exporter Journeys</H4>
+          <TabbedButtons
+            current={exporterJourneyKey}
+            keys={durationTypes}
+            onClick={(key) => setExporterJourneyKey(key)}
+          />
+          <ResponsiveContainer width={'100%'} height={250}>
+            <Sankey
+              nodePadding={50}
+              iterations={0}
+              data={exporterJourneysData}
+              node={{ fill: COLOURS.BLUE }}
+              link={{ stroke: COLOURS.TURQUOISE_50, strokeOpacity: 0.5 }}
+            >
+              <Tooltip />
+            </Sankey>
           </ResponsiveContainer>
         </GridCol>
       </GridRow>
