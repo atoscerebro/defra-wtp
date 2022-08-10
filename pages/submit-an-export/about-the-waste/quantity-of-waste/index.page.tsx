@@ -5,13 +5,9 @@ import { Form, Field } from 'react-final-form';
 import {
   H1,
   FormGroup,
-  Radio,
-  Paragraph,
   Caption,
   Button,
-  GridRow,
-  GridCol,
-  Input,
+  ErrorText
 } from 'govuk-react';
 import { Link } from '../../../../components/link';
 import { useRouter } from 'next/router';
@@ -25,6 +21,7 @@ import { RadiosConditional } from '../../../../components/radios-conditional';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
+  const mustBeNumber = (value) => (isNaN(value) ? 'Must be a number' : undefined);
 
   return (
     <BaseTaskPage
@@ -51,7 +48,11 @@ const QuantityOfWaste: NextPage = () => {
                       {...input}
                       ariaId=""
                       renderConditional={() => (
-                        <QuantityInput updateLaterMsg={false} />
+                        <Field name="quantity-of-waste" validate={mustBeNumber}>
+                          {({input, meta}) => (
+                              <QuantityInput {...input} errorMsg={meta.error && input.value.length > 0 && <>{meta.error}</>} updateLaterMsg={false} />
+                          )}
+                        </Field>
                       )}
                     >
                       Yes
@@ -69,7 +70,11 @@ const QuantityOfWaste: NextPage = () => {
                       {...input}
                       ariaId=""
                       renderConditional={() => (
-                        <QuantityInput updateLaterMsg={false} />
+                        <Field name="quantity-of-waste" validate={mustBeNumber}>
+                          {({input, meta}) => (
+                            <QuantityInput {...input} errorMsg={meta.error && input.value.length > 0 && <>{meta.error}</>} updateLaterMsg={true} />
+                          )}
+                        </Field>
                       )}
                     >
                       No

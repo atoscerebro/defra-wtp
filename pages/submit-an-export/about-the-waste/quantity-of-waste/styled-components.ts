@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as COLOURS from 'govuk-colours';
+import { ErrorText } from 'govuk-react';
 
 export const QuantityInputWrapper = styled.div`
   display: flex;
@@ -85,4 +86,9 @@ export const LinkButton = styled.button`
 
 export const UpdateLaterMsg = styled.div`
   color: ${COLOURS.BLACK};
+`;
+
+export const QuantityErrorMessage = styled(ErrorText)`
+  padding: 1rem 0 0 0;
+  margin-bottom: 0;
 `;
