@@ -1,4 +1,7 @@
 import { DateField, GridRow, GridCol, H1, Paragraph } from 'govuk-react';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
+import { TRANSLATION_KEYS } from '../../translations/constants';
 import { DateLabelWrapper, DateLabelHeadingWrapper } from './styled-components';
 
 export const DateInputField = ({ ...props }) => {
@@ -11,7 +14,7 @@ export const DateInputField = ({ ...props }) => {
             <DateLabelHeadingWrapper size="SMALL">
               {props.label}
             </DateLabelHeadingWrapper>
-            For example, 25 9 2022
+            {props.date}
           </DateLabelWrapper>
         </DateField>
       </GridCol>

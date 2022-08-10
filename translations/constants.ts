@@ -105,4 +105,22 @@ export const TRANSLATION_KEYS = {
     'wastesFromMineralMetalliferousExcavation010101',
   oilContainingAcids050112: 'oilContainingAcids050112',
   youHaveAdded3EWCCodes: 'youHaveAdded3EWCCodes',
+  thisMustBeOn11July2022OrAfter: 'thisMustBeOn11July2022OrAfter',
+  noIllEnterAnEstimate: 'noIllEnterAnEstimate',
+  enterTheDate: 'enterTheDate',
+  enterAnEstimateDate: 'enterAnEstimateDate',
+  forExample2592022: 'forExample2592022',
+
+  //Exporter and Importer
+  whatsTheExporterAddress: 'whatsTheExporterAddress',
+  postcode: 'postcode',
+  enterAddressManually: 'enterAddressManually',
+  findAddress: 'findAddress',
+  exportersDetails: 'exportersDetails',
+  changePostcode: 'changePostcode',
+  selectAddress: 'selectAddress',
+  selectAnAddress: 'selectAnAddress',
+  iCannotFindMyAddressInTheList: 'CannotFindMyAddressInTheList',
+  changeAddress: 'changeAddress',
+  contactDetails: 'contactDetails',
 };

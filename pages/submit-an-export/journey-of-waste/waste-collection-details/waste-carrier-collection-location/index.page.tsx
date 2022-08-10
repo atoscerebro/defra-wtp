@@ -1,6 +1,7 @@
 import { H2 } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { AddressForm } from '../../../../../components/address-form';
+import { defaultLabels } from '../../../../../components/address-form/constants';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { links } from '../../constants';
 
@@ -12,6 +13,13 @@ const WasteCarrierCollect = () => {
     router.push(links.wasteCarrierCollectContact);
   };
 
+  const translatedLabels: typeof defaultLabels = useMemo(
+    () => ({
+      postcode: t(defaultLabels.postcode),
+    }),
+    [t],
+  );
+
   return (
     <BaseTaskPage
       component={
@@ -22,6 +30,7 @@ const WasteCarrierCollect = () => {
           <AddressForm
             handleSubmit={handleSubmit}
             hints={{ country: "We'll use this as the exporting country." }}
+            labels={}
           />
         </>
       }

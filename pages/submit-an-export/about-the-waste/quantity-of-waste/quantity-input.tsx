@@ -25,8 +25,11 @@ export const QuantityInput: FC<IProps> = ({ updateLaterMsg, ...input }) => {
         <UpdateLaterMsg>
           {updateLaterMsg && (
             <Paragraph>
-              You&apos;ll need to update this with actual details as soon as
-              possible after submitting this export.
+              {
+                t(
+                  TRANSLATION_KEYS.youllNeedToUpdateThisWithActualDetailsAsSoonAsPossibleAfterSubmittingThisExport,
+                ) as string
+              }
             </Paragraph>
           )}
         </UpdateLaterMsg>

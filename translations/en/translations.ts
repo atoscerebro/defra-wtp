@@ -117,4 +117,24 @@ export const TRANSLATIONS_EN = {
     '010101: wastes from mineral metalliferous excavation',
   [TRANSLATION_KEYS.oilContainingAcids050112]: '050112*: oil containing acids',
   [TRANSLATION_KEYS.youHaveAdded3EWCCodes]: 'You have added 3 EWC codes',
+  [TRANSLATION_KEYS.thisMustBeOn11July2022OrAfter]:
+    'This must be on 11 July 2022 or after.',
+  [TRANSLATION_KEYS.noIllEnterAnEstimate]: "No, I'll enter an estimate",
+  [TRANSLATION_KEYS.enterTheDate]: 'Enter the date',
+  [TRANSLATION_KEYS.enterAnEstimateDate]: 'Enter an estimate date',
+  [TRANSLATION_KEYS.forExample2592022]: 'For example, 25 9 2022',
+
+  //Exporter and Importer
+  [TRANSLATION_KEYS.whatsTheExporterAddress]: "What's the exporter address?",
+  [TRANSLATION_KEYS.postcode]: 'Postcode',
+  [TRANSLATION_KEYS.enterAddressManually]: 'Enter address manually',
+  [TRANSLATION_KEYS.findAddress]: 'Find address',
+  [TRANSLATION_KEYS.exportersDetails]: "Exporter's details",
+  [TRANSLATION_KEYS.changePostcode]: 'Change postcode',
+  [TRANSLATION_KEYS.selectAddress]: 'Select address',
+  [TRANSLATION_KEYS.selectAnAddress]: 'Select an address',
+  [TRANSLATION_KEYS.iCannotFindMyAddressInTheList]:
+    'I cannot find my address in the list',
+  [TRANSLATION_KEYS.changeAddress]: 'Change address',
+  [TRANSLATION_KEYS.contactDetails]: 'Contact Details',
 };

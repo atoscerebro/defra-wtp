@@ -23,7 +23,7 @@ import { useTranslation } from 'react-i18next';
 
 const CollectionDate: NextPage = () => {
   const router = useRouter();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <BaseTaskPage
@@ -42,7 +42,7 @@ const CollectionDate: NextPage = () => {
                 </H1>
                 <CaptionWrapper>
                   <Caption size="M">
-                    This must be on 11 July 2022 or after.
+                    {t(TRANSLATION_KEYS.thisMustBeOn11July2022OrAfter)}
                   </Caption>
                 </CaptionWrapper>
                 <Field name="collection-date-radio" type="radio" value="yes">
@@ -55,13 +55,13 @@ const CollectionDate: NextPage = () => {
                           {({ input }) => (
                             <DateInputField
                               {...input}
-                              label={'Enter the date'}
+                              label={t(TRANSLATION_KEYS.enterTheDate)}
                             />
                           )}
                         </Field>
                       )}
                     >
-                      Yes
+                      {t(TRANSLATION_KEYS.yes)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -78,17 +78,22 @@ const CollectionDate: NextPage = () => {
                       renderConditional={() => (
                         <DateInputField
                           {...input}
-                          label={'Enter an estimate date'}
-                          caption={`You'll need to update this with actual details assoon as possible after submitting this export.`}
+                          label={t(TRANSLATION_KEYS.enterAnEstimateDate)}
+                          caption={t(
+                            TRANSLATION_KEYS.youllNeedToUpdateThisWithActualDetailsAsSoonAsPossibleAfterSubmittingThisExport,
+                          )}
+                          date={t(TRANSLATION_KEYS.forExample2592022)}
                         />
                       )}
                     >
-                      No, I&apos;ll enter an estimate
+                      {t(TRANSLATION_KEYS.noIllEnterAnEstimate)}
                     </RadiosConditional>
                   )}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">Save and continue</Button>
+                  <Button type="submit">
+                    {t(TRANSLATION_KEYS.saveAndContinue)}
+                  </Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>

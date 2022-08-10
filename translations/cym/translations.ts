@@ -118,4 +118,24 @@ export const TRANSLATIONS_CYM = {
   [TRANSLATION_KEYS.oilContainingAcids050112]:
     '050112*: olew yn cynnwys asidau',
   [TRANSLATION_KEYS.youHaveAdded3EWCCodes]: 'Rydych wedi ychwanegu 3 chod EWC',
+  [TRANSLATION_KEYS.thisMustBeOn11July2022OrAfter]:
+    'Rhaid i hyn fod ar 11 Gorffennaf 2022 neu ar ôl hynny.',
+  [TRANSLATION_KEYS.noIllEnterAnEstimate]: 'Na, byddaf yn nodi amcangyfrif',
+  [TRANSLATION_KEYS.enterTheDate]: 'Nodwch y dyddiad',
+  [TRANSLATION_KEYS.enterAnEstimateDate]: 'Rhowch ddyddiad amcangyfrif',
+  [TRANSLATION_KEYS.forExample2592022]: 'Er enghraifft, 25 9 2022',
+
+  //Exporter and Importer
+  [TRANSLATION_KEYS.whatsTheExporterAddress]: 'Beth yw cyfeiriad yr allforiwr?',
+  [TRANSLATION_KEYS.postcode]: 'Côd post',
+  [TRANSLATION_KEYS.enterAddressManually]: 'Rhowch y cyfeiriad â llaw',
+  [TRANSLATION_KEYS.findAddress]: 'Dod o hyd i gyfeiriad',
+  [TRANSLATION_KEYS.exportersDetails]: 'Manylion allforwyr',
+  [TRANSLATION_KEYS.changePostcode]: 'Newid cod post',
+  [TRANSLATION_KEYS.selectAddress]: 'Dewiswch gyfeiriad',
+  [TRANSLATION_KEYS.selectAnAddress]: 'Ddewis cyfeiriad',
+  [TRANSLATION_KEYS.iCannotFindMyAddressInTheList]:
+    "Ni allaf ddod o hyd i'm cyfeiriad yn y rhestr",
+  [TRANSLATION_KEYS.changeAddress]: 'Newid cyfeiriad',
+  [TRANSLATION_KEYS.contactDetails]: 'Manylion cyswllt',
 };

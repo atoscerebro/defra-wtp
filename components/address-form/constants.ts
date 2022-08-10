@@ -20,3 +20,14 @@ export enum ADDRESS_FORM_LABELS {
   POSTCODE = 'Postcode',
   COUNTRY = 'Country',
 }
+
+export const defaultLabels = {
+  postcode: 'postcode',
+  enterAddressManually: 'enterAddressManually',
+  findAddress: 'findAddress',
+  changePostcode: 'changePostcode',
+  selectAddress: 'selectAddress',
+  selectAnAddress: 'selectAnAddress',
+  iCannotFindMyAddressInTheList: 'CannotFindMyAddressInTheList',
+  saveAndContinue: 'saveAndContinue',
+};
