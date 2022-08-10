@@ -19,3 +19,10 @@ export const dailyUsersData = [
   { date: formatChartDate(new Date(2022, 7, 11)), users: 15 },
   { date: formatChartDate(new Date(2022, 7, 12)), users: 20 },
 ];
+
+export const userLanguagesData = [
+  { language: 'English', percent: 75, color: 'crimson' },
+  { language: 'Ulster Scots', percent: 12, color: 'darkblue' },
+  { language: 'Gaelic', percent: 7, color: 'lightblue' },
+  { language: 'Welsh', percent: 6, color: 'green' },
+];
