@@ -1,6 +1,5 @@
 /*
  * Add a average-visit-minutes/user-count line chart
- * Convert pie chart to bar chart
  * Add labels to sankey nodes
  */
 
@@ -45,6 +44,38 @@ export const yearlyUsersData = [
   { date: formatYearDate(new Date(2022, 5, 1)), users: 298 },
   { date: formatYearDate(new Date(2022, 6, 1)), users: 354 },
   { date: formatYearDate(new Date(2022, 7, 1)), users: 205 },
+];
+
+// User visit time
+
+export const dailyAverageTime = [
+  { minutes: 1, users: 5 },
+  { minutes: 5, users: 8 },
+  { minutes: 10, users: 7 },
+  { minutes: 15, users: 6 },
+  { minutes: 20, users: 9 },
+  { minutes: 25, users: 5 },
+  { minutes: 30, users: 2 },
+];
+
+export const weeklyAverageTime = [
+  { minutes: 1, users: 15 },
+  { minutes: 5, users: 18 },
+  { minutes: 10, users: 34 },
+  { minutes: 15, users: 12 },
+  { minutes: 20, users: 5 },
+  { minutes: 25, users: 2 },
+  { minutes: 30, users: 1 },
+];
+
+export const monthlyAverageTime = [
+  { minutes: 1, users: 56 },
+  { minutes: 5, users: 98 },
+  { minutes: 10, users: 103 },
+  { minutes: 15, users: 130 },
+  { minutes: 20, users: 76 },
+  { minutes: 25, users: 30 },
+  { minutes: 30, users: 15 },
 ];
 
 // User languages
