@@ -1,4 +1,12 @@
-import { GridCol, GridRow, Input, Paragraph, Caption } from 'govuk-react';
+import {
+  GridCol,
+  GridRow,
+  Input,
+  Paragraph,
+  Caption,
+  ErrorText,
+  InputField,
+} from 'govuk-react';
 import { useState, FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
@@ -9,13 +17,19 @@ import {
   InputBringToFront,
   LinkButton,
   UpdateLaterMsg,
+  QuantityErrorMessage,
 } from './styled-components';
 
 interface IProps {
   updateLaterMsg?: boolean;
+  errorMsg?: React.ReactNode;
 }
 
-export const QuantityInput: FC<IProps> = ({ updateLaterMsg, ...input }) => {
+export const QuantityInput: FC<IProps> = ({
+  updateLaterMsg,
+  errorMsg,
+  ...input
+}) => {
   const [measurementInTonnes, setMeasurementInTonnes] = useState(true);
   const { t } = useTranslation();
 
@@ -39,6 +53,8 @@ export const QuantityInput: FC<IProps> = ({ updateLaterMsg, ...input }) => {
             ? t(TRANSLATION_KEYS.tonnes)
             : t(TRANSLATION_KEYS.cubicMetres)}
         </Caption>
+        <QuantityErrorMessage>{errorMsg}</QuantityErrorMessage>
+
         <GridRow>
           <GridCol setWidth="one-third">
             <QuantityInputWrapper>

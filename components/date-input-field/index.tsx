@@ -1,8 +1,6 @@
-import { DateField, GridRow, GridCol, H1, Paragraph } from 'govuk-react';
-import { t } from 'i18next';
-import { useTranslation } from 'react-i18next';
-import { TRANSLATION_KEYS } from '../../translations/constants';
+import { DateField, GridRow, GridCol, H1, Paragraph, Input } from 'govuk-react';
 import { DateLabelWrapper, DateLabelHeadingWrapper } from './styled-components';
+import { Field } from 'react-final-form';
 
 export const DateInputField = ({ ...props }) => {
   return (

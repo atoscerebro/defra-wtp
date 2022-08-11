@@ -2,17 +2,7 @@ import { NextPage } from 'next';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
 import { Form, Field } from 'react-final-form';
-import {
-  H1,
-  FormGroup,
-  Radio,
-  Paragraph,
-  Caption,
-  Button,
-  GridRow,
-  GridCol,
-  Input,
-} from 'govuk-react';
+import { H1, FormGroup, Caption, Button, ErrorText } from 'govuk-react';
 import { Link } from '../../../../components/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -27,7 +17,9 @@ import { TRANSLATION_KEYS } from '../../../../translations/constants';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
+  const mustBeNumber = (value: any) =>
+    isNaN(value) ? 'Must be a number' : undefined;
 
   return (
     <BaseTaskPage
@@ -41,11 +33,14 @@ const QuantityOfWaste: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">{t(TRANSLATION_KEYS.doYouKnowTheQuantityOfWaste)}</H1>
+                <H1 size="LARGE">
+                  {t(TRANSLATION_KEYS.doYouKnowTheQuantityOfWaste)}
+                </H1>
                 <CaptionWrapper>
                   <Caption size="M">
-                    {t(TRANSLATION_KEYS.onlyProvideTheNetWeightOrVolumeDoNotIncludeTheWeightOfTheContainerOrVehicle)}
-                   
+                    {t(
+                      TRANSLATION_KEYS.onlyProvideTheNetWeightOrVolumeDoNotIncludeTheWeightOfTheContainerOrVehicle,
+                    )}
                   </Caption>
                 </CaptionWrapper>
                 <Field name="quantity-of-waste-radio" type="radio" value="yes">
@@ -54,7 +49,18 @@ const QuantityOfWaste: NextPage = () => {
                       {...input}
                       ariaId=""
                       renderConditional={() => (
-                        <QuantityInput updateLaterMsg={false} />
+                        <Field name="quantity-of-waste" validate={mustBeNumber}>
+                          {({ input, meta }) => (
+                            <QuantityInput
+                              {...input}
+                              errorMsg={
+                                meta.error &&
+                                input.value.length > 0 && <>{meta.error}</>
+                              }
+                              updateLaterMsg={false}
+                            />
+                          )}
+                        </Field>
                       )}
                     >
                       {t(TRANSLATION_KEYS.yes)}
@@ -72,7 +78,18 @@ const QuantityOfWaste: NextPage = () => {
                       {...input}
                       ariaId=""
                       renderConditional={() => (
-                        <QuantityInput updateLaterMsg={false} />
+                        <Field name="quantity-of-waste" validate={mustBeNumber}>
+                          {({ input, meta }) => (
+                            <QuantityInput
+                              {...input}
+                              errorMsg={
+                                meta.error &&
+                                input.value.length > 0 && <>{meta.error}</>
+                              }
+                              updateLaterMsg={true}
+                            />
+                          )}
+                        </Field>
                       )}
                     >
                       {t(TRANSLATION_KEYS.no)}
@@ -80,7 +97,9 @@ const QuantityOfWaste: NextPage = () => {
                   )}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
+                  <Button type="submit">
+                    {t(TRANSLATION_KEYS.saveAndContinue)}
+                  </Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>
