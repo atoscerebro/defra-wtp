@@ -96,6 +96,10 @@ export const TRANSLATIONS_CYM = {
     'manyleb neu radd ryngwladol (er enghraifft, EN643 2.05.00 ar gyfer papur)',
   [TRANSLATION_KEYS.polymerTypeForPlasticForExampleLpdeFilm]:
     'math polymer ar gyfer plastig (er enghraifft, ffilm LPDE)',
+  [TRANSLATION_KEYS.day]: 'Dydd',
+  [TRANSLATION_KEYS.month]: 'Mis',
+  [TRANSLATION_KEYS.year]: 'YBlwyddyn',
+  [TRANSLATION_KEYS.pleaseEnterAValidDate]: 'Rhowch ddyddiad dilys',
 
   //Quantity of Waste
   [TRANSLATION_KEYS.doYouKnowTheQuantityOfWaste]:

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as COLOURS from 'govuk-colours';
+import { SPACING } from '@govuk-react/constants';
 
 export const TranslationLinksContainer = styled.div`
   width: 100%;
@@ -8,51 +9,24 @@ export const TranslationLinksContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const TranslationLinkDivLeft = styled.option`
-  padding-right: 10%;
-  color: ${COLOURS.LINK_COLOUR};
-  text-decoration: underline;
+export const TranslationLinkButton = styled.button<{ isSelected: boolean }>`
+  all: unset;
+  color: ${({ isSelected }) =>
+    isSelected ? COLOURS.WHITE : COLOURS.LINK_COLOUR};
+  background-color: black;
+  text-decoration: ${({ isSelected }) => (isSelected ? 'none' : 'underline')};
   text-decoration-thickness: max(1px, 0.0625rem);
   text-underline-offset: 0.1em;
-
-  :active {
-    color: white;
-    text-decoration: none;
-  }
 
   :hover {
     text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
     text-decoration-skip-ink: none;
     text-decoration-skip: none;
-    color: #003078;
+    color: white;
     cursor: pointer;
   }
 `;
 
-export const TranslationLinkDivRight = styled.option`
-  padding-left: 10%;
-  color: ${COLOURS.LINK_COLOUR};
-  text-decoration: underline;
-  text-decoration-thickness: max(1px, 0.0625rem);
-  text-underline-offset: 0.1em;
-
-  :active {
-    color: white;
-  }
-
-  :hover {
-    text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
-    text-decoration-skip-ink: none;
-    text-decoration-skip: none;
-    color: #003078;
-    cursor: pointer;
-  }
-
-  :focus {
-    outline: 3px solid transparent;
-    color: ${COLOURS.BLACK};
-    background-color: ${COLOURS.YELLOW};
-    box-shadow: 0 -2px ${COLOURS.YELLOW}, 0 4px ${COLOURS.BLACK};
-    text-decoration: none;
-  }
+export const TranslationSeparator = styled.span`
+  padding: 0px ${SPACING.SCALE_2};
 `;

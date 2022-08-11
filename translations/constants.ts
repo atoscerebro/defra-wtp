@@ -86,6 +86,10 @@ export const TRANSLATION_KEYS = {
     'internationalSpecificationOrGradeForExampleEN643ForPaper',
   polymerTypeForPlasticForExampleLpdeFilm:
     'polymerTypeForPlasticForExampleLpdeFilm',
+  day: 'day',
+  month: 'month',
+  year: 'year',
+  pleaseEnterAValidDate: 'pleaseEnterAValidDate',
 
   //Quantity of Waste
   doYouKnowTheQuantityOfWaste: 'doYouKnowTheQuantityOfWaste',

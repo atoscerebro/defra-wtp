@@ -39,7 +39,7 @@ const CollectionDate: NextPage = () => {
         return undefined;
       }
     }
-    return 'Please enter a valid date';
+    return t(TRANSLATION_KEYS.pleaseEnterAValidDate);
   };
 
   return (
@@ -77,7 +77,7 @@ const CollectionDate: NextPage = () => {
                           {({ input, meta }) => (
                             <CollectionDateInput
                               updateLaterMsg={false}
-                              errorMsg={meta.error && <>{meta.error}</>}
+                              errorMsg={meta.touched && meta.error}
                               {...input}
                             />
                           )}
@@ -106,7 +106,7 @@ const CollectionDate: NextPage = () => {
                           {({ input, meta }) => (
                             <CollectionDateInput
                               updateLaterMsg={true}
-                              errorMsg={meta.error && <>{meta.error}</>}
+                              errorMsg={meta.touched && meta.error}
                               {...input}
                             />
                           )}

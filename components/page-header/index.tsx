@@ -4,13 +4,12 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../../translations/i18n';
 import {
   TranslationLinksContainer,
-  TranslationLinkDivLeft,
-  TranslationLinkDivRight,
+  TranslationLinkButton,
+  TranslationSeparator,
 } from './styled-components';
 
 export const PageHeader = () => {
   const [language, setLanguage] = useState('en');
-  const [visible, setVisible] = useState(false);
   const { t } = useTranslation();
 
   // const handleOnChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -18,10 +17,9 @@ export const PageHeader = () => {
   //   setLanguage(value);
   //   i18n.changeLanguage(value);
   // };
-  const handleOnClick = (e) => {
+  const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const value = e.currentTarget.value;
     setLanguage(value);
-    setVisible(!visible);
     i18n.changeLanguage(value);
   };
   return (
@@ -46,13 +44,21 @@ export const PageHeader = () => {
         }
       >
         <TranslationLinksContainer>
-          <TranslationLinkDivLeft value="en" onClick={handleOnClick}>
+          <TranslationLinkButton
+            value="en"
+            onClick={handleOnClick}
+            isSelected={language === 'en'}
+          >
             English
-          </TranslationLinkDivLeft>
-          <span> | </span>
-          <TranslationLinkDivRight value="cym" onClick={handleOnClick}>
+          </TranslationLinkButton>
+          <TranslationSeparator>|</TranslationSeparator>
+          <TranslationLinkButton
+            value="cym"
+            onClick={handleOnClick}
+            isSelected={language === 'cym'}
+          >
             Cymraeg
-          </TranslationLinkDivRight>
+          </TranslationLinkButton>
         </TranslationLinksContainer>
       </TopNav>
     </div>

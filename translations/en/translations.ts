@@ -96,6 +96,10 @@ export const TRANSLATIONS_EN = {
     'international specification or grade (for example,EN643 2.05.00 for paper)',
   [TRANSLATION_KEYS.polymerTypeForPlasticForExampleLpdeFilm]:
     'polymer type for plastic (for example, LPDE film)',
+  [TRANSLATION_KEYS.day]: 'Day',
+  [TRANSLATION_KEYS.month]: 'Month',
+  [TRANSLATION_KEYS.year]: 'Year',
+  [TRANSLATION_KEYS.pleaseEnterAValidDate]: 'Please enter a valid date',
 
   //Quantity of Waste
   [TRANSLATION_KEYS.doYouKnowTheQuantityOfWaste]:
