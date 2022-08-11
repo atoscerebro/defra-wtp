@@ -34,7 +34,7 @@ import { durationTypes, timeTypes } from './constants';
 import { useState } from 'react';
 import { ChartContainer } from './styled-components';
 
-function DemoSankeyNode({
+function LabelNode({
   x,
   y,
   width,
@@ -135,7 +135,10 @@ const Admin: NextPage = () => {
             <ResponsiveContainer width={'100%'} height={250}>
               <LineChart data={averageMinutesData}>
                 <CartesianGrid vertical={false} />
-                <Tooltip formatter={letterCaseToolTip} />
+                <Tooltip
+                  formatter={letterCaseToolTip}
+                  labelFormatter={(label) => `${label} mins`}
+                />
                 <XAxis
                   axisLine={false}
                   tickLine={false}
@@ -193,7 +196,7 @@ const Admin: NextPage = () => {
                 nodePadding={50}
                 iterations={0}
                 data={exporterJourneysData}
-                node={<DemoSankeyNode width={50} containerWidth={800} />}
+                node={<LabelNode width={50} containerWidth={800} />}
                 link={{ stroke: COLOURS.TURQUOISE_50, strokeOpacity: 0.5 }}
               >
                 <Tooltip />

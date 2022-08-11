@@ -1,8 +1,3 @@
-/*
- * Add minutes label to average minutes tooltip
- * Add labels to sankey nodes
- */
-
 // Unique Users
 
 const formatDayDate = (date: Date) => {
