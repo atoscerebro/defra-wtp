@@ -23,7 +23,7 @@ import {
   monthlyExporterJourneysData,
 } from '../../payloads/charts-data';
 import { GridCol, GridRow, H4, Main } from 'govuk-react';
-import { formatToolTip } from './utils';
+import { formatUniqueUsersToolTip, formatUserLanguagesToolTip } from './utils';
 import * as COLOURS from 'govuk-colours';
 import { TabbedButtons } from '../../components/tabbed-buttons';
 import { durationTypes } from './constants';
@@ -60,7 +60,7 @@ const Admin: NextPage = () => {
             <ResponsiveContainer width={'100%'} height={250}>
               <BarChart data={userCountData}>
                 <CartesianGrid vertical={false} />
-                <Tooltip formatter={formatToolTip} />
+                <Tooltip formatter={formatUniqueUsersToolTip} />
                 <XAxis axisLine={false} tickLine={false} dataKey="date" />
                 <YAxis axisLine={false} tickLine={false} width={30} />
                 <Bar dataKey="users" fill={COLOURS.BLUE} />
@@ -70,23 +70,26 @@ const Admin: NextPage = () => {
         </GridCol>
       </GridRow>
       <GridRow margin={{ direction: 'bottom', size: 9 }}>
-        <GridCol setWidth="one-half">
+        <GridCol setWidth="full">
           <ChartContainer>
             <H4>User Languages</H4>
             <ResponsiveContainer width={'100%'} height={250}>
-              <PieChart>
-                <Legend layout="vertical" align="left" verticalAlign="middle" />
-                <Pie
-                  data={userLanguagesData}
+              <BarChart data={userLanguagesData}>
+                <CartesianGrid vertical={false} />
+                <Tooltip formatter={formatUserLanguagesToolTip} />
+                <XAxis axisLine={false} tickLine={false} dataKey="language" />
+                <YAxis
+                  axisLine={false}
+                  tickLine={false}
+                  width={30}
                   dataKey="percent"
-                  nameKey="language"
-                  label={(e) => `${e.percent}%`}
-                >
-                  {userLanguagesData.map(({ color, language }) => (
-                    <Cell key={language} fill={color} />
+                />
+                <Bar dataKey="percent">
+                  {userLanguagesData.map((point) => (
+                    <Cell key={point.language} fill={point.color} />
                   ))}
-                </Pie>
-              </PieChart>
+                </Bar>
+              </BarChart>
             </ResponsiveContainer>
           </ChartContainer>
         </GridCol>
