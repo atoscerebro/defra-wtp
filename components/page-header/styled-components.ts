@@ -22,7 +22,6 @@ export const TranslationLinkButton = styled.button<{ isSelected: boolean }>`
     text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
     text-decoration-skip-ink: none;
     text-decoration-skip: none;
-    color: white;
     cursor: pointer;
   }
 `;

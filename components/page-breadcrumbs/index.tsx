@@ -1,8 +1,7 @@
 import { Breadcrumbs, H2, H3 } from 'govuk-react';
 import { Link } from '../link';
 import { FC } from 'react';
-
-const BreadcrumbsLink = Breadcrumbs.Link || Link;
+import { BreadcrumbLink } from './breadcrumb-link';
 
 export interface IBreadcrumb {
   route: string;
@@ -21,9 +20,9 @@ export const PageBreadcrumbs: FC<IPageBreadcumbsProps> = ({
   return (
     <Breadcrumbs>
       {crumbs.map((crumb, index) => (
-        <BreadcrumbsLink key={index} href={crumb.route}>
+        <BreadcrumbLink key={index} href={crumb.route}>
           {crumb.label}
-        </BreadcrumbsLink>
+        </BreadcrumbLink>
       ))}
       <span>{currentPage}</span>
     </Breadcrumbs>
