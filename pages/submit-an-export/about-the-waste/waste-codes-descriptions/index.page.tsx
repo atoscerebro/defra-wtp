@@ -1,26 +1,18 @@
+import { Button, Caption, FormGroup, H1, Paragraph, Radio } from 'govuk-react';
 import { NextPage } from 'next';
-import {
-  H1,
-  FormGroup,
-  Radio,
-  Paragraph,
-  Caption,
-  Button,
-  LabelText,
-} from 'govuk-react';
-import { BaseTaskPage } from '../../../../components/base-task-page';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { CaptionWrapper } from '../../../../components/form-pages/styled-components';
+import { Field, Form } from 'react-final-form';
+import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { BaseTaskPage } from '../../../../components/base-task-page';
 import {
-  WASTE_CODES_LABELS,
-  baselAnnexIX,
-  oecd,
   annexIIIA,
   annexIIIB,
+  baselAnnexIX,
+  oecd,
+  WASTE_CODES_LABELS,
 } from '../../../../components/form-pages/constants';
-import { Form, Field } from 'react-final-form';
-import { useRouter } from 'next/router';
-import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
+import { CaptionWrapper } from '../../../../components/form-pages/styled-components';
 import { RadiosConditional } from '../../../../components/radios-conditional';
 
 const WasteCodes: NextPage = () => {

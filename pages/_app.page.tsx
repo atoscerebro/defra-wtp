@@ -4,13 +4,16 @@ import { GlobalStyle } from 'govuk-react';
 import '../styles/globals.css';
 import '../styles/autocomplete.css';
 import 'normalize.css';
+import SubmitExportProvider from '../lib/SubmitExportContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </Layout>
+    <SubmitExportProvider>
+      <Layout>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </Layout>
+    </SubmitExportProvider>
   );
 }
 

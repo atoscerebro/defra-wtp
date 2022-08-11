@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { FormGroup, Radio, H1, Button, GridRow, GridCol } from 'govuk-react';
 import { Main } from 'govuk-react';
-import { useMemo, useState } from 'react';
+import { ChangeEvent, FormEvent, useContext, useMemo, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { ButtonWrapper } from '../../../components/form-pages/styled-components';
@@ -12,12 +12,14 @@ import { TwoThirdsInputField } from '../../../components/two-thirds-input-field/
 import { useTranslation } from 'react-i18next';
 import { translateCrumbs } from '../../../translations/utils';
 import { TRANSLATION_KEYS } from '../../../translations/constants';
+import { SubmitExportContext } from '../../../lib/SubmitExportContext';
 
 // const PRENOTIFY_ROUTE = 'prenotify';
 const PRENOTIFY_ROUTE = '/submit-export-task-list';
 
 const UniqueRef: NextPage = () => {
   const router = useRouter();
+  const { saveUserRef } = useContext(SubmitExportContext);
 
   const handleFormSubmit = () => {
     router.push(PRENOTIFY_ROUTE);
@@ -42,7 +44,7 @@ const UniqueRef: NextPage = () => {
             onSubmit={(e) => {
               console.log(e); //ref-number-answer: 'yes' or 'no'. (If 'yes') ref-number-input: 'reference number string'
 
-              handleFormSubmit();
+              // handleFormSubmit();
             }}
           >
             {({ handleSubmit }) => (
@@ -53,13 +55,17 @@ const UniqueRef: NextPage = () => {
                       TRANSLATION_KEYS.doYouWantToAddYourOwnReferenceNumberToThisExport,
                     )}
                   </H1>
-                  <Field name="ref-number-answer" type="radio" value="yes">
+                  <Field name="refNumberAnswer" type="radio" value="yes">
                     {({ input }) => (
                       <RadiosConditional
                         {...input}
                         ariaId={'conditional-contact'}
                         renderConditional={() => (
-                          <TwoThirdsInputField>
+                          <TwoThirdsInputField
+                            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                              console.log(e.target.value)
+                            }
+                          >
                             {t(TRANSLATION_KEYS.enterYourReferenceNumber)}
                           </TwoThirdsInputField>
                         )}
@@ -69,7 +75,7 @@ const UniqueRef: NextPage = () => {
                     )}
                   </Field>
 
-                  <Field name="ref-number-answer" type="radio" value="no">
+                  <Field name="refNumberAnswer" type="radio" value="no">
                     {({ input }) => (
                       <Radio {...input}>{t(TRANSLATION_KEYS.no)}</Radio>
                     )}
