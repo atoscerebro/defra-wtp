@@ -8,6 +8,10 @@ interface IProps {
   label?: string;
 }
 
+/**
+ * Use the accessible autocomplete input to allow users choose from a large set of options
+ * via typeahead search
+ */
 export const AccessibleAutocomplete: FC<IProps> = ({
   options,
   hintText,
