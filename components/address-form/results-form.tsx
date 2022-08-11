@@ -4,16 +4,10 @@ import { FC } from 'react';
 import { Field } from 'react-final-form';
 import { ADDRESS_FORM_IDS, defaultLabels } from './constants';
 import * as StyledComponents from './styled-components';
-import { IAddress } from './types';
+import { IAddress, ILabels } from './types';
 
 export interface IResultsForm {
-  labels: {
-    changePostcode?: string;
-    selectAddress?: string;
-    selectAnAddress?: string;
-    iCannotFindMyAddressInTheList?: string;
-    saveAndContinue?: string;
-  };
+  labels: ILabels;
   results: Record<string, IAddress>;
   form: FormApi<IAddress, Partial<IAddress>>;
   postcode: string;
@@ -22,7 +16,7 @@ export interface IResultsForm {
 }
 
 export const ResultsForm: FC<IResultsForm> = ({
-  labels = {},
+  labels,
   results,
   form,
   postcode,

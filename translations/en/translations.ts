@@ -137,4 +137,57 @@ export const TRANSLATIONS_EN = {
     'I cannot find my address in the list',
   [TRANSLATION_KEYS.changeAddress]: 'Change address',
   [TRANSLATION_KEYS.contactDetails]: 'Contact Details',
+  [TRANSLATION_KEYS.fullName]: 'Full name',
+  [TRANSLATION_KEYS.emailAddress]: 'Email address',
+  [TRANSLATION_KEYS.phoneNumber]: 'Phone number',
+  [TRANSLATION_KEYS.faxNumberOptional]: 'Fax number (optional)',
+  [TRANSLATION_KEYS.organisationName]: 'Organisation name',
+  [TRANSLATION_KEYS.address]: 'Address',
+  [TRANSLATION_KEYS.whosTheImporter]: "Who's the importer?",
+  [TRANSLATION_KEYS.country]: 'Country',
+  [TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers]:
+    'Include the country code for international numbers',
+
+  //Journey of Waste
+  [TRANSLATION_KEYS.whoIsTheWasteCarrier]: 'Who is the waste carrier?',
+  [TRANSLATION_KEYS.youllBeAbleToUpdateTheseDetailsAfterSubmittingThisExport]:
+    "You'll be able to update these details after submitting this export.",
+  [TRANSLATION_KEYS.howWillTheWasteCarrierTransportTheWaste]:
+    'How will the waste carrier transport the waste?',
+  [TRANSLATION_KEYS.road]: 'Road',
+  [TRANSLATION_KEYS.rail]: 'Rail',
+  [TRANSLATION_KEYS.sea]: 'Sea',
+  [TRANSLATION_KEYS.air]: 'Air',
+  [TRANSLATION_KEYS.enterContainerNumberOrVehicleRegistrationNumberOptional]:
+    'Enter container number or vehicle registration number (optional)',
+  [TRANSLATION_KEYS.enterContainerNumberOptional]:
+    'Enter container number (optional)',
+  [TRANSLATION_KEYS.enterFlightNumberOptional]:
+    'Enter flight number (optional)',
+  [TRANSLATION_KEYS.firstWasteCarrier]: 'First waste carrier',
+  [TRANSLATION_KEYS.additionalWasteCarriers]: 'Additional Waste Carriers',
+  [TRANSLATION_KEYS.doYouNeedToAddAnotherWasteCarrier]:
+    'Do you need to add another waste carrier?',
+  [TRANSLATION_KEYS.youCanHaveUpTo5AdditionalWasteCarriers]:
+    'You can have up to 5 additional waste carriers.',
+  [TRANSLATION_KEYS.wellUseThisAsTheExportingCountry]:
+    "We'll use this as the exporting country",
+  [TRANSLATION_KEYS.whereWillTheWasteCarrierCollectTheWasteFrom]:
+    'Where will the waste carrier collect the waste from?',
+  [TRANSLATION_KEYS.doYouKnowTheLocationAtWhichTheWasteWillLeaveTheUk]:
+    'Do you know the location at which the waste will leave the UK?',
+  [TRANSLATION_KEYS.enterLocation]: 'Enter location',
+  [TRANSLATION_KEYS.areThereAnyOtherCountriesTheWasteWillTravelThrough]:
+    'Are there any other countries the waste will travel through?',
+  [TRANSLATION_KEYS.doNotIncludeTheExportingOrImportingCountry]:
+    'Do not include the exporting or importing country.',
+  [TRANSLATION_KEYS.enterCountriesInOrderOfTravel]:
+    'Enter countries in order of travel',
+
+  //Treatment of waste
+  [TRANSLATION_KEYS.laboratoryDetails]: 'Laboratory Details',
+  [TRANSLATION_KEYS.whatIsTheDisposalCode]: 'What is the disposal code?',
+  [TRANSLATION_KEYS.wellAlsoUseThisAsTheImportingCountry]:
+    "We'll also use this as the importing country.",
+  [TRANSLATION_KEYS.laboratoryName]: 'Laboratory name',
 };

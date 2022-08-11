@@ -2,7 +2,7 @@ import { H2 } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { AddressForm } from '../../../../../components/address-form';
-import { defaultLabels } from '../../../../../components/address-form/constants';
+import { defaultKeys } from '../../../../../components/address-form/constants';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { TRANSLATION_KEYS } from '../../../../../translations/constants';
 import { links } from '../../constants';
@@ -17,18 +17,22 @@ const ExporterAddress = () => {
     router.push(links.exporterContact);
   };
 
-  const translatedLabels: typeof defaultLabels = useMemo(
+  const translatedLabels: typeof defaultKeys = useMemo(
     () => ({
-      postcode: t(defaultLabels.postcode),
-      enterAddressManually: t(defaultLabels.enterAddressManually),
-      findAddress: t(defaultLabels.findAddress),
-      changePostcode: t(defaultLabels.changePostcode),
-      selectAddress: t(defaultLabels.selectAddress),
-      selectAnAddress: t(defaultLabels.selectAnAddress),
+      line1: t(defaultKeys.line1),
+      line2: t(defaultKeys.line2),
+      town: t(defaultKeys.town),
+      country: t(defaultKeys.country),
+      postcode: t(defaultKeys.postcode),
+      enterAddressManually: t(defaultKeys.enterAddressManually),
+      findAddress: t(defaultKeys.findAddress),
+      changePostcode: t(defaultKeys.changePostcode),
+      selectAddress: t(defaultKeys.selectAddress),
+      selectAnAddress: t(defaultKeys.selectAnAddress),
       iCannotFindMyAddressInTheList: t(
-        defaultLabels.iCannotFindMyAddressInTheList,
+        defaultKeys.iCannotFindMyAddressInTheList,
       ),
-      saveAndContinue: t(defaultLabels.saveAndContinue),
+      saveAndContinue: t(defaultKeys.saveAndContinue),
     }),
     [t],
   );

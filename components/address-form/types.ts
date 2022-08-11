@@ -1,3 +1,5 @@
+import { defaultLabels } from './constants';
+
 export interface IAddress {
   line1: string;
   line2?: string;
@@ -7,3 +9,5 @@ export interface IAddress {
 }
 
 export type IHints = Partial<IAddress>;
+
+export type ILabels = typeof defaultLabels;

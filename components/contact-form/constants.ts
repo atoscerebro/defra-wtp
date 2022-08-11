@@ -5,9 +5,16 @@ export enum CONTACT_FORM_IDS {
   FAX_NUMBER = 'fax-number',
 }
 
-export enum CONTACT_FORM_LABELS {
-  FULL_NAME = 'Full name',
-  EMAIL_ADDRESS = 'Email address',
-  PHONE_NUMBER = 'Phone number',
-  FAX_NUMBER = 'Fax number (optional)',
-}
+export const defaultKeys = {
+  fullName: 'fullName',
+  emailAddress: 'emailAddress',
+  phoneNumber: 'phoneNumber',
+  faxNumberOptional: 'faxNumberOptional',
+};
+
+export const defaultLabels = {
+  fullName: 'Full name',
+  emailAddress: 'Email address',
+  phoneNumber: 'Phone number',
+  faxNumberOptional: 'Fax number (optional)',
+};

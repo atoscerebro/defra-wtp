@@ -15,14 +15,29 @@ import { ContactForm } from '../../../../../components/contact-form';
 import { links } from '../../../../submit-export-task-list/constants';
 import { IMPORTER_ADDRESS_IDS, IMPORTER_ADDRESS_LABELS } from './constants';
 import { countryList } from '../../../../../components/form-pages/constants';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
+import { defaultKeys } from '../../../../../components/contact-form/constants';
+import { useMemo } from 'react';
 
 const ImporterAddress = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSubmit = (data: any) => {
     console.log(data);
     router.push(links.submitExportTaskList);
   };
+
+  const translatedLabels: typeof defaultKeys = useMemo(
+    () => ({
+      fullName: t(defaultKeys.fullName),
+      phoneNumber: t(defaultKeys.phoneNumber),
+      emailAddress: t(defaultKeys.emailAddress),
+      faxNumberOptional: t(defaultKeys.faxNumberOptional),
+    }),
+    [t],
+  );
 
   return (
     <BaseTaskPage
@@ -30,12 +45,12 @@ const ImporterAddress = () => {
         <Form onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <H2 size="LARGE">Who&apos;s the importer?</H2>
+              <H2 size="LARGE">{t(TRANSLATION_KEYS.whosTheImporter)}</H2>
               <FormGroup>
                 <Field name={IMPORTER_ADDRESS_IDS.ORGANISATION_NAME}>
                   {({ input }) => (
                     <InputField {...input}>
-                      {IMPORTER_ADDRESS_LABELS.ORGANISATION_NAME}
+                      {t(TRANSLATION_KEYS.organisationName)}
                     </InputField>
                   )}
                 </Field>
@@ -44,7 +59,7 @@ const ImporterAddress = () => {
                 <Field name={IMPORTER_ADDRESS_IDS.ADDRESS}>
                   {({ input }) => (
                     <TextArea {...input}>
-                      {IMPORTER_ADDRESS_LABELS.ADDRESS}
+                      {t(TRANSLATION_KEYS.address)}
                     </TextArea>
                   )}
                 </Field>
@@ -55,7 +70,7 @@ const ImporterAddress = () => {
                     <AccessibleAutocomplete
                       {...input}
                       options={countryList}
-                      label={IMPORTER_ADDRESS_LABELS.COUNTRY}
+                      label={t(TRANSLATION_KEYS.country)}
                     />
                   )}
                 </Field>
@@ -63,19 +78,23 @@ const ImporterAddress = () => {
               <FormGroup>
                 <Fieldset>
                   <Fieldset.Legend>
-                    <H3>Contact Details</H3>
+                    <H3>{t(TRANSLATION_KEYS.contactDetails)}</H3>
                   </Fieldset.Legend>
                   <ContactForm
+                    labels={translatedLabels}
                     hints={{
-                      phone:
-                        'Include the country code for international numbers.',
-                      fax: 'Include the country code for international numbers.',
+                      phone: t(
+                        TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers,
+                      ),
+                      fax: t(
+                        TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers,
+                      ),
                     }}
                   />
                 </Fieldset>
               </FormGroup>
               <div>
-                <Button>Save and continue</Button>
+                <Button>{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
               </div>
             </form>
           )}

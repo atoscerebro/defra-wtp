@@ -1,9 +1,11 @@
 import { Button, FormGroup, H2, Paragraph } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
+import { useTranslation } from 'react-i18next';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { RadiosConditional } from '../../../../../components/radios-conditional';
 import { TwoThirdsInputField } from '../../../../../components/two-thirds-input-field/styled-components';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
 import { links } from '../../constants';
 import {
   WASTE_CARRIER_TRANSPORT_GROUP,
@@ -13,6 +15,7 @@ import {
 
 const WasteCarrierTransport = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSubmit = (data: any) => {
     console.log(data);
@@ -26,11 +29,14 @@ const WasteCarrierTransport = () => {
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <H2 size="LARGE">
-                How will the waste carrier transport the waste?
+                {t(TRANSLATION_KEYS.howWillTheWasteCarrierTransportTheWaste)}
               </H2>
               <Paragraph>
-                You&apos;ll be able to update these details after submitting
-                this export.
+                {
+                  t(
+                    TRANSLATION_KEYS.youllBeAbleToUpdateTheseDetailsAfterSubmittingThisExport,
+                  ) as string
+                }
               </Paragraph>
               <FormGroup>
                 <Field
@@ -43,12 +49,16 @@ const WasteCarrierTransport = () => {
                       {...input}
                       ariaId={'conditional-contact-road'}
                       renderConditional={() => (
-                        <TwoThirdsInputField hint="Enter container number or vehicle registration number (optional)">
+                        <TwoThirdsInputField
+                          hint={t(
+                            TRANSLATION_KEYS.enterContainerNumberOrVehicleRegistrationNumberOptional,
+                          )}
+                        >
                           <></>
                         </TwoThirdsInputField>
                       )}
                     >
-                      {WASTE_CARRIER_TRANSPORT_LABELS.ROAD}
+                      {t(TRANSLATION_KEYS.road)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -62,12 +72,16 @@ const WasteCarrierTransport = () => {
                       {...input}
                       ariaId={'conditional-contact-rail'}
                       renderConditional={() => (
-                        <TwoThirdsInputField hint="Enter container number (optional)">
+                        <TwoThirdsInputField
+                          hint={t(
+                            TRANSLATION_KEYS.enterContainerNumberOptional,
+                          )}
+                        >
                           <></>
                         </TwoThirdsInputField>
                       )}
                     >
-                      {WASTE_CARRIER_TRANSPORT_LABELS.RAIL}
+                      {t(TRANSLATION_KEYS.rail)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -81,12 +95,16 @@ const WasteCarrierTransport = () => {
                       {...input}
                       ariaId={'conditional-contact-sea'}
                       renderConditional={() => (
-                        <TwoThirdsInputField hint="Enter container number (optional)">
+                        <TwoThirdsInputField
+                          hint={t(
+                            TRANSLATION_KEYS.enterContainerNumberOptional,
+                          )}
+                        >
                           <></>
                         </TwoThirdsInputField>
                       )}
                     >
-                      {WASTE_CARRIER_TRANSPORT_LABELS.SEA}
+                      {t(TRANSLATION_KEYS.sea)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -100,18 +118,20 @@ const WasteCarrierTransport = () => {
                       {...input}
                       ariaId={'conditional-contact-air'}
                       renderConditional={() => (
-                        <TwoThirdsInputField hint="Enter flight number (optional)">
+                        <TwoThirdsInputField
+                          hint={t(TRANSLATION_KEYS.enterFlightNumberOptional)}
+                        >
                           <></>
                         </TwoThirdsInputField>
                       )}
                     >
-                      {WASTE_CARRIER_TRANSPORT_LABELS.AIR}
+                      {t(TRANSLATION_KEYS.air)}
                     </RadiosConditional>
                   )}
                 </Field>
               </FormGroup>
               <div>
-                <Button>Save and continue</Button>
+                <Button>{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
               </div>
             </form>
           )}

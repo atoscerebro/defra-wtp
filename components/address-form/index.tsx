@@ -5,22 +5,13 @@ import { ADDRESS_FORM_VIEW_KEY } from './constants';
 import { ManualForm } from './manual-form';
 import { PostcodeForm } from './postcode-form';
 import { ResultsForm } from './results-form';
-import { IAddress, IHints } from './types';
+import { IAddress, IHints, ILabels } from './types';
 import { getAddressString } from './utils';
 import { defaultLabels } from './constants';
 
 export interface IAddressFormProps {
   hints?: IHints;
-  labels?: {
-    postcode?: string;
-    enterAddressManually?: string;
-    findAddress?: string;
-    changePostcode?: string;
-    selectAddress?: string;
-    selectAnAddress?: string;
-    iCannotFindMyAddressInTheList?: string;
-    saveAndContinue?: string;
-  };
+  labels?: ILabels;
   handleSubmit: (address: IAddress) => void;
 }
 
@@ -95,7 +86,7 @@ export const AddressForm: FC<IAddressFormProps> = ({
             {
               [ADDRESS_FORM_VIEW_KEY.SEARCH]: (
                 <PostcodeForm
-                  labels={{ ...labels }}
+                  labels={labels}
                   onChangePostcode={(value) => setPostcode(value)}
                   onSetResults={handleSetResults}
                   onSetManual={handleSetManual}
@@ -103,7 +94,7 @@ export const AddressForm: FC<IAddressFormProps> = ({
               ),
               [ADDRESS_FORM_VIEW_KEY.RESULTS]: (
                 <ResultsForm
-                  labels={{ ...labels }}
+                  labels={labels}
                   postcode={postcode}
                   results={results}
                   form={form}
@@ -113,6 +104,7 @@ export const AddressForm: FC<IAddressFormProps> = ({
               ),
               [ADDRESS_FORM_VIEW_KEY.MANUAL]: (
                 <ManualForm
+                  labels={labels}
                   hints={hints}
                   form={form}
                   onResetPostcode={handleResetPostcode}

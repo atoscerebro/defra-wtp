@@ -1,3 +1,6 @@
+import { defaultKeys as addressKeys } from '../components/address-form/constants';
+import { defaultKeys as contactKeys } from '../components/contact-form/constants';
+
 export const TRANSLATION_KEYS = {
   // Home page translations
   greenListWasteOverview: 'greenListWasteOverview',
@@ -23,7 +26,6 @@ export const TRANSLATION_KEYS = {
     'doYouWantToAddYourOwnReferenceNumberToThisExport',
   yes: 'yes',
   no: 'no',
-  saveAndContinue: 'saveAndContinue',
   enterYourReferenceNumber: 'enterYourReferenceNumber',
   submissionIncomplete: 'submissionIncomplete',
   submissionComplete: 'submissionComplete',
@@ -113,14 +115,55 @@ export const TRANSLATION_KEYS = {
 
   //Exporter and Importer
   whatsTheExporterAddress: 'whatsTheExporterAddress',
-  postcode: 'postcode',
-  enterAddressManually: 'enterAddressManually',
-  findAddress: 'findAddress',
-  exportersDetails: 'exportersDetails',
-  changePostcode: 'changePostcode',
-  selectAddress: 'selectAddress',
-  selectAnAddress: 'selectAnAddress',
-  iCannotFindMyAddressInTheList: 'CannotFindMyAddressInTheList',
-  changeAddress: 'changeAddress',
   contactDetails: 'contactDetails',
+  exportersDetails: 'exportersDetails',
+  organisationName: 'organisationName',
+  changeAddress: 'changeAddress',
+  address: 'address',
+  whosTheImporter: 'whosTheImporter',
+  includeTheCountryCodeForInternationalNumbers:
+    'includeTheCountryCodeForInternationalNumbers',
+
+  //Journey of Waste
+  whoIsTheWasteCarrier: 'whoIsTheWasteCarrier',
+  youllBeAbleToUpdateTheseDetailsAfterSubmittingThisExport:
+    'youllBeAbleToUpdateTheseDetailsAfterSubmittingThisExport',
+  howWillTheWasteCarrierTransportTheWaste:
+    'howWillTheWasteCarrierTransportTheWaste',
+  road: 'road',
+  rail: 'rail',
+  sea: 'sea',
+  air: 'air',
+  enterContainerNumberOrVehicleRegistrationNumberOptional:
+    'enterContainerNumberOrVehicleRegistrationNumberOptional',
+  enterContainerNumberOptional: 'enterContainerNumberOptional',
+  enterFlightNumberOptional: 'enterFlightNumberOptional',
+  firstWasteCarrier: 'firstWasteCarrier',
+  additionalWasteCarriers: 'additionalWasteCarriers',
+  doYouNeedToAddAnotherWasteCarrier: 'doYouNeedToAddAnotherWasteCarrier',
+  youCanHaveUpTo5AdditionalWasteCarriers:
+    'youCanHaveUpTo5AdditionalWasteCarriers',
+  wellUseThisAsTheExportingCountry: 'wellUseThisAsTheExportingCountry',
+  whereWillTheWasteCarrierCollectTheWasteFrom:
+    'whereWillTheWasteCarrierCollectTheWasteFrom',
+  doYouKnowTheLocationAtWhichTheWasteWillLeaveTheUk:
+    'doYouKnowTheLocationAtWhichTheWasteWillLeaveTheUk',
+  enterLocation: 'enterLocation',
+  areThereAnyOtherCountriesTheWasteWillTravelThrough:
+    'areThereAnyOtherCountriesTheWasteWillTravelThrough',
+  doNotIncludeTheExportingOrImportingCountry:
+    'doNotIncludeTheExportingOrImportingCountry',
+  enterCountriesInOrderOfTravel: 'enterCountriesInOrderOfTravel',
+
+  //Treatment of waste
+  laboratoryDetails: 'laboratoryDetails',
+  wellAlsoUseThisAsTheImportingCountry: 'wellAlsoUseThisAsTheImportingCountry',
+  whatIsTheDisposalCode: 'whatIsTheDisposalCode',
+  laboratoryName: 'laboratoryName',
+
+  // Contact Form
+  ...contactKeys,
+
+  // Address Form
+  ...addressKeys,
 };

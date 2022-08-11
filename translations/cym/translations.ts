@@ -138,4 +138,56 @@ export const TRANSLATIONS_CYM = {
     "Ni allaf ddod o hyd i'm cyfeiriad yn y rhestr",
   [TRANSLATION_KEYS.changeAddress]: 'Newid cyfeiriad',
   [TRANSLATION_KEYS.contactDetails]: 'Manylion cyswllt',
+  [TRANSLATION_KEYS.fullName]: 'Enw llawn',
+  [TRANSLATION_KEYS.emailAddress]: 'Cyfeiriad ebost',
+  [TRANSLATION_KEYS.phoneNumber]: 'Rhif ffôn',
+  [TRANSLATION_KEYS.faxNumberOptional]: 'Rhif ffacs (dewisol)',
+  [TRANSLATION_KEYS.organisationName]: "Enw'r sefydliad",
+  [TRANSLATION_KEYS.address]: 'Cyfeiriad',
+  [TRANSLATION_KEYS.whosTheImporter]: "Pwy yw'r mewnforiwr?",
+  [TRANSLATION_KEYS.country]: 'Gwlad',
+  [TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers]:
+    'Cynhwyswch god y wlad ar gyfer rhifau rhyngwladol',
+
+  //Journey of Waste
+  [TRANSLATION_KEYS.whoIsTheWasteCarrier]: "Pwy yw'r cludwr gwastraff?",
+  [TRANSLATION_KEYS.youllBeAbleToUpdateTheseDetailsAfterSubmittingThisExport]:
+    "Byddwch yn gallu diweddaru'r manylion hyn ar ôl cyflwyno'r allforyn hwn.",
+  [TRANSLATION_KEYS.howWillTheWasteCarrierTransportTheWaste]:
+    "Sut bydd y cludwr gwastraff yn cludo'r gwastraff?",
+  [TRANSLATION_KEYS.road]: 'Ffordd',
+  [TRANSLATION_KEYS.rail]: 'Rheilffordd',
+  [TRANSLATION_KEYS.sea]: 'Môr',
+  [TRANSLATION_KEYS.air]: 'Awyr',
+  [TRANSLATION_KEYS.enterContainerNumberOrVehicleRegistrationNumberOptional]:
+    'Rhowch rif cynhwysydd neu rif cofrestru cerbyd (dewisol)',
+  [TRANSLATION_KEYS.enterContainerNumberOptional]:
+    'Rhowch rif y cynhwysydd (dewisol)',
+  [TRANSLATION_KEYS.enterFlightNumberOptional]: 'Rhowch rif hedfan (dewisol)',
+  [TRANSLATION_KEYS.firstWasteCarrier]: 'Cludwr gwastraff cyntaf',
+  [TRANSLATION_KEYS.additionalWasteCarriers]: 'Cludwyr Gwastraff Ychwanegol',
+  [TRANSLATION_KEYS.doYouNeedToAddAnotherWasteCarrier]:
+    'Oes angen i chi ychwanegu cludwr gwastraff arall?',
+  [TRANSLATION_KEYS.youCanHaveUpTo5AdditionalWasteCarriers]:
+    'Gallwch gael hyd at 5 cludwr gwastraff ychwanegol.',
+  [TRANSLATION_KEYS.wellUseThisAsTheExportingCountry]:
+    'Byddwn yn defnyddio hwn fel y wlad allforio',
+  [TRANSLATION_KEYS.whereWillTheWasteCarrierCollectTheWasteFrom]:
+    "O ble bydd y cludwr gwastraff yn casglu'r gwastraff?",
+  [TRANSLATION_KEYS.doYouKnowTheLocationAtWhichTheWasteWillLeaveTheUk]:
+    "Ydych chi'n gwybod y lleoliad lle bydd y gwastraff yn gadael y DU?",
+  [TRANSLATION_KEYS.enterLocation]: 'Rhowch leoliad',
+  [TRANSLATION_KEYS.areThereAnyOtherCountriesTheWasteWillTravelThrough]:
+    'A oes unrhyw wledydd eraill y bydd y gwastraff yn teithio drwyddynt?',
+  [TRANSLATION_KEYS.doNotIncludeTheExportingOrImportingCountry]:
+    'Peidiwch â chynnwys y wlad allforio neu fewnforio.',
+  [TRANSLATION_KEYS.enterCountriesInOrderOfTravel]:
+    'Rhowch wledydd yn nhrefn teithio',
+
+  // Treatment of waste
+  [TRANSLATION_KEYS.laboratoryDetails]: 'Manylion Labordy',
+  [TRANSLATION_KEYS.whatIsTheDisposalCode]: "Beth yw'r cod gwaredu?",
+  [TRANSLATION_KEYS.wellAlsoUseThisAsTheImportingCountry]:
+    "Byddwn hefyd yn defnyddio hwn fel y wlad sy'n mewnforio.",
+  [TRANSLATION_KEYS.laboratoryName]: 'Enw labordy',
 };

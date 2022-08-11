@@ -13,10 +13,12 @@ import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { ContactForm } from '../../../../../components/contact-form';
+import { defaultKeys } from '../../../../../components/contact-form/constants';
 import { LineBreak } from '../../../../../components/line-break';
 import { TRANSLATION_KEYS } from '../../../../../translations/constants';
 import { links } from '../../constants';
 import { EXPORTER_CONTACT_IDS, EXPORTER_CONTACT_LABELS } from './constants';
+import React, { useMemo } from 'react';
 
 const ExporterContact = () => {
   const router = useRouter();
@@ -26,6 +28,16 @@ const ExporterContact = () => {
     console.log(data);
     router.push(links.importerAddress);
   };
+
+  const translatedLabels: typeof defaultKeys = useMemo(
+    () => ({
+      fullName: t(defaultKeys.fullName),
+      phoneNumber: t(defaultKeys.phoneNumber),
+      emailAddress: t(defaultKeys.emailAddress),
+      faxNumberOptional: t(defaultKeys.faxNumberOptional),
+    }),
+    [t],
+  );
 
   return (
     <BaseTaskPage
@@ -50,7 +62,7 @@ const ExporterContact = () => {
                 <Field name={EXPORTER_CONTACT_IDS.ORGANISATION_NAME}>
                   {({ input }) => (
                     <InputField {...input}>
-                      {EXPORTER_CONTACT_LABELS.ORGANISATION_NAME}
+                      {t(TRANSLATION_KEYS.organisationName)}
                     </InputField>
                   )}
                 </Field>
@@ -60,7 +72,7 @@ const ExporterContact = () => {
                   <Fieldset.Legend>
                     <H3>{t(TRANSLATION_KEYS.contactDetails)}</H3>
                   </Fieldset.Legend>
-                  <ContactForm />
+                  <ContactForm labels={translatedLabels} />
                 </Fieldset>
               </FormGroup>
               <div>
