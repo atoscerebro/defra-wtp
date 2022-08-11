@@ -10,6 +10,8 @@ import {
   Sankey,
   LineChart,
   Line,
+  Layer,
+  Rectangle,
 } from 'recharts';
 import { NextPage } from 'next';
 import {
@@ -31,6 +33,49 @@ import { TabbedButtons } from '../../components/tabbed-buttons';
 import { durationTypes, timeTypes } from './constants';
 import { useState } from 'react';
 import { ChartContainer } from './styled-components';
+
+function DemoSankeyNode({
+  x,
+  y,
+  width,
+  height,
+  index,
+  payload,
+  containerWidth,
+}: any) {
+  const isOut = x + width + 6 > containerWidth;
+  return (
+    <Layer key={`CustomNode${index}`}>
+      <Rectangle
+        x={x}
+        y={y}
+        width={width}
+        height={height}
+        fill={COLOURS.BLUE}
+        fillOpacity="1"
+      />
+      <text
+        textAnchor={isOut ? 'end' : 'start'}
+        x={isOut ? x - 6 : x + width + 6}
+        y={y + height / 2}
+        fontSize="14"
+        stroke="#333"
+      >
+        {payload.name}
+      </text>
+      <text
+        textAnchor={isOut ? 'end' : 'start'}
+        x={isOut ? x - 6 : x + width + 6}
+        y={y + height / 2 + 13}
+        fontSize="12"
+        stroke="#333"
+        strokeOpacity="0.5"
+      >
+        {payload.value}
+      </text>
+    </Layer>
+  );
+}
 
 const Admin: NextPage = () => {
   const [userCountKey, setUserCountKey] = useState(durationTypes[0]);
@@ -148,7 +193,7 @@ const Admin: NextPage = () => {
                 nodePadding={50}
                 iterations={0}
                 data={exporterJourneysData}
-                node={{ fill: COLOURS.BLUE }}
+                node={<DemoSankeyNode width={50} containerWidth={800} />}
                 link={{ stroke: COLOURS.TURQUOISE_50, strokeOpacity: 0.5 }}
               >
                 <Tooltip />

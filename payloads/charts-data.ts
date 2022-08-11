@@ -1,5 +1,5 @@
 /*
- * Add a average-visit-minutes/user-count line chart
+ * Add minutes label to average minutes tooltip
  * Add labels to sankey nodes
  */
 
@@ -96,7 +96,7 @@ const exporterJourneyNodes = [
   { name: 'Journey of waste' },
   { name: 'Treatment of waste' },
   { name: 'Export submitted' },
-  { name: 'Abandonned' },
+  { name: 'Export abandonned' },
 ];
 
 export const dailyExporterJourneysData = {
@@ -109,7 +109,7 @@ export const dailyExporterJourneysData = {
     { source: 4, target: 5, value: 45 },
     { source: 4, target: 6, value: 20 },
     { source: 3, target: 6, value: 3 },
-    { source: 2, target: 6, value: 5 },
+    { source: 2, target: 6, value: 4 },
     { source: 1, target: 6, value: 10 },
     { source: 0, target: 6, value: 30 },
   ],
@@ -118,31 +118,31 @@ export const dailyExporterJourneysData = {
 export const weeklyExporterJourneysData = {
   nodes: exporterJourneyNodes,
   links: [
-    { source: 0, target: 1, value: 345 },
-    { source: 1, target: 2, value: 280 },
-    { source: 2, target: 3, value: 275 },
-    { source: 3, target: 4, value: 250 },
-    { source: 4, target: 5, value: 245 },
-    { source: 4, target: 6, value: 5 },
-    { source: 3, target: 6, value: 25 },
-    { source: 2, target: 6, value: 5 },
-    { source: 1, target: 6, value: 65 },
-    { source: 0, target: 6, value: 50 },
+    { source: 0, target: 1, value: 820 },
+    { source: 1, target: 2, value: 690 },
+    { source: 2, target: 3, value: 672 },
+    { source: 3, target: 4, value: 621 },
+    { source: 4, target: 5, value: 450 },
+    { source: 4, target: 6, value: 171 },
+    { source: 3, target: 6, value: 51 },
+    { source: 2, target: 6, value: 18 },
+    { source: 1, target: 6, value: 130 },
+    { source: 0, target: 6, value: 300 },
   ],
 };
 
 export const monthlyExporterJourneysData = {
   nodes: exporterJourneyNodes,
   links: [
-    { source: 0, target: 1, value: 2025 },
-    { source: 1, target: 2, value: 1860 },
-    { source: 2, target: 3, value: 1600 },
-    { source: 3, target: 4, value: 1515 },
-    { source: 4, target: 5, value: 1400 },
-    { source: 4, target: 6, value: 115 },
-    { source: 3, target: 6, value: 85 },
-    { source: 2, target: 6, value: 260 },
-    { source: 1, target: 6, value: 165 },
-    { source: 0, target: 6, value: 780 },
+    { source: 0, target: 1, value: 8200 },
+    { source: 1, target: 2, value: 6850 },
+    { source: 2, target: 3, value: 5920 },
+    { source: 3, target: 4, value: 5812 },
+    { source: 4, target: 5, value: 4500 },
+    { source: 4, target: 6, value: 1312 },
+    { source: 3, target: 6, value: 108 },
+    { source: 2, target: 6, value: 930 },
+    { source: 1, target: 6, value: 1350 },
+    { source: 0, target: 6, value: 3000 },
   ],
 };
