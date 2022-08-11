@@ -3,7 +3,6 @@ import * as COLOURS from 'govuk-colours';
 import { OrderedList, Paragraph, Tag, UnorderedList } from 'govuk-react';
 import styled from 'styled-components';
 import { TaskListStatus } from './types';
-import { Link } from '../link';
 
 export const TaskList = styled(OrderedList)`
   ${MEDIA_QUERIES.TABLET} {

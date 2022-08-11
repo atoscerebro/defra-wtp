@@ -27,6 +27,7 @@
     "react-final-form": "^6.5.9",
     "react-final-form-listeners": "^1.0.3",
     "react-i18next": "^11.18.3",
+    "recharts": "2.1.12",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
