@@ -2,13 +2,7 @@ import { NextPage } from 'next';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { DisplayInputFieldWrapper } from '../../../../components/display-input-field/styled-components';
 import { Form, Field } from 'react-final-form';
-import {
-  H1,
-  FormGroup,
-  Caption,
-  Button,
-  ErrorText
-} from 'govuk-react';
+import { H1, FormGroup, Caption, Button, ErrorText } from 'govuk-react';
 import { Link } from '../../../../components/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -18,10 +12,14 @@ import {
 } from '../../../../components/form-pages/styled-components';
 import { QuantityInput } from './quantity-input';
 import { RadiosConditional } from '../../../../components/radios-conditional';
+import { useTranslation } from 'react-i18next';
+import { TRANSLATION_KEYS } from '../../../../translations/constants';
 
 const QuantityOfWaste: NextPage = () => {
   const router = useRouter();
-  const mustBeNumber = (value: any) => (isNaN(value) ? 'Must be a number' : undefined);
+  const { t } = useTranslation();
+  const mustBeNumber = (value: any) =>
+    isNaN(value) ? 'Must be a number' : undefined;
 
   return (
     <BaseTaskPage
@@ -35,11 +33,14 @@ const QuantityOfWaste: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">Do you know the quantity of waste?</H1>
+                <H1 size="LARGE">
+                  {t(TRANSLATION_KEYS.doYouKnowTheQuantityOfWaste)}
+                </H1>
                 <CaptionWrapper>
                   <Caption size="M">
-                    Only provide the net weight or volume. Do not include the
-                    weight of the container or vehicle.
+                    {t(
+                      TRANSLATION_KEYS.onlyProvideTheNetWeightOrVolumeDoNotIncludeTheWeightOfTheContainerOrVehicle,
+                    )}
                   </Caption>
                 </CaptionWrapper>
                 <Field name="quantity-of-waste-radio" type="radio" value="yes">
@@ -49,13 +50,20 @@ const QuantityOfWaste: NextPage = () => {
                       ariaId=""
                       renderConditional={() => (
                         <Field name="quantity-of-waste" validate={mustBeNumber}>
-                          {({input, meta}) => (
-                              <QuantityInput {...input} errorMsg={meta.error && input.value.length > 0 && <>{meta.error}</>} updateLaterMsg={false} />
+                          {({ input, meta }) => (
+                            <QuantityInput
+                              {...input}
+                              errorMsg={
+                                meta.error &&
+                                input.value.length > 0 && <>{meta.error}</>
+                              }
+                              updateLaterMsg={false}
+                            />
                           )}
                         </Field>
                       )}
                     >
-                      Yes
+                      {t(TRANSLATION_KEYS.yes)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -71,18 +79,27 @@ const QuantityOfWaste: NextPage = () => {
                       ariaId=""
                       renderConditional={() => (
                         <Field name="quantity-of-waste" validate={mustBeNumber}>
-                          {({input, meta}) => (
-                            <QuantityInput {...input} errorMsg={meta.error && input.value.length > 0 && <>{meta.error}</>} updateLaterMsg={true} />
+                          {({ input, meta }) => (
+                            <QuantityInput
+                              {...input}
+                              errorMsg={
+                                meta.error &&
+                                input.value.length > 0 && <>{meta.error}</>
+                              }
+                              updateLaterMsg={true}
+                            />
                           )}
                         </Field>
                       )}
                     >
-                      No
+                      {t(TRANSLATION_KEYS.no)}
                     </RadiosConditional>
                   )}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">Save and continue</Button>
+                  <Button type="submit">
+                    {t(TRANSLATION_KEYS.saveAndContinue)}
+                  </Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>

@@ -12,9 +12,12 @@ import { ButtonWrapper } from '../../../../../components/form-pages/styled-compo
 import { Form, Field } from 'react-final-form';
 import { useRouter } from 'next/router';
 import { DescribeWasteCaption } from './styled-components';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
 
 const DescribeTheWaste: NextPage = () => {
   const router = useRouter();
+  const {t} = useTranslation();
 
   return (
     <BaseTaskPage
@@ -28,27 +31,27 @@ const DescribeTheWaste: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">Describe the waste</H1>
+                <H1 size="LARGE">{t(TRANSLATION_KEYS.describeTheWaste)}</H1>
                 <Field name="describe-the-waste-input">
                   {({ input }) => (
                     <TextArea {...input}>
                       <DescribeWasteCaption>
-                        Your description could include things like:
+                        {t(TRANSLATION_KEYS.yourDescriptionCouldIncludeThingsLike)}
                       </DescribeWasteCaption>
                       <UnorderedList>
                         <ListItem>
-                          international specification or grade (for example,
-                          EN643 2.05.00 for paper)
+                          {t(TRANSLATION_KEYS.internationalSpecificationOrGradeForExampleEN643ForPaper)}
+                          
                         </ListItem>
                         <ListItem>
-                          polymer type for plastic (for example, LPDE film)
+                        {t(TRANSLATION_KEYS.polymerTypeForPlasticForExampleLpdeFilm)}
                         </ListItem>
                       </UnorderedList>
                     </TextArea>
                   )}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">Save and continue</Button>
+                  <Button type="submit">{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>

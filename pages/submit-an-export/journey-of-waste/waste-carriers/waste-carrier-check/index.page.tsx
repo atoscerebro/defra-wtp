@@ -10,7 +10,9 @@ import {
 } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
+import { useTranslation } from 'react-i18next';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
 import { links } from '../../constants';
 import {
   ADD_CARRIER_GROUP,
@@ -20,6 +22,7 @@ import {
 
 const WasteCarrierTransport = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSubmit = (data: any) => {
     const addCarrier = {
@@ -38,17 +41,23 @@ const WasteCarrierTransport = () => {
         <Form onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <H2 size="LARGE">Waste Carriers</H2>
+              <H2 size="LARGE">{t(TRANSLATION_KEYS.wasteCarriers)}</H2>
               <FormGroup>
-                <H3 size="MEDIUM">First Waste Carrier</H3>
-                <H3 size="MEDIUM">Additional Waste Carriers</H3>
+                <H3 size="MEDIUM">{t(TRANSLATION_KEYS.firstWasteCarrier)}</H3>
+                <H3 size="MEDIUM">
+                  {t(TRANSLATION_KEYS.additionalWasteCarriers)}
+                </H3>
               </FormGroup>
               <FormGroup>
                 <Fieldset>
                   <Fieldset.Legend>
-                    <H3>Do you need to add another another waste carrier?</H3>
+                    <H3>
+                      {t(TRANSLATION_KEYS.doYouNeedToAddAnotherWasteCarrier)}
+                    </H3>
                     <HintText>
-                      You can have up to 5 additional waste carriers.
+                      {t(
+                        TRANSLATION_KEYS.youCanHaveUpTo5AdditionalWasteCarriers,
+                      )}
                     </HintText>
                   </Fieldset.Legend>
                   <Field
@@ -57,7 +66,7 @@ const WasteCarrierTransport = () => {
                     value={WASTE_CARRIER_CHECK_IDS.YES}
                   >
                     {({ input }) => (
-                      <Radio {...input}>{WASTE_CARRIER_CHECK_LABELS.YES}</Radio>
+                      <Radio {...input}>{t(TRANSLATION_KEYS.yes)}</Radio>
                     )}
                   </Field>
                   <Field
@@ -66,13 +75,13 @@ const WasteCarrierTransport = () => {
                     value={WASTE_CARRIER_CHECK_IDS.NO}
                   >
                     {({ input }) => (
-                      <Radio {...input}>{WASTE_CARRIER_CHECK_LABELS.NO}</Radio>
+                      <Radio {...input}>{t(TRANSLATION_KEYS.no)}</Radio>
                     )}
                   </Field>
                 </Fieldset>
               </FormGroup>
               <div>
-                <Button>Save and continue</Button>
+                <Button>{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
               </div>
             </form>
           )}

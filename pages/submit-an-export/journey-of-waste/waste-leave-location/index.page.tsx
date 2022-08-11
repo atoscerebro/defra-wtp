@@ -1,9 +1,11 @@
 import { Button, FormGroup, H2, Radio } from 'govuk-react';
 import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
+import { useTranslation } from 'react-i18next';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { RadiosConditional } from '../../../../components/radios-conditional';
 import { TwoThirdsInputField } from '../../../../components/two-thirds-input-field/styled-components';
+import { TRANSLATION_KEYS } from '../../../../translations/constants';
 import { links } from '../constants';
 import {
   WASTE_CARRIER_COLLECT_LEAVE_GROUP,
@@ -13,6 +15,7 @@ import {
 
 const WasteCarrierCollectLeave = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSubmit = (data: any) => {
     console.log(data);
@@ -26,7 +29,9 @@ const WasteCarrierCollectLeave = () => {
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <H2 size="LARGE">
-                Do you know the location at which the waste will leave the UK?
+                {t(
+                  TRANSLATION_KEYS.doYouKnowTheLocationAtWhichTheWasteWillLeaveTheUk,
+                )}
               </H2>
               <FormGroup>
                 <Field
@@ -40,11 +45,11 @@ const WasteCarrierCollectLeave = () => {
                       ariaId={'conditional-contact-1'}
                       renderConditional={() => (
                         <TwoThirdsInputField>
-                          Enter location
+                          {t(TRANSLATION_KEYS.enterLocation)}
                         </TwoThirdsInputField>
                       )}
                     >
-                      {WASTE_CARRIER_COLLECT_LEAVE_LABELS.YES}
+                      {t(TRANSLATION_KEYS.yes)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -55,13 +60,13 @@ const WasteCarrierCollectLeave = () => {
                 >
                   {({ input }) => (
                     <Radio {...input} id={'conditional-contact-2'}>
-                      {WASTE_CARRIER_COLLECT_LEAVE_LABELS.NO}
+                      {t(TRANSLATION_KEYS.no)}
                     </Radio>
                   )}
                 </Field>
               </FormGroup>
               <div>
-                <Button>Save and continue</Button>
+                <Button>{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
               </div>
             </form>
           )}

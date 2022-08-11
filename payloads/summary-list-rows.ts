@@ -1,6 +1,8 @@
+import { TRANSLATION_KEYS } from '../translations/constants';
+
 export const summaryListRows = [
   {
-    key: '050104*: acid alkyl sludges',
+    key: TRANSLATION_KEYS.acidAlkylSludges050104,
     value: '',
     action: [
       {
@@ -14,7 +16,7 @@ export const summaryListRows = [
     ],
   },
   {
-    key: '010101: wastes from mineral metalliferous excavation',
+    key: TRANSLATION_KEYS.wastesFromMineralMetalliferousExcavation010101,
     value: '',
     action: [
       {
@@ -28,7 +30,7 @@ export const summaryListRows = [
     ],
   },
   {
-    key: '050104*: acid alkyl sludges',
+    key: TRANSLATION_KEYS.oilContainingAcids050112,
     value: '',
     action: [
       {

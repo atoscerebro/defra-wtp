@@ -7,9 +7,12 @@ import { useRouter } from 'next/router';
 import { EWCInputCaption } from './styled-component';
 import { AccessibleAutocomplete } from '../../../../../../components/accessible-autocomplete/accessible-autocomplete';
 import { ecWastes } from '../../../../../../components/form-pages/constants';
+import { TRANSLATION_KEYS } from '../../../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
 
 const EWCCodeInput: NextPage = () => {
   const router = useRouter();
+  const {t} = useTranslation();
 
   return (
     <BaseTaskPage
@@ -25,18 +28,18 @@ const EWCCodeInput: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">Enter an EWC code?</H1>
+                <H1 size="LARGE">{t(TRANSLATION_KEYS.enterAnEWCCode)}</H1>
                 <Field name="ewc-code-input">
                   {({ input }) => (
                     <AccessibleAutocomplete
                       {...input}
                       options={ecWastes}
-                      hintText={'Start typing, then choose from the list'}
+                      hintText={t(TRANSLATION_KEYS.startTypingThenChooseFromTheList)}
                     />
                   )}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">Save and continue</Button>
+                  <Button type="submit">{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>

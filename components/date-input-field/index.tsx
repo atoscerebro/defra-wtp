@@ -12,7 +12,7 @@ export const DateInputField = ({ ...props }) => {
             <DateLabelHeadingWrapper size="SMALL">
               {props.label}
             </DateLabelHeadingWrapper>
-            For example, 25 9 2022
+            {props.date}
           </DateLabelWrapper>
         </DateField>
       </GridCol>

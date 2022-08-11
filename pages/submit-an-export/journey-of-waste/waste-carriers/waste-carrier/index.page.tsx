@@ -15,15 +15,30 @@ import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { countryList } from '../../../../../components/form-pages/constants';
 import { ContactForm } from '../../../../../components/contact-form';
 import { links } from '../../constants';
-import { WASTE_CARRIERS_IDS, WASTE_CARRIERS_LABELS } from './constants';
+import { WASTE_CARRIERS_IDS } from './constants';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
+import { defaultKeys } from '../../../../../components/contact-form/constants';
+import { useMemo } from 'react';
 
 const WasteCarrier = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSubmit = (data: any) => {
     console.log(data);
     router.push(links.wasteCarrierTransport);
   };
+
+  const translatedLabels: typeof defaultKeys = useMemo(
+    () => ({
+      fullName: t(defaultKeys.fullName),
+      phoneNumber: t(defaultKeys.phoneNumber),
+      emailAddress: t(defaultKeys.emailAddress),
+      faxNumberOptional: t(defaultKeys.faxNumberOptional),
+    }),
+    [t],
+  );
 
   return (
     <BaseTaskPage
@@ -31,16 +46,19 @@ const WasteCarrier = () => {
         <Form onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <H2 size="LARGE">Who is the waste carrier?</H2>
+              <H2 size="LARGE">{t(TRANSLATION_KEYS.whoIsTheWasteCarrier)}</H2>
               <Paragraph>
-                You&apos;ll be able to update these details after submitting
-                this export.
+                {
+                  t(
+                    TRANSLATION_KEYS.youllBeAbleToUpdateTheseDetailsAfterSubmittingThisExport,
+                  ) as string
+                }
               </Paragraph>
               <FormGroup>
                 <Field name={WASTE_CARRIERS_IDS.ORGANISATION_NAME}>
                   {({ input }) => (
                     <InputField {...input}>
-                      {WASTE_CARRIERS_LABELS.ORGANISATION_NAME}
+                      {t(TRANSLATION_KEYS.organisationName)}
                     </InputField>
                   )}
                 </Field>
@@ -49,7 +67,7 @@ const WasteCarrier = () => {
                 <Field name={WASTE_CARRIERS_IDS.ADDRESS}>
                   {({ input }) => (
                     <TextArea {...input}>
-                      {WASTE_CARRIERS_LABELS.ADDRESS}
+                      {t(TRANSLATION_KEYS.address)}
                     </TextArea>
                   )}
                 </Field>
@@ -61,7 +79,7 @@ const WasteCarrier = () => {
                       <AccessibleAutocomplete
                         {...input}
                         options={countryList}
-                        label={WASTE_CARRIERS_LABELS.COUNTRY}
+                        label={t(TRANSLATION_KEYS.country)}
                       />
                     </>
                   )}
@@ -70,19 +88,23 @@ const WasteCarrier = () => {
               <FormGroup>
                 <Fieldset>
                   <Fieldset.Legend>
-                    <H3>Contact Details</H3>
+                    <H3>{t(TRANSLATION_KEYS.contactDetails)}</H3>
                   </Fieldset.Legend>
                   <ContactForm
+                    labels={translatedLabels}
                     hints={{
-                      phone:
-                        'Include the country code for international numbers.',
-                      fax: 'Include the country code for international numbers.',
+                      phone: t(
+                        TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers,
+                      ),
+                      fax: t(
+                        TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers,
+                      ),
                     }}
                   />
                 </Fieldset>
               </FormGroup>
               <div>
-                <Button>Save and continue</Button>
+                <Button>{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
               </div>
             </form>
           )}

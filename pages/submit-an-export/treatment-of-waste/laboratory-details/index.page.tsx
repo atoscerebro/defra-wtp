@@ -11,18 +11,33 @@ import { useRouter } from 'next/router';
 import { Field, Form } from 'react-final-form';
 import { BaseTaskPage } from '../../../../components/base-task-page';
 import { ContactForm } from '../../../../components/contact-form';
+import { defaultKeys } from '../../../../components/contact-form/constants';
 import { links } from '../constants';
 import { LABORATORY_DETAILS_IDS, LABORATORY_DETAILS_LABELS } from './constants';
 import { AccessibleAutocomplete } from '../../../../components/accessible-autocomplete/accessible-autocomplete';
 import { countryList } from '../../../../components/form-pages/constants';
+import { TRANSLATION_KEYS } from '../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
+import { useMemo } from 'react';
 
 const ImporterAddress = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSubmit = (data: any) => {
     console.log(data);
     router.push(links.disposalCode);
   };
+
+  const translatedLabels: typeof defaultKeys = useMemo(
+    () => ({
+      fullName: t(defaultKeys.fullName),
+      phoneNumber: t(defaultKeys.phoneNumber),
+      emailAddress: t(defaultKeys.emailAddress),
+      faxNumberOptional: t(defaultKeys.faxNumberOptional),
+    }),
+    [t],
+  );
 
   return (
     <BaseTaskPage
@@ -30,12 +45,12 @@ const ImporterAddress = () => {
         <Form onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <H2 size="LARGE">Laboratory Details</H2>
+              <H2 size="LARGE">{t(TRANSLATION_KEYS.laboratoryDetails)}</H2>
               <FormGroup>
                 <Field name={LABORATORY_DETAILS_IDS.LABORATORY_NAME}>
                   {({ input }) => (
                     <InputField {...input}>
-                      {LABORATORY_DETAILS_LABELS.LABORATORY_NAME}
+                      {t(TRANSLATION_KEYS.laboratoryName)}
                     </InputField>
                   )}
                 </Field>
@@ -44,7 +59,7 @@ const ImporterAddress = () => {
                 <Field name={LABORATORY_DETAILS_IDS.ADDRESS}>
                   {({ input }) => (
                     <TextArea {...input}>
-                      {LABORATORY_DETAILS_LABELS.ADDRESS}
+                      {t(TRANSLATION_KEYS.address)}
                     </TextArea>
                   )}
                 </Field>
@@ -55,8 +70,10 @@ const ImporterAddress = () => {
                     <AccessibleAutocomplete
                       {...input}
                       options={countryList}
-                      hintText={`We'll also use this as the importing country.`}
-                      label={LABORATORY_DETAILS_LABELS.COUNTRY}
+                      hintText={t(
+                        TRANSLATION_KEYS.wellAlsoUseThisAsTheImportingCountry,
+                      )}
+                      label={t(TRANSLATION_KEYS.country)}
                     />
                   )}
                 </Field>
@@ -64,19 +81,24 @@ const ImporterAddress = () => {
               <FormGroup>
                 <Fieldset>
                   <Fieldset.Legend>
-                    <H3>Contact Details</H3>
+                    <H3>{t(TRANSLATION_KEYS.contactDetails)}</H3>
                   </Fieldset.Legend>
                   <ContactForm
+                    labels={translatedLabels}
                     hints={{
-                      phone:
-                        'Include the country code for international numbers.',
-                      fax: 'Include the country code for international numbers.',
+                      phone: t(
+                        TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers,
+                      ),
+
+                      fax: t(
+                        TRANSLATION_KEYS.includeTheCountryCodeForInternationalNumbers,
+                      ),
                     }}
                   />
                 </Fieldset>
               </FormGroup>
               <div>
-                <Button>Save and continue</Button>
+                <Button>{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
               </div>
             </form>
           )}

@@ -19,14 +19,29 @@ import { Link } from '../../../../../components/link';
 import { useRouter } from 'next/router';
 import { links } from '../../constants';
 import { ContactForm } from '../../../../../components/contact-form';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
+import { defaultKeys } from '../../../../../components/contact-form/constants';
+import { useMemo } from 'react';
 
 const WasteCarrierCollectionContact = () => {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleSubmit = (data: any) => {
     console.log(data);
     router.push(links.wasteLeaveLocation);
   };
+
+  const translatedLabels: typeof defaultKeys = useMemo(
+    () => ({
+      fullName: t(defaultKeys.fullName),
+      phoneNumber: t(defaultKeys.phoneNumber),
+      emailAddress: t(defaultKeys.emailAddress),
+      faxNumberOptional: t(defaultKeys.faxNumberOptional),
+    }),
+    [t],
+  );
 
   return (
     <BaseTaskPage
@@ -34,7 +49,7 @@ const WasteCarrierCollectionContact = () => {
         <Form onSubmit={handleSubmit}>
           {({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
-              <H2 size="LARGE">Waste collection details</H2>
+              <H2 size="LARGE">{t(TRANSLATION_KEYS.wasteCollectionDetails)}</H2>
               <FormGroup>
                 <LineBreak>
                   {['5 Stafford Park', 'Telford', 'TRF 3RT', 'UK']}
@@ -42,10 +57,12 @@ const WasteCarrierCollectionContact = () => {
               </FormGroup>
               <FormGroup>
                 <HintText>
-                  We&apos;ll use this as the exporting country.
+                  {t(TRANSLATION_KEYS.wellUseThisAsTheExportingCountry)}
                 </HintText>
                 <Link href={links.wasteCarrierCollectLocation}>
-                  <Paragraph>Change address</Paragraph>
+                  <Paragraph>
+                    {t(TRANSLATION_KEYS.changeAddress) as string}
+                  </Paragraph>
                 </Link>
               </FormGroup>
               <FormGroup>
@@ -54,7 +71,7 @@ const WasteCarrierCollectionContact = () => {
                 >
                   {({ input }) => (
                     <InputField {...input}>
-                      {WASTE_CARRIER_COLLECT_DETAILS_LABELS.ORGANISATION_NAME}
+                      {t(TRANSLATION_KEYS.organisationName)}
                     </InputField>
                   )}
                 </Field>
@@ -62,13 +79,13 @@ const WasteCarrierCollectionContact = () => {
               <FormGroup>
                 <Fieldset>
                   <Fieldset.Legend>
-                    <H3>Contact Details</H3>
+                    <H3>{t(TRANSLATION_KEYS.contactDetails)}</H3>
                   </Fieldset.Legend>
-                  <ContactForm />
+                  <ContactForm labels={translatedLabels} />
                 </Fieldset>
               </FormGroup>
               <div>
-                <Button>Save and continue</Button>
+                <Button>{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
               </div>
             </form>
           )}

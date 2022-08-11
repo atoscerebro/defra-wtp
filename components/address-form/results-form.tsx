@@ -2,11 +2,12 @@ import { FormApi } from 'final-form';
 import { Button, FormGroup, Paragraph, Select } from 'govuk-react';
 import { FC } from 'react';
 import { Field } from 'react-final-form';
-import { ADDRESS_FORM_IDS } from './constants';
+import { ADDRESS_FORM_IDS, defaultLabels } from './constants';
 import * as StyledComponents from './styled-components';
-import { IAddress } from './types';
+import { IAddress, ILabels } from './types';
 
 export interface IResultsForm {
+  labels: ILabels;
   results: Record<string, IAddress>;
   form: FormApi<IAddress, Partial<IAddress>>;
   postcode: string;
@@ -15,6 +16,7 @@ export interface IResultsForm {
 }
 
 export const ResultsForm: FC<IResultsForm> = ({
+  labels,
   results,
   form,
   postcode,
@@ -40,7 +42,7 @@ export const ResultsForm: FC<IResultsForm> = ({
           type="button"
           onClick={handleResetPostcode}
         >
-          Change postcode
+          {labels.changePostcode}
         </StyledComponents.LinkButton>
       </FormGroup>
       <FormGroup>
@@ -48,7 +50,7 @@ export const ResultsForm: FC<IResultsForm> = ({
           {({ input: { onChange, ...rest } }) => (
             <Select
               {...rest}
-              label="Select an address"
+              label={labels.selectAnAddress}
               input={{
                 defaultValue: 'none',
                 onChange: (e) =>
@@ -56,7 +58,7 @@ export const ResultsForm: FC<IResultsForm> = ({
               }}
             >
               <option value="none" disabled>
-                Select address
+                {labels.selectAddress}
               </option>
               {Object.keys(results).map((key) => (
                 <option key={key} value={key}>
@@ -73,11 +75,11 @@ export const ResultsForm: FC<IResultsForm> = ({
           type="button"
           onClick={handleSetManual}
         >
-          I cannot find my address in the list
+          {labels.iCannotFindMyAddressInTheList}
         </StyledComponents.LinkButton>
       </FormGroup>
       <div>
-        <Button>Save and continue</Button>
+        <Button>{labels.saveAndContinue}</Button>
       </div>
     </>
   );

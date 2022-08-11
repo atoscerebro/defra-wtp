@@ -5,11 +5,13 @@ import { ADDRESS_FORM_VIEW_KEY } from './constants';
 import { ManualForm } from './manual-form';
 import { PostcodeForm } from './postcode-form';
 import { ResultsForm } from './results-form';
-import { IAddress, IHints } from './types';
+import { IAddress, IHints, ILabels } from './types';
 import { getAddressString } from './utils';
+import { defaultLabels } from './constants';
 
 export interface IAddressFormProps {
   hints?: IHints;
+  labels?: ILabels;
   handleSubmit: (address: IAddress) => void;
 }
 
@@ -17,7 +19,11 @@ export interface IAddressFormProps {
  * Use the address form to allow users to choose between searching for and
  * manually inputting their address.
  */
-export const AddressForm: FC<IAddressFormProps> = ({ hints, handleSubmit }) => {
+export const AddressForm: FC<IAddressFormProps> = ({
+  hints,
+  labels = defaultLabels,
+  handleSubmit,
+}) => {
   const [viewKey, setViewKey] = useState(ADDRESS_FORM_VIEW_KEY.SEARCH);
   const [postcode, setPostcode] = useState('');
   const [results, setResults] = useState<Record<string, IAddress>>({});
@@ -80,6 +86,7 @@ export const AddressForm: FC<IAddressFormProps> = ({ hints, handleSubmit }) => {
             {
               [ADDRESS_FORM_VIEW_KEY.SEARCH]: (
                 <PostcodeForm
+                  labels={labels}
                   onChangePostcode={(value) => setPostcode(value)}
                   onSetResults={handleSetResults}
                   onSetManual={handleSetManual}
@@ -87,6 +94,7 @@ export const AddressForm: FC<IAddressFormProps> = ({ hints, handleSubmit }) => {
               ),
               [ADDRESS_FORM_VIEW_KEY.RESULTS]: (
                 <ResultsForm
+                  labels={labels}
                   postcode={postcode}
                   results={results}
                   form={form}
@@ -96,6 +104,7 @@ export const AddressForm: FC<IAddressFormProps> = ({ hints, handleSubmit }) => {
               ),
               [ADDRESS_FORM_VIEW_KEY.MANUAL]: (
                 <ManualForm
+                  labels={labels}
                   hints={hints}
                   form={form}
                   onResetPostcode={handleResetPostcode}

@@ -19,9 +19,13 @@ import { ButtonWrapper } from '../../../../../components/form-pages/styled-compo
 import { NationalCodeInputCaption } from './styled-components';
 import { BaseTaskPage } from '../../../../../components/base-task-page';
 import { RadiosConditional } from '../../../../../components/radios-conditional';
+import { TRANSLATION_KEYS } from '../../../../../translations/constants';
+import { useTranslation } from 'react-i18next';
 
 const NationalCodeRadio: NextPage = () => {
   const router = useRouter();
+  const{t} = useTranslation();
+
   return (
     <BaseTaskPage
       component={
@@ -37,13 +41,12 @@ const NationalCodeRadio: NextPage = () => {
           {({ handleSubmit }) => (
             <FormGroup>
               <form onSubmit={handleSubmit}>
-                <H1 size="LARGE">Do you have a national code?</H1>
+                <H1 size="LARGE">{t(TRANSLATION_KEYS.doYouHaveANationalCode)}</H1>
                 <Paragraph>
-                  A national code is also known as a commodity code and may be
-                  required by the country you&apos;re exporting to.
+                  {t(TRANSLATION_KEYS.aNationalCodeIsAlsoKnownAsACommodityCodeAndMayBeRequiredByTheCountryYoureExportingTo) as string}
                 </Paragraph>
-                <NationalCodeInputCaption size="M">
-                  It&apos;s not required by UK regulators.
+                <NationalCodeInputCaption size="M"> 
+                {t(TRANSLATION_KEYS.itsNotRequiredByUkRegulators)}
                 </NationalCodeInputCaption>
                 <Field name="ref-number-answer" type="radio" value="yes">
                   {({ input }) => (
@@ -52,10 +55,10 @@ const NationalCodeRadio: NextPage = () => {
                       ariaId=""
                       id="national-code-input"
                       renderConditional={() => (
-                        <InputField>Enter code</InputField>
+                        <InputField>{t(TRANSLATION_KEYS.enterCode)}</InputField>
                       )}
                     >
-                      Yes
+                      {t(TRANSLATION_KEYS.yes)}
                     </RadiosConditional>
                   )}
                 </Field>
@@ -65,10 +68,10 @@ const NationalCodeRadio: NextPage = () => {
                   type="radio"
                   value="no"
                 >
-                  {({ input }) => <Radio {...input}>No</Radio>}
+                  {({ input }) => <Radio {...input}>{t(TRANSLATION_KEYS.no)}</Radio>}
                 </Field>
                 <ButtonWrapper>
-                  <Button type="submit">Save and continue</Button>
+                  <Button type="submit">{t(TRANSLATION_KEYS.saveAndContinue)}</Button>
                 </ButtonWrapper>
               </form>
             </FormGroup>

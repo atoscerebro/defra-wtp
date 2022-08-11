@@ -3,9 +3,3 @@ export enum WASTE_CARRIERS_IDS {
   ADDRESS = 'address',
   COUNTRY = 'country',
 }
-
-export enum WASTE_CARRIERS_LABELS {
-  ORGANISATION_NAME = 'Organisation name',
-  ADDRESS = 'Address',
-  COUNTRY = 'Country',
-}
