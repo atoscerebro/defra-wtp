@@ -19,11 +19,10 @@ export const AccessibleAutocomplete: FC<IProps> = ({
 }) => {
   const suggest = (query: string, populateResults: any, results: any) => {
     const filteredResults = results.filter(
-      (result: any) => result.indexOf(query) !== -1,
+      (result: any) => result.toLowerCase().indexOf(query.toLowerCase()) !== -1,
     );
     populateResults(filteredResults);
   };
-
   return (
     <>
       {label && <LabelText>{label}</LabelText>}
