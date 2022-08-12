@@ -1,11 +1,12 @@
 import { Footer } from 'govuk-react';
 import { useTranslation } from 'react-i18next';
+import { StyledFooter } from './styled-components';
 
 export const PageFooter = () => {
   const { t } = useTranslation();
 
   return (
-    <Footer
+    <StyledFooter
       copyright={{
         image: {
           height: 102,
