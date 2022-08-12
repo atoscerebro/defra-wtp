@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         </LinkWrapper>
 
         <LinkWrapper>
-          <HomepageLink href={'#'}>
+          <HomepageLink href={'#/'}>
             {t(TRANSLATION_KEYS.continueADraftExport)}
           </HomepageLink>
         </LinkWrapper>
