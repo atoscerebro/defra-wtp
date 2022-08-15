@@ -85,7 +85,7 @@ const EWCCodeSummary: NextPage = () => {
                           }}
                           inline
                         >
-                          {t(TRANSLATION_KEYS.yes)}
+                          {t(TRANSLATION_KEYS.no)}
                         </Radio>
                       )}
                     </Field>
