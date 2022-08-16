@@ -9,7 +9,7 @@ interface IProps {
 }
 
 /**
- * Use the accessible autocomplete input to allow users choose from a large set of options
+ * Use the accessible autocomplete input to allow users to choose from a large set of options
  * via typeahead search
  */
 export const AccessibleAutocomplete: FC<IProps> = ({
