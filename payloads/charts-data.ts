@@ -91,7 +91,7 @@ const exporterJourneyNodes = [
   { name: 'Journey of waste' },
   { name: 'Treatment of waste' },
   { name: 'Export submitted' },
-  { name: 'Export abandonned' },
+  { name: 'Export abandoned' },
 ];
 
 export const dailyExporterJourneysData = {
