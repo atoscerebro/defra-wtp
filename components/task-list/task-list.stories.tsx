@@ -7,7 +7,7 @@ const defaultData = [
     title: 'Check before you start',
     sections: [
       {
-        title: 'Check elligibility',
+        title: 'Check eligibility',
         link: '/',
         status: {
           label: TaskListStatus.COMPLETED,
