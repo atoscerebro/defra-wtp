@@ -196,7 +196,7 @@ const Admin: NextPage = () => {
               onClick={(key) => setExporterJourneyKey(key)}
             />
             <SankeyWrapper>
-              <SankeyContainer width={'100%'} height={250}>
+              <SankeyContainer width={'98%'} height={250}>
                 <Sankey
                   nodePadding={50}
                   iterations={0}
