@@ -32,7 +32,11 @@ import * as COLOURS from 'govuk-colours';
 import { TabbedButtons } from '../../components/tabbed-buttons';
 import { durationTypes, timeTypes } from './constants';
 import { useState } from 'react';
-import { ChartContainer } from './styled-components';
+import {
+  ChartContainer,
+  SankeyContainer,
+  SankeyWrapper,
+} from './styled-components';
 
 function LabelNode({
   x,
@@ -191,17 +195,19 @@ const Admin: NextPage = () => {
               keys={durationTypes}
               onClick={(key) => setExporterJourneyKey(key)}
             />
-            <ResponsiveContainer width={'100%'} height={250}>
-              <Sankey
-                nodePadding={50}
-                iterations={0}
-                data={exporterJourneysData}
-                node={<LabelNode width={50} containerWidth={800} />}
-                link={{ stroke: COLOURS.TURQUOISE_50, strokeOpacity: 0.5 }}
-              >
-                <Tooltip />
-              </Sankey>
-            </ResponsiveContainer>
+            <SankeyWrapper>
+              <SankeyContainer width={'100%'} height={250}>
+                <Sankey
+                  nodePadding={50}
+                  iterations={0}
+                  data={exporterJourneysData}
+                  node={<LabelNode width={50} containerWidth={800} />}
+                  link={{ stroke: COLOURS.TURQUOISE_50, strokeOpacity: 0.5 }}
+                >
+                  <Tooltip />
+                </Sankey>
+              </SankeyContainer>
+            </SankeyWrapper>
           </ChartContainer>
         </GridCol>
       </GridRow>
